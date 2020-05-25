@@ -1,0 +1,228 @@
+// ******************** HEADER *********************
+@import client-menu
+@import mobile_header
+@import "../mixins/media-in"
+
+header
+	width: 100%
+	// min-height:
+	position: fixed
+	top: 0
+	z-index: 10
+	// margin-bottom: 3em
+	text-decoration: none
+	& ul
+		list-style: none
+
+/* UPPER BAR */
+.upper-bar-wrap
+	padding: .5em 1em
+	height: 32px
+	background-color: $c300
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+	z-index: 3
+	position: relative
+	+mq('md')
+		display: none
+
+	.upper-bar
+		max-width: 1280px
+		margin: auto auto
+		display: grid
+		grid-template-columns: 2fr 10fr
+		grid-template-rows: 1fr
+		grid-column-gap: 40px
+		align-items: center
+		justify-items: stretch
+
+		font-family: $font
+		color: #fff
+		// text-shadow: rgba(0, 0, 0, 0.1)
+		letter-spacing: .5px
+
+		// .local-menu
+		// 	z-index: 11
+		// 	justify-self: left
+		// 	ul
+		// 		li
+		// 			a
+		// 				font-family: $font
+		// 				padding: 0 1em
+		// 				color: #fff
+		// 				text-shadow: rgba(0, 0, 0, 0.1)
+		// 				letter-spacing: .5px
+		// 		li
+		// 			a:after
+		// 				font-family: 'fa-solid'
+		// 				content: "\f107"
+		// 				padding-left: 0.5em
+		// 				vertical-align: middle
+		// 				font-size: 14px
+		// 		li
+		// 			a:only-child:after
+		// 				content: ''
+		// 		ul
+		// 			display: none
+		// 			position: absolute
+		// 		li:hover
+		// 			ul
+		// 				display: inherit
+		// 				li
+		// 					background-color: $c300
+		// 					border-top: 1px solid #49d3a5
+		// 					bottom: -8px
+		// 					padding: 0.75em 0
+		// 					position: relative
+
+		.local-menu
+			justify-self: left
+			ul
+				li
+					a
+						font-family: $font
+						padding: 0 1em
+						color: #fff
+						// text-shadow: rgba(0, 0, 0, 0.1)
+						letter-spacing: .5px
+					a:hover
+						color: $c20
+				li
+					a:after
+						font-family: 'fa-solid'
+						content: "\f107"
+						padding-left: 0.5em
+						vertical-align: middle
+						font-size: 14px
+				li
+					a:only-child:after
+						content: ''
+				ul
+					display: none
+					position: absolute
+
+				li:hover
+					ul
+						display: inherit
+						li
+							background-color: $c300
+							border-top: 1px solid #49d3a5
+							bottom: -8px
+							padding: 0.75em 0
+							position: relative
+							color: $c20
+
+		.top-menu
+			display: grid
+			justify-items: right
+			justify-self: right
+
+		nav
+			display: grid
+			grid-template-columns: auto auto auto auto auto auto auto auto
+			grid-column-gap: 1.5em
+			a
+				color: #ffffff
+
+/* ------ LOWER BAR ------ */
+.lower-bar-wrap
+	width: 100%
+	padding: .5em 0
+	background-color: #fff
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+	// position: absolute
+	z-index: 3
+	// margin-top: 32px
+	+mq('md')
+		display: none
+
+	.lower-bar
+		max-width: 1280px
+		margin: auto auto
+		display: grid
+		grid-template-columns: 2fr 5fr 2fr 2fr
+		grid-template-rows: 1fr
+		grid-column-gap: 1em
+		justify-content: stretch
+
+			/* Logotype */
+		.logo-place
+			padding: .5em 0
+			img
+				max-width: 130px
+				transform: scale(1)
+				transition: all .3s ease-in-out
+			img:hover
+				transition: all .2s ease-in-out
+				transform: scale(1.02)
+
+
+		/* Services Menu */
+		.services-menu
+			display: grid
+			align-self: center
+			height: 40px
+			font-weight: 600
+			padding-left: 3em
+
+		/* Phone & info */
+		.phone-info
+			align-self: center
+			justify-self: right
+			p
+				text-align: right
+				font-size: 16px
+				font-weight: 400
+				letter-spacing: .3px
+				color: $c500
+			#phone
+				font-size: 1.8em
+				line-height: 1
+				font-weight: 600
+
+				color: $c800
+				border-bottom: 2px solid transparent
+				&:hover
+					color: $c700
+					border-bottom: 2px dotted $c500
+					transition: .3s ease-in
+
+
+		/* Button */
+		.consult-button
+			display: grid
+			grid-template: 1fr / 1fr
+			align-content: center
+			justify-content: stretch
+			.button
+				align-self: center
+				text-align: center
+				width: 100%
+				padding: 0.7em 0
+
+				color: $c300
+				letter-spacing: .3px
+				font-size: 1.2em
+				font-weight: 600
+				text-shadow: 0 1px rgba(0, 0, 0, 0.1)
+
+				border: 2px solid $c300
+				border-radius: 5px
+				box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.1)
+
+				i,
+				i:hover
+					font-size: .9em
+					vertical-align: middle
+				.consult-call
+					padding: 0 1em 0 0
+
+			a:hover
+				box-shadow: 0 5px 8px 2px rgba(0, 0, 0, 0.15)
+
+.header-filler
+	height: 116px
+	display: block
+	background: transparent
+	+mq('md')
+		height: 64px
+

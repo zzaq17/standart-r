@@ -1,0 +1,120 @@
+.section-certificates
+	padding: 60px 0
+	width: 100%
+	margin: auto
+	+mq('xs')
+		padding: 40px 0
+
+	.container
+		display: grid
+		grid-template: auto / auto auto
+		gap: 0 30px
+		padding: 0 15px
+		+mq('sm')
+			grid-template: auto auto / auto
+			padding: 0
+			gap: 40px 30px
+			// margin: 0 10px
+
+	.certificates-elem
+		box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.43)
+		transition: background .3s,border .3s,border-radius .3s,box-shadow .3s
+		border: 1px solid #eaeaea
+		padding: 10px
+		border-radius: 10px
+
+		display: grid
+		grid-template: auto / 60% auto
+		align-items: center
+		+mq('sublg')
+			grid-template: 310px auto / auto
+			justify-items: center
+		+mq('sm')
+			grid-template: 310px auto / auto
+			justify-items: center
+
+		.picture
+			object-fit: cover
+			height: 100%
+			border: 1px solid #ddd
+
+		.info-block
+			padding: 10px 50px 100px 30px
+			display: flex
+			flex-direction: column
+			align-items: start
+			+mq('sm')
+				padding: 20px 10px 10px 10px
+				max-width: 400px
+
+			.title
+				color: #666
+				font-size: 24px
+				line-height: 1.3em
+				font-weight: 600
+				margin: 0 0 20px
+
+			.descr
+				font-size: 17px
+				color: #7a7a7a
+				margin: 0 0 15px
+
+			.btn
+				width: auto
+				margin: auto 0 0
+
+	&.section-sentence
+		.subtitle
+			text-align: center
+			color: #7a7a7a
+			margin: 20px 0
+
+		.certificates-elem
+			padding: 0
+			overflow: hidden
+
+			.picture
+				width: 50%
+				border: none
+				height: 340px
+
+			.info-block
+				width: 50%
+				padding: 80px 30px 20px
+				text-align: center
+
+				.mail
+					font-size: 17px
+					color: #4f4f4f
+					margin: 0 0 20px
+					text-align: center
+					width: 100%
+
+				.bottom-info
+					color: #4f4f4f
+					text-align: center
+					width: 100%
+					font-size: 17px
+
+			&.form-elem
+				background: $c300
+
+				.title
+					color: #fff
+					text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3)
+
+				.bottom-elem
+					color: #fff
+
+				.form-control
+					min-height: 47px
+
+				.btn
+					width: 100%
+
+				.pd-wrapper
+					span
+						color: #fff
+
+					svg
+						color: #fff

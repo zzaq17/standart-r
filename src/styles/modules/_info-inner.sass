@@ -1,0 +1,78 @@
+.section-info-inner
+	padding: 50px 0
+
+	.container
+		display: grid
+		grid-template: auto / 1fr 3fr
+		gap: 20px 20px
+		+mq('sm')
+			max-width: fit-content
+			grid-template: auto auto / auto
+			gap: 50px 0
+			margin: 0 0
+
+	.title
+		width: 100%
+		max-width: 300px
+		color: $c800
+		font-size: 41px
+		font-weight: 600
+		text-transform: uppercase
+		line-height: 1.2em
+		letter-spacing: 2px
+		position: relative
+		padding: 50px 0 0
+		+mq('sm')
+			max-width: fit-content
+			justify-self: center
+
+		&:before
+			content: ''
+			width: 100%
+			max-width: 300px
+			background: $c300
+			position: absolute
+			top: 0
+			left: 0
+			height: 2px
+			+mq('sm')
+				width: 100%
+
+	.descr
+		width: 100%
+		height: 440px
+		overflow-y: auto
+		padding: 20px 20px 20px 20px
+		margin-left: 30px
+		font-size: 17px
+		border: 1px solid $c50
+		border-left: none
+		border-right: none
+		+mq('sm')
+			padding: 15px
+			justify-self: center
+			margin: 10px 0
+
+		& ul
+			list-style: disc
+			// list-style-position: inside
+			margin: 20px 0 20px 30px
+			& li
+				line-height: 1.3
+				margin-bottom: 10px
+				padding-left: 10px
+				font-size: 18px
+
+		p
+			margin-bottom: 1.5em
+			font-size: 17px
+			letter-spacing: .5px
+
+		h3, h4
+			font-size: 26px
+			color: $c700
+			font-weight: 400
+			margin-bottom: 20px
+
+		.bold>p
+			font-weight: 600

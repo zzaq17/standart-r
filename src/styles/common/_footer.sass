@@ -1,0 +1,179 @@
+
+// ******************** FOOTER *********************
+
+a
+	text-decoration: none
+	color: $c20
+
+footer
+	display: grid
+	grid-template: auto auto / auto
+	width: 100%
+	min-height: 60px
+	z-index: 8
+	margin-top: 3em
+	background-color: $c700
+	color: $c50
+	font-weight: 300
+	text-shadow: 1px 2px 1px rgba(0,0,0,0.2)
+
+	i
+		padding: 0 .5em 0 .5em
+
+	.upper-footer,
+	.down-footer
+		max-width: 1280px
+		width: 100%
+		margin: 0 auto
+		padding: 2em .5em
+		display: grid
+		grid-template: auto / 1fr 1fr 1fr 1fr
+		grid-column-gap: .5em
+		+mq('md')
+			padding: 2em .5em
+			grid-template: auto auto / 1fr 1fr
+			grid-column-gap: .5em
+			grid-row-gap: 1em
+		+mq('sm')
+			padding: 2em .5em
+			grid-template: auto auto / 1fr 1fr
+		+mq('xs')
+			padding: 2em 1em
+			justify-items: center
+			grid-template: auto / auto
+			grid-column-gap: .5em
+			grid-row-gap: 1em
+
+		& > .column
+			display: grid
+			grid-template: auto / auto
+			+mq('md')
+				padding-left: 1em
+			+mq('xs')
+				padding: .5em
+
+			&:nth-child(1) > img
+				width: 130px
+				margin-bottom: .5em
+			&:nth-child(1) > p
+				padding-left: .5em
+				line-height: 1.1
+
+			p
+				color: $c100
+				line-height: 1.5em
+				+mq('xs')
+					text-align: center
+
+			& > p:first-child
+				color: $c20
+				padding: 0 0 1em 0
+				font-weight: 400
+				font-size: 18px
+				letter-spacing: 1.2px
+				font-feature-settings: "salt"
+			a
+				line-height: 1.1em
+				letter-spacing: .3px
+				font-size: 16px
+				padding: .3em 0
+			& > a:hover
+				letter-spacing: 1.4px
+				color: $c50
+
+			.phone-link
+				font-weight: 400
+				font-size: 1.4em
+			.phone-link:hover
+				color: $c100
+
+			.social-buttons
+				justify-items: left
+				+mq('xs')
+					justify-items: center
+			.social-buttons > a
+				font-size: 1.4em
+				text-shadow: 1px 3px 5px rgba(0,0,0,0.3)
+			.social-buttons > a:hover
+				text-shadow: 1px 3px 5px rgba(0,0,0,0.3)
+
+			.service-links
+				display: flex
+				flex-flow: column
+				padding: .5em 0
+				a
+					color: $c100
+					font-size: 14px
+					letter-spacing: .5px
+			.official-information
+				& > p
+					padding-left: 1.8em
+					// padding-bottom: 1em
+					line-height: 1em
+					color: $c100
+					+mq('sm')
+						padding-left: 0
+					+mq('xs')
+						padding: 0
+
+	.upper-footer
+		border-bottom: 1px solid $c500
+	.down-footer
+		grid-template: auto / 25% 50% 25%
+		justify-items: left
+		+mq('xs')
+			grid-template: auto / auto
+			justify-items: center
+			text-align: center
+	div.down-footer > div:nth-child(2)
+		text-align: center
+
+
+/* Button */
+/* Button */
+.footer-button
+	display: grid
+	grid-template: auto / auto
+	align-items: center
+	justify-content: stretch
+	max-width: 240px
+	margin-top: 10px
+
+	.button
+		display: grid
+		align-items: center
+		text-align: center
+		height: 40px
+
+		color: $c50
+		letter-spacing: .3px
+		font-size: 1.2em
+		font-weight: 600
+
+		border: 2px solid $c100
+		border-radius: 5px
+		box-shadow: 0 3px 3px 1px rgba(225, 255, 255, 0.1)
+
+	a:hover
+		box-shadow: 0 5px 8px 2px rgba(225, 255, 255, 0.1)
+		color: $c50
+.review-btn
+	padding: .5em 0
+	margin-top: 25px
+// .hvr-bob
+// 	display: grid
+
++mq('md')
+	footer > div.upper-footer > div:nth-child(3),
+	footer > div.upper-footer > div:nth-child(4)
+		display: none
+
++mq('xs')
+	.upper-footer > .column
+		padding: .5em .5em
+		justify-items: center
+		grid-template: auto / auto
+		grid-row-gap: 10px
+
+	.button-wrap
+		justify-items: center

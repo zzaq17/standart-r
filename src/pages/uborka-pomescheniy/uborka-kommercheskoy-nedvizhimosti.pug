@@ -1,0 +1,40 @@
+extends ../_templates/_template_kommerce
+
+block variables
+
+	- var subDomain = ''
+	- var pageUrl = '/uborka-pomescheniy/uborka-kommercheskoy-nedvizhimosti'
+	- var title = 'Уборка коммерческой недвижимости в Жуковском - Клининговая компания «Стандарт»'
+	- var metaDescr = 'Коммерческий клининг- отличная возможность при минимальных затратах поддерживать идеальную чистоту в помещении'
+	- var ogImage = '../img/uborka-tc.jpg'
+
+	- var h1 = 'Клининг коммерческой недвижимости'
+	- var h1Descr = 'Убираем любые помещения после ремонта, на регулярной основе, генеральные уборки. Полное клининговое обслуживание и разовые заказы'
+
+	- var nestingLevel = '1'
+	- var category = "komm"
+
+	- var bcCat = ''
+	- var bcCatUrl = ''
+	- var bc = 'Уборка коммерческой недвижимости'
+
+
+	- var mainBackground = 'img/uborka-ofisa3.jpg'
+	- var formBackground = 'img/uborka-ofisa2.jpg'
+
+
+	- var priceH2 = 'Цены на уборку для нежилых помещений'
+
+	//- mixin pricetable
+	-
+		var thead = ['Коммерческие объекты', 'Цена']
+	-
+		var tbody = [
+				['Ежедневная (комплексная)', 'от 15 000 р. /мес.'],
+				['Генеральная уборка', '60 р. /м²'],
+				['Послестроительная уборка до 500 м²', '90 р. /м²'],
+				['Послестроительная уборка от 501 до 1500 м²', '70 р. /м²'],
+				['Послестроительная уборка от 1500 до 5000 м²', '60 р. /м²'],
+		]
+
+

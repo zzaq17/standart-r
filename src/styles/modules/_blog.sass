@@ -1,0 +1,227 @@
+.section-blog-hero
+
+	& .container
+		background: rgba(0, 0, 0, .6) url(../img/ceny-na-kliningovye-1280.jpg)
+		+mq('sm')
+			background: rgba(0, 0, 0, .6) url(../img/ceny-na-kliningovye-768.jpg)
+		+mq('xs')
+			background: rgba(0, 0, 0, .6) url(../img/ceny-na-kliningovye-480.jpg)
+		background-blend-mode: overlay
+		background-position: center center
+		background-size: cover
+		background-repeat: no-repeat
+		
+		display: grid
+		grid-template: auto / minmax(min-content, 960px)
+		gap: 30px
+		justify-items: center
+		align-items: center
+		// margin: 0 auto
+		+mq('sm')
+			margin: 30px auto
+			padding: 0
+		& h1
+			font-size: 40px
+			font-weight: 600
+			// font-feature-settings: "salt"
+			color: $c20
+			text-align: center
+			justify-self: center
+			+mq("sm")
+				font-size: 30px
+		& p
+			font-size: 17px
+			color: $c20
+			max-width: 768px
+			text-align: center
+		ul.breadcrumbs
+			display: grid
+			grid-template: auto / repeat(5, auto)
+			align-items: center
+			// justify-self: left
+			+mq('sm')
+				grid-template: auto / auto
+				gap: 2px 0
+
+			li
+				margin: 0 10px 0 0
+
+				&:last-child
+					margin: 0
+					span
+						font-size: 14px
+						font-weight: 100
+						color: #eee
+						display: block
+						letter-spacing: .6px
+				a *
+					display: block
+					color: $c50
+					letter-spacing: .4px
+					font-size: 15px
+					font-weight: 300
+			li:nth-child(2n)
+				color: $c300
+				width: 10px
+				+mq('sm')
+					transform: rotate(90deg)
+
+p
+	color: $c700
+	line-height: 1.35
+	margin-bottom: 10px
+
+.section-sitemap,
+.section-blog .container
+	max-width: 960px
+	display: grid
+	justify-content: left
+	+mq('sm')
+		margin-left: 16px
+	+mq('xs')
+		margin: auto 16px
+	ol>li
+		list-style-type: decimal
+		list-style-position: inside
+		font-size: 30px
+		color: $c500
+		justify-self: left
+		margin: 40px 0
+		overflow-wrap: break-word
+		word-wrap: break-word
+		hyphens: auto
+		& ol>li,
+		p
+			font-size: 18px
+			font-weight: 300
+			line-height: 1.45
+			letter-spacing: .6px
+			margin: 16px 0
+			color: $c800
+			list-style-type: decimal
+			overflow-wrap: break-word
+			word-wrap: break-word
+			hyphens: auto
+
+			+mq('xs')
+				list-style-position: inside
+				line-height: 1.55
+				font-size: 18px
+				letter-spacing: .3px
+	& ul
+		padding: 20px
+
+		li
+			margin: 15px 0
+			line-height: 1.3
+			font-size: 18px
+			color: $c700
+		span.b
+			font-weight: 600
+			// font-feature-settings: "salt"
+			font-size: 20px
+			color: $c300
+	h2
+		font-size: 30px
+		font-weight: 600
+		// font-feature-settings: "salt"
+		color: $c300
+		margin: 30px 0 0 0
+
+	h2.left
+		text-align: left
+		margin-bottom: 20px
+
+	& .elements
+		display: grid
+		grid-template: auto / 1fr 1fr
+		gap: 60px
+		+mq('sm')
+			grid-template: auto / auto
+		& p:first-child
+			font-weight: 600
+			// font-feature-settings: "salt"
+			font-size: 32px
+			color: $c300
+			margin: 10px
+		& p:not(:first-child)
+			margin-top: 30px
+			line-height: 1.3
+			font-size: 18px
+			color: $c700
+
+	.media-elem
+		img
+			width: 100%
+			height: fit-content
+			max-height: 380px
+			max-width: 320px
+			object-fit: cover
+
+	.info-block
+		p
+			line-height: 1.25
+			font-size: 18px
+			color: $c700
+			margin: 4px 0
+		span.b
+			font-weight: 600
+			// font-feature-settings: "salt"
+			font-size: 20px
+			color: $c300
+
+	.elem
+		display: grid
+		grid-template: auto/auto
+		align-items: center
+
+.section-sitemap
+	a
+		color: $c700
+		text-decoration: underline
+
+
+.four-column
+	padding: 20px 0
+	display: grid
+	grid-template: auto / 1fr 1fr 1fr 1fr
+	gap: 20px
+	+mq('sm')
+		grid-template: auto / auto
+
+.one-three-column
+	padding: 20px 0
+	display: grid
+	grid-template: auto / 1fr 3fr
+	gap: 20px
+	+mq('sm')
+		grid-template: auto / auto
+
+.two-column
+	padding: 20px 0
+	display: grid
+	grid-template: auto / 1fr 1fr
+	gap: 20px
+	+mq('sm')
+		grid-template: auto / auto
+
+
+.blog-page
+	.elem
+		display: grid
+		grid-template: auto / 1fr 1fr
+		border: 1px solid $c50
+		border-radius: 10px
+
+		img
+			width: 100%
+			min-height: 220px
+			object-fit: cover
+
+		a
+			color: $c700
+			font-size: 30px
+			font-weight: 400
+			letter-spacing: .3px
+			padding: 20px
+

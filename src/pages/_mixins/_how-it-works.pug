@@ -1,0 +1,134 @@
+mixin how-it-works
+	section.section.section-how-it-works
+		.container
+			.section-title
+				h2 Четыре шага к чистоте
+			.why-we-wrapper
+				.why-we-elem
+					img(src='../img/how-it-works__phone.png', alt='')
+					.title
+						| заявка
+					.descr
+						p оставьте заявку на сайте или позвоните&nbsp;нам
+						a(href='tel:+74951367363') +7 (495) 136-73-63
+				.arrow
+				.why-we-elem
+					img(src='../img/how-it-works__consult.png', alt='')
+					.title
+						| консультация
+					.descr
+						p менеджер перезвонит вам и договорится об удобном времени для выезда и точной оценки стоимости работ
+				.arrow
+				case category
+					when 'kvartiry'
+						.why-we-elem
+							img(src='../img/how-it-works__cleaning.png', alt='')
+							.title
+								| уборка
+							.descr
+								p в назначенное время приедут наши сотрудники с необходимым оборудованием и выполнят работы
+						.arrow
+						.why-we-elem
+							img(src='../img/how-it-works__payment.png', alt='')
+							.title
+								| оплата
+							.descr
+								p радуетесь сиянию вашей квартиры и по результату оплачиваете услугу
+					when 'doma'
+						.why-we-elem
+							img(src='../img/how-it-works__cleaning.png', alt='')
+							.title
+								| уборка
+							.descr
+								p в назначенное время приедут наши сотрудники с необходимым оборудованием и выполнят работы
+						.arrow
+						.why-we-elem
+							img(src='../img/how-it-works__payment.png', alt='')
+							.title
+								| оплата
+							.descr
+								p радуетесь сиянию вашего дома и по результату оплачиваете услугу
+					when 'moyka'
+						.why-we-elem
+							img(src='../img/how-it-works__cleaning.png', alt='')
+							.title
+								| уборка
+							.descr
+								p в назначенное время приедут наши сотрудники с необходимым оборудованием и выполнят работы
+						.arrow
+						.why-we-elem
+							img(src='../img/how-it-works__payment.png', alt='')
+							.title
+								| оплата
+							.descr
+								p у вас кристально чистые окна, осталось принять и оплатить работу
+					when 'himchistka'
+						.why-we-elem
+							img(src='../img/how-it-works__bubbles.png', alt='')
+							.title
+								| химчистка
+							.descr
+								p в назначенное время приедет наш сотрудник с необходимым оборудованием и выполнит работы
+						.arrow
+						.why-we-elem
+							img(src='../img/how-it-works__payment.png', alt='')
+							.title
+								| оплата
+							.descr
+								p радуетесь обновленным предметам интерьера и по результату оплачиваете услугу
+					when 'ofisy'
+						.why-we-elem
+							img(src='../img/how-it-works__payment.png', alt='')
+							.title
+								| оплата
+							.descr
+								p менеджер выезжает для оценки и заключает договор. После оплачиваете счёт удобным способом
+						.arrow
+						.why-we-elem
+							img(src='../img/how-it-works__cleaning.png', alt='')
+							.title
+								| работы
+							.descr
+								p в назначенное время приедут наши сотрудники с необходимым оборудованием и выполнят работы
+					when 'komm'
+						.why-we-elem
+							img(src='../img/how-it-works__payment.png', alt='')
+							.title
+								| оплата
+							.descr
+								p менеджер выезжает для оценки и заключает договор. После оплачиваете счёт удобным способом
+						.arrow
+						.why-we-elem
+							img(src='../img/how-it-works__cleaning.png', alt='')
+							.title
+								| работы
+							.descr
+								p в назначенное время приедут наши сотрудники с необходимым оборудованием и выполнят работы
+					when 'osteklenie'
+						.why-we-elem
+							img(src='../img/how-it-works__payment.png', alt='')
+							.title
+								| оплата
+							.descr
+								p менеджер выезжает для оценки и заключает договор. После оплачиваете счёт удобным способом
+						.arrow
+						.why-we-elem
+							img(src='../img/how-it-works__cleaning.png', alt='')
+							.title
+								| работы
+							.descr
+								p в назначенное время приедут наши сотрудники с необходимым оборудованием и выполнят работы
+					default
+						.why-we-elem
+							img(src='../img/how-it-works__cleaning.png', alt='')
+							.title
+								| работы
+							.descr
+								p в назначенное время приедут наши сотрудники с необходимым оборудованием и выполнят работы
+						.arrow
+						.why-we-elem
+							img(src='../img/how-it-works__payment.png', alt='')
+							.title
+								| оплата
+							.descr
+								p оцениваете выполненный объем, принимаете работу и оплачиваете услугу

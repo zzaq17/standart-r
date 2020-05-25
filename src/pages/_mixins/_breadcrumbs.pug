@@ -1,0 +1,51 @@
+mixin breadcrumbs
+	div.section.section-breadcrumbs
+		.container
+			ul(itemscope itemtype='http://schema.org/BreadcrumbList').breadcrumbs
+				li(itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem')
+					a(itemscope itemtype='http://schema.org/Thing' itemprop='item' href='/')
+						span(itemprop='name') Клининговая компания
+						meta(itemprop='position' content='1')
+				li
+					span »
+				if bcCat
+					li(itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem')
+						a(itemscope itemtype='http://schema.org/Thing' itemprop='item' href=''+bcCatUrl)
+							span(itemprop='name')= bcCat
+							meta(itemprop='position' content='2')
+					li
+						span »
+				else
+				li(itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem')
+					span(itemprop='name')= bc
+					if bcCat
+						meta(itemprop='position' content='3')
+					else
+						meta(itemprop='position' content='2')
+
+mixin breadcrumbs_naked
+	ul(itemscope itemtype='http://schema.org/BreadcrumbList').breadcrumbs
+		li(itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem')
+			a(itemscope itemtype='http://schema.org/Thing' itemprop='item' href='/')
+				span(itemprop='name') Клининговая компания
+				meta(itemprop='position' content='1')
+		li
+			span »
+		if bcCat
+			li(itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem')
+				a(itemscope itemtype='http://schema.org/Thing' itemprop='item' href=''+bcCatUrl)
+					span(itemprop='name')= bcCat
+					meta(itemprop='position' content='2')
+			li
+				span »
+		else
+		li(itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem')
+			span(itemprop='name')= bc
+			if bcCat
+				meta(itemprop='position' content='3')
+			else
+				meta(itemprop='position' content='2')
+
+
+
+

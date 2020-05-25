@@ -1,0 +1,26 @@
+mixin additional
+	if additional
+		section.section.section-additional-services
+			.container
+				.head-nav
+					.section-title
+						h2 Цены на дополни­тельные услуги
+					.buttons
+						case category
+							when 'kvartiry'
+								a.btn-sm__t-green.hvr-bob(href='../kalkulyator-kliningovyh-uslug-dlya-kvartir')
+									| Калькулятор стоимости
+							when 'doma'
+								a.btn-sm__t-green.hvr-bob(href='../kalkulyator-kliningovyh-uslug-dlya-kvartir')
+									| Калькулятор стоимости
+						a.btn-sm__green.hvr-bob(href='../ceny-na-kliningovye-uslugi')
+							| Полный прайс на уборку
+				ul
+					each index, val in additional
+						li
+							p= index['name']
+							p= index['price']
+					li.item
+						span
+							| *Цены могут меняться в зависимости от степени загрязнения, так как потребуется больше времени работы и моющих средств.
+	else

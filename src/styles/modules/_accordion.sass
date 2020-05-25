@@ -1,0 +1,89 @@
+.accordion
+	margin: 20px 0
+
+.accordion-item
+	align-items: center
+	border: 1px solid $c50
+	border-bottom: none
+
+.accordion-item:last-child
+	border-bottom: 1px solid $c50
+
+//   &:last-child
+//     margin-bottom: 0
+
+.accordion-item-header
+	height: inherit
+	padding: 15px 20px
+	background: $c20
+	color: $c300
+	cursor: pointer
+	position: relative
+	align-self: center
+
+.accordion-item.show .accordion-item-header
+	background: $c300
+	color: $c20
+	&::after
+		font-family: "Font Awesome 5 Free"
+		font-weight: 900
+		content: "\f078"
+		transform: rotate(180deg)
+		position: absolute
+		right: 30px
+
+
+.accordion-item-header
+	&:hover, &:focus
+		background: $c100
+		color: $c20
+
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		width: 10px
+		background: rgba(255, 255, 255, 0.5)
+	&::after
+		font-family: "Font Awesome 5 Free"
+		font-weight: 900
+		content: "\f078"
+		position: absolute
+		right: 30px
+
+
+.accordion-item-content
+	visibility: hidden
+	opacity: 0
+	height: 0
+	transition: all .4s ease-out
+
+	&>*
+		padding: 10px
+		color: $c800
+		font-size: 17px
+		font-weight: 400
+		letter-spacing: .3px
+
+	ul
+		list-style: disc
+		margin-left: 20px
+	li
+		padding: 4px 0
+
+	h4
+		font-size: 20px
+		margin-left: 30px
+		padding: 20px 0 0 0
+
+.accordion-item.show .accordion-item-content
+	visibility: visible
+	opacity: 1
+	overflow-y: auto
+	height: 50vh
+	transition: all .4s ease-out
+
+
+

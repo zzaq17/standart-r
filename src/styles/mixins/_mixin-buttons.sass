@@ -1,0 +1,37 @@
+=btn__green($width: 100%)
+	@extend %btn__green
+	width: $width
+	&:hover
+		color: $c20
+
+=btn__transp($btn-color: white, $width: 100%)
+	@extend %btn__transp
+	border: 2px solid $btn-color
+	color: $btn-color
+	width: $width
+	&:hover
+		color: $btn-color
+
+=btn__white($width: 100%)
+	@extend %btn__white
+	width: $width
+
+// small buttons
+
+=btn-sm__green($width: 100%)
+	@extend %btn-sm__green
+	width: $width
+	& *:hover
+		color: $c20
+
+=btn-sm__transp($btn-color: white, $width: 100%)
+	@extend %btn-sm__transp
+	border: 2px solid $btn-color
+	color: $btn-color
+	width: $width
+
+=btn-sm__white($width: 100%)
+	@extend %btn-sm__white
+	width: $width
+	&:hover
+		color: $c300

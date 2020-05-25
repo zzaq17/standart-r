@@ -1,0 +1,58 @@
+.section-akcii
+	& .container
+		& .elem
+			display: grid
+			grid-template: auto / 1fr 1fr
+			gap: 20px 0
+			align-items: start
+
+			border-radius: 10px
+			@extend %bshadow
+			+mq('md')
+				grid-template: auto / auto
+			+mq('sm')
+				grid-template: auto / 1fr 1fr
+			+mq('xs')
+				grid-template: auto / auto
+
+			& .picture
+				padding: 0
+				align-self: stretch
+				img
+					min-height: 250px
+					width: 100%
+					object-fit: scale-down
+					border-radius: 10px 0 0 10px
+					+mq('md')
+						border-radius: 10px 10px 0 0
+					+mq('sm')
+						border-radius: 10px 0 0 10px
+					+mq('xs')
+						border-radius: 10px 10px 0 0
+			
+			& .info-block
+				display: grid
+				justify-self: stretch
+
+				p
+					padding: 20px
+					color: $c700
+					font-size: 18px
+					letter-spacing: .5px
+
+				p:first-child
+					font-weight: 600
+					font-size: 22px
+
+				& .social-buttons
+					border-top: 1px solid $c50
+					display: grid
+					grid-template: auto / repeat(3, 1fr)
+					gap: 20px
+					align-items: center
+					justify-items: center
+					padding: 20px
+				& .social-buttons>a
+
+					font-size: 20px
+					color: $c300

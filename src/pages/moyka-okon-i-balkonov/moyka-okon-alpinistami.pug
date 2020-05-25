@@ -1,0 +1,35 @@
+extends ../_templates/_template_subservice
+
+block variables
+
+	- var subDomain = ''
+	- var pageUrl = '/moyka-okon-i-balkonov/moyka-okon-alpinistami'
+	- var title = 'Мойка окон альпинистами в Жуковском'
+	- var metaDescr = 'Мытье остекления и фасадов промышленными альпинистами в г. Раменское. Мойка балконов и панорамного остекления на высоте.'
+	- var ogImage = 'img/photo-prom-alp-min.jpg'
+
+	- var h1 = 'Мойка окон альпинистами в Жуковском'
+	- var h1Descr = 'Мойка окон методом промышленного альпинизма обычно требуется при витражном и панарамном остеклении помещений в высотных зданиях. Также используется, когда нет возможности установить вышку или ограничить движение.'
+
+	- var bcCat = 'Мойка окон'
+	- var nestingLevel = '2'
+	- var bcCatUrl = '/moyka-okon-i-balkonov/'
+	- var bc = 'Мойка окон альпинистами'
+	- var category = 'osteklenie'
+
+	- var mainBackground = 'img/moyka-ostekleniya.jpg'
+	- var formBackground = 'img/moyka-ostekleniya.jpg'
+
+
+	- var priceH2 = 'Цены на мойку остекления и фасадов'
+
+	//- mixin pricetable
+	-
+		var thead = ['Мойка фасадов, окон', 'Цена']
+	-
+		var tbody = [
+				['Мойка фасада, окон (на высоте до 3-х метров)', 'от 50 р. /м²'],
+				['Мойка фасада, окон (на высоте более 3-х метров с применением автовышки или вышки-туры)', 'от 50 р. /м² + вышка от 1 500 р. за сутки'],
+				['Мойка фасада, окон (с применением промышленного альпинизма)', 'от 60 р. /м²'],
+		]
+

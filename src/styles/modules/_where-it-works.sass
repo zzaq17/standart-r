@@ -1,0 +1,38 @@
+.where-it-works
+    & .where-it-works-wrap
+        display: grid
+        grid-template: auto / repeat(4, 1fr)
+        margin: 0 60px
+        gap: 0 16px
+        +mq('sublg')
+            grid-template: 1fr 1fr / 1fr 1fr
+            gap: 40px 30px
+            margin: 0 60px
+        +mq('sm')
+            margin: 0 20px
+        +mq('xs')
+            margin: 0 20px
+            grid-template: repeat(4, 1fr) / 1fr
+            justify-items: center
+            gap: 30px 0
+        & .where-it-works-elem
+            padding-left: 1em
+            display: grid
+            grid-template: 100px 40px auto / auto
+            +mq('sublg')
+                max-width: 320px
+                padding-left: 0
+                padding-right: 16px
+            +mq('xs')
+                grid-template: 85px 40px auto / auto
+            & .picture
+                color: $c300
+                padding: 0 0 16px 0
+                font-size: 64px
+            & .title
+                color: $c700
+                font-size: 24px
+                +mq('sm')
+                    font-size: 22px
+            & .descr
+                letter-spacing: .2px

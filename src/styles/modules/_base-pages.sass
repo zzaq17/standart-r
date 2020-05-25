@@ -1,0 +1,286 @@
+.hero
+	max-width: 1280px
+	margin: auto
+	padding: 30px 40px
+
+	display: grid
+	justify-items: center
+	gap: 40px 0
+
+	background: rgba(0, 0, 0, .6) url(../img/ceny-na-kliningovye-1280.jpg)
+	+mq('sm')
+		background: rgba(0, 0, 0, .6) url(../img/ceny-na-kliningovye-768.jpg)
+	+mq('xs')
+		background: rgba(0, 0, 0, .6) url(../img/ceny-na-kliningovye-480.jpg)
+
+	background-blend-mode: overlay
+	background-position: center center
+	background-size: cover
+	background-repeat: no-repeat
+	background-blend-mode: overlay
+	h1
+		font-size: 50px
+		color: $c20
+		// font-feature-settings: "salt"
+		+mq('sm')
+			font-size: 40px
+	ul
+		display: grid
+		grid-template: auto / repeat(3, auto)
+		align-items: center
+		gap: 10px
+		+mq('sm')
+			grid-template: auto / auto
+			gap: 2px 0
+			justify-self: left
+		li
+			display: inline
+
+			&>span
+				color: lightgray
+				font-size: 14px
+				font-weight: 300
+				letter-spacing: .6px
+
+			& a
+				color: $c300
+				font-size: 15px
+				font-weight: 300
+				letter-spacing: .6px
+
+		li:nth-child(2n)
+			color: $c300
+			width: 10px
+			+mq('sm')
+				transform: rotate(90deg)
+
+
+.section-contacts
+	padding-top: 20px
+	.container
+		// border: 1px solid #eee
+
+		.two-column
+			gap: 80px
+			align-items: start
+			padding-top: 0
+
+			.part
+				.elem
+					margin-top: 20px
+					display: grid
+
+					p:first-child
+						font-size: 18px
+						font-weight: 600
+						color: $c500
+						text-transform: uppercase
+
+					a
+						color: $c800
+						font-weight: 600
+						font-size: 22px
+						padding: 8px 0
+
+					img
+						justify-self: center
+						// object-fit: none
+						max-height: 200px
+
+				.map-elem
+					display: grid
+					grid-template: auto auto / 100%
+					gap: 5px 0
+					margin-top: 20px
+
+					p
+						font-size: 20px
+					.map
+						height: 530px
+						max-width: 640px
+						box-shadow: 0 2px 8px rgba(0,0,0,.2)
+
+				.map-elem:last-child
+					+mq('sm')
+						margin-top: 60px
+				.two-column
+					+mq('sm')
+						grid-template: auto / 1fr 1fr
+					+mq('xs')
+						grid-template: auto / auto
+
+				.phones
+					p:first-child
+						margin-bottom: 20px
+					a
+						display: block
+				.emails
+					p
+						font-size: 20px
+						color: $c700
+					p:first-child
+						margin-bottom: 20px
+
+				.social-buttons
+					// height: 40px
+					display: grid
+					grid-template: auto / repeat(3, 1fr)
+					width: 100%
+					justify-items: center
+					gap: 0 30px
+					margin: 0
+					i
+						color: $c300
+						font-size: 30px
+
+				span.line
+					display: block
+					margin: 30px 50px
+					padding-left: 20px
+					border-left: 4px solid $c50
+
+				.info-block
+					margin-top: 20px
+					color: $c800
+					h3
+						font-size: 30px
+						font-weight: 300
+						color: $c700
+						margin-bottom: 20px
+
+					span.bold
+						font-weight: 600
+						font-size: 18px
+						margin: 40px 0 10px 0
+						display: block
+
+					p
+						font-size: 17px
+						letter-spacing: .4px
+						margin: 16px 0
+						line-height: 1.45
+
+				form
+					margin-top: 30px
+					& p
+						color: $c800
+					& p:nth-child(2)
+						margin-bottom: 10px
+						font-size: 18px
+						font-weight: 600
+						color: $c500
+						text-transform: uppercase
+
+					.success
+						display: none
+						// display: grid
+						grid-template: auto / auto
+						position: absolute
+						z-index: 2
+						top: 0
+						left: 0
+						bottom: 0
+						right: 0
+						color: $c20
+						.title
+							font-size: 36px
+						div
+							align-self: center
+							justify-self: center
+							text-align: center
+							margin: auto
+							max-width: 320px
+							div
+								padding: 5px 0
+								font-size: 18px
+						.success>*
+							transition: opacity .5s ease
+						&.active
+								& ~ *
+									opacity: .3
+									filter: blur(3px)
+
+					.two
+						display: grid
+						grid-template: auto / 1fr 1fr
+						gap: 0 20px
+
+
+					.politika
+						width: 100%
+						margin-top: 4px
+						display: grid
+						grid-template: auto / auto auto
+						gap: 0 10px
+						justify-items: center
+						color: #555
+						opacity: 0.5
+						& i
+							color: #555
+							align-self: center
+							font-size: 15px
+						&>span
+							color: #555
+							font-weight: 300
+							letter-spacing: .5px
+							font-size: 15px
+
+
+						&:hover,
+						& *:hover
+							color: #555
+							opacity: 1
+
+
+.section-vacancy
+	
+	.about
+		// padding: 30px
+		color: $cg
+		font-size: 17px
+		font-weight: 400
+		li
+			padding: 5px 0
+		a, span.color
+			color: $c500
+			font-size: 1.1em
+			font-weight: 700
+
+	.info-block
+		display: grid
+		grid-template: auto / 2fr 1fr
+		gap: 10px
+		border-radius: 10px
+		@extend %bshadow
+		padding: 20px
+
+		& h2
+			font-size: 26px
+			font-weight: 600
+			color: $c300
+			letter-spacing: .4px
+			text-align: left
+			grid-column: 1 / -1
+
+		& .header
+			display: grid
+			align-items: start
+			gap: 20px 0
+			margin-top: 10px
+		
+		& .duties
+			display: grid
+			grid-template: auto / 30% 60%
+			gap: 20px
+			// margin-top: 30px
+
+		
+		p
+			font-size: 17px
+			font-weight: 400
+			color: $c800
+			letter-spacing: .3px
+		
+		span.b
+			font-weight: 800
+			color: $c500

@@ -1,0 +1,250 @@
+.main-page
+	.tabs
+		// border: 1px solid $c50
+		border-radius: 10px
+		display: grid
+		grid-template: auto auto / auto
+		justify-items: left
+
+		.tabs-nav
+			display: grid
+			grid-template: auto / repeat(4, auto)
+			// max-width: 1280px
+			margin: 0 auto
+			+mq('sm')
+				padding: 0 5px
+			+mq('xs')
+				width: 100%
+				overflow-x: auto
+				padding: 0
+				&::-webkit-scrollbar
+					height: 8px
+				&::after
+					content: '<<>>'
+					position: absolute
+					color: $c100
+					z-index: 4
+					margin: 0 45%
+					margin-top: 44px
+
+			.tabs-nav__item
+				max-width: 200px
+				border-bottom: 4px solid transparent
+				cursor: pointer
+				justify-self: center
+				padding: 16px 40px
+
+				color: $c800
+				font-size: 18px
+				font-weight: 300
+				letter-spacing: .3px
+				+mq('sm')
+					padding: 16px 20px
+				+mq('xs')
+					padding: 10px 10px
+					min-width: 110px
+
+				&:hover
+					background-color: $c50t
+					border-bottom: 2px solid $c300
+				&:first-child
+					border-top-left-radius: 8px
+				&:last-child
+					border-top-right-radius: 8px
+				&.is-active
+					border-bottom: 4px solid $c300
+
+		.tabs__content
+			margin: 0 auto
+			.tab
+				width: 100%
+				display: none
+				margin: 0 auto
+				img
+					width: 100%
+					margin: 0 auto
+					border-radius: 5px 5px
+					padding: 0
+				&.is-active
+					display: block
+
+.section-price-page
+	.tabs
+		display: grid
+		grid-template: auto auto / auto
+
+		.tabs-nav
+			width: 100%
+			display: grid
+			grid-template: auto / repeat(6, 1fr)
+			border-left: 1px solid $c50
+			border-right: 1px solid $c50
+			border-bottom: 1px solid $c50
+			margin: 0 auto
+			+mq('sm')
+				padding: 0 5px
+			+mq('xs')
+				width: 100%
+				grid-template: repeat(3, 1fr) / 1fr 1fr
+				padding: 0
+
+			.tabs-nav__item
+				height: 100%
+				border-bottom: 4px solid transparent
+				cursor: pointer
+				justify-self: stretch
+				padding: 16px 10px
+				align-content: center
+				text-align: center
+				color: $c700
+				font-size: 17px
+				font-weight: 400
+				letter-spacing: .4px
+				+mq('sm')
+					padding: 16px 10px
+				+mq('xs')
+					padding: 15px 10px
+					text-align: left
+					border-left: 1px solid $c50
+					border-bottom: 1px solid $c50
+
+				&:hover
+					background-color: $c50t
+					border-bottom: 2px solid $c300
+				&:first-child
+					border-top-left-radius: 8px
+				&:last-child
+					border-top-right-radius: 8px
+				&.is-active
+					border-bottom: 4px solid $c300
+
+		.tabs__content
+			display: grid
+			grid-template: auto / auto
+			.tab
+				width: 100%
+				display: none
+				+mq('sm')
+					padding: 0 20px
+				.tab-wrapper
+					padding: 20px 0
+					width: 100%
+					display: grid
+					grid-template: auto / 1fr 1fr
+					gap: 10px 40px
+					+mq('sm')
+						gap: 20px
+					+mq('xs')
+						grid-template: auto / auto
+						gap: 20px 0
+
+				.tab-wrapper__one
+					padding: 20px 0
+					width: 100%
+					display: grid
+					grid-template: auto / auto
+					gap: 0
+
+				.tab-wrapper__accordeon
+					padding: 20px 0
+					width: 100%
+					display: grid
+					grid-template: auto / 2fr 1fr
+					gap: 10px 40px
+					+mq('sm')
+						grid-template: auto / auto
+			& .is-active
+				display: block
+
+.section-otzyvy
+
+	.tabs
+		border-radius: 10px
+		display: grid
+		grid-template: auto auto / auto
+
+		.tabs-nav
+			border: 1px solid $c50
+			border-radius: 10px 10px 0 0
+			position: relative
+			background-color: #fff
+			top: 1px
+			width: 50%
+			display: grid
+			grid-template: auto / repeat(2, 1fr)
+			border-bottom: 1px solid $c50
+			margin-top: 0
+			margin-bottom: 0
+			// box-shadow: 0 1px 3px rgba(0,0,0,.1)
+
+			+mq('sm')
+				padding: 0 5px
+			+mq('xs')
+				width: 100%
+				grid-template: repeat(3, 1fr) / 1fr 1fr
+				padding: 0
+
+			.tabs-nav__item
+				height: 100%
+				border-bottom: 4px solid transparent
+				cursor: pointer
+				justify-self: stretch
+				padding: 16px 10px
+				align-content: center
+				text-align: center
+				color: $c700
+				font-size: 17px
+				font-weight: 400
+				letter-spacing: .4px
+				+mq('sm')
+					padding: 16px 10px
+				+mq('xs')
+					padding: 15px 10px
+					text-align: left
+					border-left: 1px solid $c50
+					border-bottom: 1px solid $c50
+
+				&:hover
+					background-color: $c50t
+					border-bottom: 2px solid $c300
+				&:first-child
+					border-top-left-radius: 10px
+				&:last-child
+					border-top-right-radius: 10px
+				&.is-active
+					border-bottom: 4px solid $c300
+			& .tabs-nav__item:nth-child(2)
+				border-left: 1px solid $c50
+
+		.tabs__content
+			border: 1px solid $c50
+			// border-top: none
+			border-radius: 0 0 10px 10px
+			display: grid
+			grid-template: auto / auto
+
+			.tab
+				width: 100%
+				display: none
+				+mq('sm')
+					padding: 0 20px
+				.tab-wrapper
+					padding: 20px 0
+					width: 100%
+					display: grid
+					grid-template: auto / 1fr 1fr
+					gap: 10px 40px
+					+mq('sm')
+						gap: 20px
+					+mq('xs')
+						grid-template: auto / auto
+						gap: 20px 0
+
+				.tab-wrapper__one
+					padding: 20px 0
+					width: 100%
+					display: grid
+					grid-template: auto / auto
+					gap: 0
+			& .is-active
+				display: block

@@ -1,0 +1,48 @@
+.section-stocks
+  padding: 30px 0 0
+
+  .stocks-wrapper
+
+    display: flex
+    flex-wrap: wrap
+    margin: 20px 0 0
+
+    .stocks-elem
+      transition: all 0.3s ease
+      width: 50%
+      display: -webkit-flex
+      display: -moz-flex
+      display: -ms-flex
+      display: -o-flex
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      transform: scale(1)
+      background: #fff
+
+      &:hover
+        transform: scale(1.1)
+        z-index: 1
+        box-shadow: 0px 0px 51px 15px rgba(0, 0, 0, 0.14)
+        position: relative
+        z-index: 1
+
+      img
+        width: 260px
+        height: 240px
+        object-fit: cover
+
+      .info-elem
+        width: calc(100% - 260px)
+        padding: 0 20px 0 20px
+
+        .title
+          color: #000
+          display: block
+          font-weight: 700
+          margin: 0 0 10px
+          font-size: 18px
+
+        .descr
+          font-size: 14px
+          color: rgba(122, 122, 122, 0.69)

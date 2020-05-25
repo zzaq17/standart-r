@@ -1,0 +1,27 @@
+mixin pricetable
+	if thead
+		section.section.section-pricetable
+			.container
+				.section-title
+					if pricetableH2
+						h2= pricetableH2
+					else
+						h2 Цены на услуги
+				.table-respond
+					table
+						thead
+							tr
+								each td in thead
+									td!= td
+						tbody
+							each tr, td in tbody
+								tr
+									each td in tr
+										td= td
+				.full-price
+					a.btn-sm__green.hvr-bob(href='../ceny-na-kliningovye-uslugi')
+						| Полный прайс
+					p
+						| *Цены могут меняться в зависимости от степени загрязнения, так как потребуется больше времени работы и моющих средств.
+	else
+

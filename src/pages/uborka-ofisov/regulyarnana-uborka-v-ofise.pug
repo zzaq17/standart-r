@@ -1,0 +1,37 @@
+extends ../_templates/_template_kommerce
+
+block variables
+
+	- var subDomain = ''
+	- var pageUrl = '/uborka-ofisov/regulyarnana-uborka-v-ofise'
+	- var title = 'Регулярная уборка в офисе в Жуковском'
+	- var metaDescr = 'Регулярная уборка в офисе'
+	- var ogImage = 'img/uborka-ofisa2.jpg'
+	- var h1 = 'Регулярная уборка офисов в Жуковском'
+	- var h1Descr = 'Убираем офисные помещения на регулярной основе: вечерние, утренние, еженедельные и т.д. Полное клининговое обслуживание и разовые заказы.'
+	- var bcCat = 'Уборка в офисе'
+	- var nestingLevel = '2'
+	- var bcCatUrl = '/uborka-ofisov/'
+	- var bc = 'Регулярная уборка в офисе'
+	- var category = "ofisy"
+
+	- var priceH2 = 'Цены на регулярную уборку для офисов'
+	//- mixin pricetable
+	-
+		var thead = ['Уборка офисов', 'Цена']
+	-
+		var tbody = [
+				['Ежедневная (комплексная)', 'от 15 000 р. /мес.'],
+		]
+
+	- var mainBackground = 'img/uborka-ofisa2.jpg'
+	- var formBackground = 'img/pexels-photo-380768.jpeg'
+
+
+
+block seotext
+	.title
+		h2 Ежедневная уборка офиса
+	.descr
+		p Для любой компании гораздо проще заключить договор с нами, чем самим держать в штате уборщиц, оплачивать им отпуска и больничные, а самое главное вести учет и организовывать закупку моющих средств и инвентаря. Это выгодно и по затратам. Доверьтесь профессионалам!
+

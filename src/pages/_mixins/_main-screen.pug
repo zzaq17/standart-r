@@ -1,0 +1,20 @@
+mixin main-screen
+	if mainBackground
+		section.section.section-main-screen(style='background-image: url(../'+mainBackground+'); background-position: center center; background-size: cover; background-repeat: no-repeat')
+			.container
+				.info-block
+					.title
+						h1= h1
+					.descr
+						p= h1Descr
+				+form_mainscreen
+	else
+		section.section.section-main-screen(style='background-image: url(../img/uborka-kvartir-posle-remonta-1680.jpg); background-position: center center; background-size: cover; background-repeat: no-repeat')
+			.container
+				.info-block
+					.title
+						h1= h1
+					.descr
+						p= h1Descr
+				+form_mainscreen
+

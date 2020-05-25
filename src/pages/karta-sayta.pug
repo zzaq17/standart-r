@@ -1,0 +1,80 @@
+extends _templates/_template_default
+
+block variables
+
+	- var subDomain = ''
+	- var pageUrl = '/karta-sayta'
+	- var title = 'Карта сайта'
+	- var metaDescr = 'Все страницы сайта списком'
+	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage.png'
+	- var h1 = 'Карта сайта'
+	- var h1Descr = ''
+	- var bcCat = ''
+	- var bcCatUrl = ''
+	- var nestingLevel = '1'
+	- var bc = 'Карта сайта'
+	- var category = 'default'
+	- var robots = 1
+	-
+		var list = [
+			{'url': 'https://standartcleaning.ru/anketa-klienta-i-aktivaciya-karty', 'h1': 'Анкета клиента для активации карты'},
+			{'url': 'https://standartcleaning.ru/ceny-na-kliningovye-uslugi', 'h1': 'Цены на клининговые услуги'},
+			{'url': 'https://standartcleaning.ru/o-kompanii', 'h1': 'О компании'},
+			{'url': 'https://standartcleaning.ru/otzyvy', 'h1': 'Отзывы о нашей работе'},
+			{'url': 'https://standartcleaning.ru/kalkulyator-kliningovyh-uslug-dlya-kvartir', 'h1': 'Калькулятор клининговых услуг'},
+			{'url': 'https://standartcleaning.ru/kontakty', 'h1': 'Контактная информация'},
+			{'url': 'https://standartcleaning.ru/himchistka/', 'h1': 'Химчистка в Жуковском, Раменском и Люберцах на дому'},
+			{'url': 'https://standartcleaning.ru/himchistka/himchistka-divanov-s-vyezdom', 'h1': 'Профессиональная химчистка диванов и кресел на дому'},
+			{'url': 'https://standartcleaning.ru/himchistka/himchistka-kovrov-s-vyezdom-na-dom', 'h1': 'Химчистка ковров и ковролина с выездом к клиенту'},
+			{'url': 'https://standartcleaning.ru/himchistka/himchistka-matrasov-na-domu', 'h1': 'Химчистка матрасов с выездом к клиенту'},
+			{'url': 'https://standartcleaning.ru/himchistka/himchistka-myagkoy-mebeli-na-domu', 'h1': 'Химчистка мягкой мебели с выездом к клиенту'},
+			{'url': 'https://standartcleaning.ru/himchistka/himchistka-salona-avtomobilya-s-vyezdom', 'h1': 'Комплексная химчистка автомобиля с выездом'},
+			{'url': 'https://standartcleaning.ru/moyka-okon-i-balkonov/', 'h1': 'Мойка окон в Жуковском'},
+			{'url': 'https://standartcleaning.ru/moyka-okon-i-balkonov/moyka-okon-alpinistami', 'h1': 'Мойка окон альпинистами в Жуковском'},
+			{'url': 'https://standartcleaning.ru/moyka-okon-i-balkonov/moyka-ostekleniya-i-fasadov', 'h1': 'Мойка остекления и фасадов в Раменском'},
+			{'url': 'https://standartcleaning.ru/moyka-okon-i-balkonov/mytyo-okon-posle-remonta', 'h1': 'Мытьё окон после ремонта в Жуковском'},
+			{'url': 'https://standartcleaning.ru/moyka-okon-i-balkonov/mytyo-okon-v-kvartire', 'h1': 'Мытьё окон в квартире'},
+			{'url': 'https://standartcleaning.ru/uborka-domov/', 'h1': 'Уборка домов в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-domov/ekspress-uborka-doma', 'h1': 'Экспресс-уборка дома в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-domov/generalnaya-uborka-doma', 'h1': 'Генеральная уборка домов в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-domov/regulyarnaya-uborka-doma', 'h1': 'Регулярная уборка домов в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-domov/uborka-kottedzha-posle-remonta', 'h1': 'Уборка дома после ремонта в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-domov/uborka-zagorodnyh-domov', 'h1': 'Уборка загородных домов в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-kvartir/', 'h1': 'Уборка квартир в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-kvartir/bystraya-uborka-kvartiry', 'h1': 'Экспресс уборка квартир в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-kvartir/generalnaya-uborka-dvuhkomntatnoy-kvartiry', 'h1': 'Генеральная уборка 2ух-комнатной квартиры от 5 000 р.'},
+			{'url': 'https://standartcleaning.ru/uborka-kvartir/generalnaya-uborka-kuhni', 'h1': 'Генеральная уборка кухни от 3 000 р.'},
+			{'url': 'https://standartcleaning.ru/uborka-kvartir/generalnaya-uborka-kvartiry', 'h1': 'Генеральная уборка квартиры в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-kvartir/generalnaya-uborka-odnokomnatnoy-kvartiry', 'h1': 'Генеральная уборка однокомнатной квартиры от 4 000 р.'},
+			{'url': 'https://standartcleaning.ru/uborka-kvartir/generalnaya-uborka-tryohkomnatnoy-kvartiry', 'h1': 'Генеральная уборка 3х-комнатной квартиры от 6 000 р.'},
+			{'url': 'https://standartcleaning.ru/uborka-kvartir/generalnaya-uborka-vannoy-komnaty', 'h1': 'Генеральная уборка ванной от 2 500 р.'},
+			{'url': 'https://standartcleaning.ru/uborka-kvartir/regulyarnaya-uborka-kvartiry', 'h1': 'Регулярная уборка квартир в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-kvartir/uborka-kvartir-posle-remonta', 'h1': 'Уборка после ремонта квартиры в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-ofisov/', 'h1': 'Уборка офисов в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-ofisov/generalnaya-uborka-ofisa', 'h1': 'Генеральная уборка офисов в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-ofisov/regulyarnana-uborka-v-ofise', 'h1': 'Регулярная уборка офисов в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-ofisov/uborka-ofisa-posle-remonta', 'h1': 'Уборка офиса после ремонта в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-pomescheniy/', 'h1': 'Уборка помещений в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-pomescheniy/generalnaya-uborka', 'h1': 'Генеральная уборка в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-pomescheniy/professionalnaya-uborka', 'h1': 'Профессиональная уборка в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-pomescheniy/uborka-kommercheskoy-nedvizhimosti', 'h1': 'Клининг коммерческой недвижимости'},
+			{'url': 'https://standartcleaning.ru/uborka-pomescheniy/uborka-posle-remonta', 'h1': 'Проведение уборки после ремонта в Жуковском'},
+			{'url': 'https://standartcleaning.ru/ochistka-krysh-ot-naledi-i-snega', 'h1': 'Очистка крыш от наледи и снега от 25 руб./м²'},
+			{'url': 'https://standartcleaning.ru/promyshlennyy-alpinizm', 'h1': 'Услуги промышленного альпинизма в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uborka-territoriy', 'h1': 'Уборка территории в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uslugi-domrabotnicy', 'h1': 'Услуги домработницы в Жуковском'},
+			{'url': 'https://standartcleaning.ru/uslugi-sadovnika', 'h1': 'Услуга ухода за садом в Жуковском'},
+			{'url': 'https://standartcleaning.ru/fotografii-rabot/', 'h1': 'Фотографии наших работ'},
+			{'url': 'https://standartcleaning.ru/fotografii-rabot/uborka-kvartiry-posle-remonta-foto-i-video-otchet', 'h1': 'Уборка квартиры после ремонта - отчет о работе'},
+			{'url': 'https://standartcleaning.ru/fotografii-rabot/uchastie-v-programme-na-kanale-pyatnitsa', 'h1': 'Участвуем в съемках передачи «На Ножах» на канале «Пятница»'},
+			{'url': 'https://standartcleaning.ru/fotografii-rabot/uchastie-v-programme-supershef-na-kanale-che', 'h1': 'Участвуем в съемках передачи «Супершеф» на канале «ЧЕ!»'},
+		]
+
+
+block content
+	section.hero
+		h1= h1
+		+breadcrumbs_naked
+	div.section.section-sitemap
+		ul
+			+sitemap

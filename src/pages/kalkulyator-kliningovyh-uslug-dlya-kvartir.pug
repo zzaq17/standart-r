@@ -1,0 +1,358 @@
+extends _templates/_template_default
+
+block variables
+
+	- var subDomain = ''
+	- var pageUrl = '/kalkulyator-kliningovyh-uslug-dlya-kvartir'
+	- var title = 'Калькулятор клининговых услуг для квартир и коттеджей'
+	- var metaDescr = 'Рассчитайте примерную стоимость клининга для вашей квартиры от клининговой компании «Стандарт». Выберите дополнительные услуги и вид уборки.'
+	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage.png'
+
+	- var h1 = 'Калькулятор клининговых услуг'
+	- var h1Descr = ''
+
+	- var bcCat = ''
+	- var bcCatUrl = ''
+	- var nestingLevel = '1'
+	- var bc = 'Калькулятор клининговых услуг для квартир и коттеджей'
+	- var category = 'default'
+
+
+block content
+	section.hero
+		h1= h1
+		+breadcrumbs_naked
+	div.section.section-calc
+		.container
+			.tabs
+				.tabs-nav
+					.tabs-nav__item.is-active(data-tab-name='tab-1')
+						| Для квартир
+					.tabs-nav__item(data-tab-name='tab-2')
+						| Для домов
+				.tabs__content
+					.tab.tab-1.is-active
+						.tab-wrapper.calc-flat
+							.step.one
+								p
+									| Шаг 1. Выберите тип уборки
+								input#type-clean1(name='type-clean', type='radio', value='tc1', checked='')
+								label.step-radio-label.no-select(for='type-clean1')
+									span.radio
+										| Регулярная
+								input#type-clean2(name='type-clean', type='radio', value='tc2')
+								label.step-radio-label.no-select(for='type-clean2')
+									span.radio
+										| Регулярная 
+										br
+										| без химии
+								input#type-clean3(name='type-clean', type='radio', value='tc3')
+								label.step-radio-label.no-select(for='type-clean3')
+									span.radio
+										| Экспресс
+								input#type-clean4(name='type-clean', type='radio', value='tc4')
+								label.step-radio-label.no-select(for='type-clean4')
+									span.radio
+										| Генеральная
+								input#type-clean5(name='type-clean', type='radio', value='tc5')
+								label.step-radio-label.no-select(for='type-clean5')
+									span.radio
+										| После ремонта
+							.step.two
+								p Шаг 2. Выберите площадь квартиры
+								input#flat-size1(name='flat-size', type='radio', value='fs1', checked='')
+								label.step-2-radio-label.no-select(for='flat-size1')
+									span.radio
+										| 1-комнатная
+										br
+										span.flat-size до 50 м²
+								input#flat-size2(name='flat-size', type='radio', value='fs2')
+								label.step-2-radio-label.no-select(for='flat-size2')
+									span.radio
+										| 2-комнатная
+										br
+										span.flat-size от 51 до 70 м²
+								input#flat-size3(name='flat-size', type='radio', value='fs3')
+								label.step-2-radio-label.no-select(for='flat-size3')
+									span.radio
+										| 3-комнатная
+										br
+										span.flat-size от 71 до 100 м²
+								//- input#flat-size4(name='flat-size', type='radio', value='fs4')
+								//- label.step-2-radio-label.no-select(for='flat-size4')
+								//- 	span.radio
+								//- 		| 4-комнатная
+								//- 		br
+								//- 		span.flat-size от 101 м²
+							.step.three
+								p Шаг 3. Выберите дополнительные услуги
+								.dop-gen-checkboxes
+									p 
+										| Генеральные уборки 
+										br
+										span.small (уже включены в Генеральную уборку)
+									//- .dop-gen-wrap
+									input#dop-gen1(type='checkbox', name='dop', value='2500')
+									label.no-select.dop-gen-label(for='dop-gen1')
+										span.dop-gen-text
+											| Генеральная уборка Ванной
+											br
+											span.dop-price +2 500 р.
+									input#dop-gen2(type='checkbox', name='dop', value='3000')
+									label.no-select.dop-gen-label(for='dop-gen2')
+										span.dop-gen-text
+											| Генеральная уборка Кухни
+											br
+											span.dop-price +3 000 р.
+									p Уборка парогенератором
+									input#dop-par1(type='checkbox', name='dop', value='300')
+									label.no-select.dop-par-label(for='dop-par1')
+										span.dop-par-text
+											| Уборка парогенератором
+											br
+											span.dop-price +300 р.
+									input#dop-par2(type='checkbox', name='dop', value='150')
+									label.no-select.dop-par-label(for='dop-par2')
+										span.dop-par-text
+											| Тюль
+											br
+											span.dop-price +150 р.
+									input#dop-par3(type='checkbox', name='dop', value='300')
+									label.no-select.dop-par-label(for='dop-par3')
+										span.dop-par-text
+											| Шторы
+											br
+											span.dop-price +300 р.
+									input#dop-par4(type='checkbox', name='dop', value='500')
+									label.no-select.dop-par-label(for='dop-par4')
+										span.dop-par-text
+											| Матрасы и мягкая мебель
+											br
+											span.dop-price +500 р.
+								.dop-checkboxes
+									p Дополнительные услуги
+									input#dop1(type='checkbox', name='dop', value='500')
+									label.no-select.dop-label(for='dop1')
+										span.dop-text
+											| Мойка холодильника
+											br
+											span.dop-price +500 р.
+									input#dop2(type='checkbox', name='dop', value='500')
+									label.no-select.dop-label(for='dop2')
+										span.dop-text
+											| Чистка духового шкафа
+											br
+											span.dop-price +500 р.
+									input#dop3(type='checkbox', name='dop', value='300')
+									label.no-select.dop-label(for='dop3')
+										span.dop-text
+											| Чистка микроволновки
+											br
+											span.dop-price +300 р.
+									input#dop4(type='checkbox', name='dop', value='1000')
+									label.no-select.dop-label(for='dop4')
+										span.dop-text
+											| Уборка шкафов и внутри
+											br
+											span.dop-price +1 000 р.
+									input#dop5(type='checkbox', name='dop', value='500')
+									label.no-select.dop-label(for='dop5')
+										span.dop-text
+											| Мойка светильников и люстр
+											br
+											span.dop-price +500 р.
+									input#dop6(type='checkbox', name='dop', value='400')
+									label.no-select.dop-label(for='dop6')
+										span.dop-text
+											| Глажка, за 1 час
+											br
+											span.dop-price +400 р.
+									input#dop7(type='checkbox', name='dop', value='300')
+									label.no-select.dop-label(for='dop7')
+										span.dop-text
+											| Смена постельного белья
+											br
+											span.dop-price +300 р.
+									input#dop8(type='checkbox', name='dop', value='200')
+									label.no-select.dop-label(for='dop8')
+										span.dop-text
+											| Мытье посуды
+											br
+											span.dop-price +200 р.
+							.result
+								.calc
+									p Предварительная
+									div
+										span#sum-1-text Стоимость услуг
+										span#sum-1 2 000
+										span.ruble  руб.
+									div
+										span.sum-text Стоимость уборки
+										span#sum-2.sum 2 000
+										span.ruble  руб.
+									div
+										span.sum-text Дополнительные услуги
+										span#sum-3.sum 0
+										span.ruble  руб.
+								.warning 
+									p в зависимости от степени загрязнения стоимость может быть увеличена, по результатам оценки объекта менеджером
+								.lead
+									p Отправьте расчёт менеджеру
+									+form_calculator
+					.tab.tab-2
+						.tab-wrapper.calc-house
+							.step.one
+								p
+									| Шаг 1. Выберите тип уборки
+								input#type-clean-houses1(name='type-clean-houses', type='radio', value='tc1', checked='')
+								label.step-radio-label.no-select(for='type-clean-houses1')
+									span.radio
+										| Регулярная
+								input#type-clean-houses2(name='type-clean-houses', type='radio', value='tc2')
+								label.step-radio-label.no-select(for='type-clean-houses2')
+									span.radio
+										| Регулярная 
+										br
+										| без химии
+								input#type-clean-houses3(name='type-clean-houses', type='radio', value='tc3')
+								label.step-radio-label.no-select(for='type-clean-houses3')
+									span.radio
+										| Экспресс
+								input#type-clean-houses4(name='type-clean-houses', type='radio', value='tc4')
+								label.step-radio-label.no-select(for='type-clean-houses4')
+									span.radio
+										| Генеральная
+								input#type-clean-houses5(name='type-clean-houses', type='radio', value='tc5')
+								label.step-radio-label.no-select(for='type-clean-houses5')
+									span.radio
+										| После ремонта
+							.step.two
+								p Шаг 2. Выберите площадь дома
+								input#house-size1(name='house-size', type='radio', value='hs1', checked='')
+								label.step-2-house-label.no-select(for='house-size1')
+									span.house-size до 150 м²
+								input#house-size2(name='house-size', type='radio', value='hs2')
+								label.step-2-house-label.no-select(for='house-size2')
+									span.house-size от 151 до 250 м²
+								input#house-size3(name='house-size', type='radio', value='hs3')
+								label.step-2-house-label.no-select(for='house-size3')
+									span.house-size от 251 до 300 м²
+								//- input#house-size4(name='house-size', type='radio', value='hs4')
+								//- label.step-2-house-label.no-select(for='house-size4')
+								//- 	span.house-size от 301 м²
+							.step.three
+								p Шаг 3. Выберите дополнительные услуги
+								.dop-checkboxes
+									p 
+										| Генеральные уборки 
+										br
+										span.small (уже включены в Генеральную уборку)
+									input#dop-gen-houses1(type='checkbox', name='dop-houses', value='2500')
+									label.no-select.dop-gen-label(for='dop-gen-houses1')
+										span.dop-text
+											| Генеральная уборка Ванной
+											br
+											span.dop-price +2 500 р.
+									input#dop-gen-houses2(type='checkbox', name='dop-houses', value='3000')
+									label.no-select.dop-gen-label(for='dop-gen-houses2')
+										span.dop-text
+											| Генеральная уборка Кухни
+											br
+											span.dop-price +3 000 р.
+									p Уборка парогенератором
+									input#dop-par-houses1(type='checkbox', name='dop-houses', value='300')
+									label.no-select.dop-par-label(for='dop-par-houses1')
+										span.dop-text
+											| Уборка парогенератором
+											br
+											span.dop-price +300 р.
+									input#dop-par-houses2(type='checkbox', name='dop-houses', value='150')
+									label.no-select.dop-par-label(for='dop-par-houses2')
+										span.dop-text
+											| Тюль
+											br
+											span.dop-price +150 р.
+									input#dop-par-houses3(type='checkbox', name='dop-houses', value='300')
+									label.no-select.dop-par-label(for='dop-par-houses3')
+										span.dop-text
+											| Шторы
+											br
+											span.dop-price +300 р.
+									input#dop-par-houses4(type='checkbox', name='dop-houses', value='500')
+									label.no-select.dop-par-label(for='dop-par-houses4')
+										span.dop-text
+											| Матрасы и мягкая мебель
+											br
+											span.dop-price +500 р.
+								.dop-checkboxes
+									p Дополнительные услуги
+									input#dop-houses1(type='checkbox', name='dop-houses', value='500')
+									label.no-select.dop-label(for='dop-houses1')
+										span.dop-text
+											| Мойка холодильника
+											br
+											span.dop-price +500 р.
+									input#dop-houses2(type='checkbox', name='dop-houses', value='500')
+									label.no-select.dop-label(for='dop-houses2')
+										span.dop-text
+											| Чистка духового шкафа
+											br
+											span.dop-price +500 р.
+									input#dop-houses3(type='checkbox', name='dop-houses', value='300')
+									label.no-select.dop-label(for='dop-houses3')
+										span.dop-text
+											| Чистка микроволновки
+											br
+											span.dop-price +300 р.
+									input#dop-houses4(type='checkbox', name='dop-houses', value='1000')
+									label.no-select.dop-label(for='dop-houses4')
+										span.dop-text
+											| Уборка шкафов и внутри
+											br
+											span.dop-price +1 000 р.
+									input#dop-houses5(type='checkbox', name='dop-houses', value='500')
+									label.no-select.dop-label(for='dop-houses5')
+										span.dop-text
+											| Мойка светильников и люстр
+											br
+											span.dop-price +500 р.
+									input#dop-houses6(type='checkbox', name='dop-houses', value='400')
+									label.no-select.dop-label(for='dop-houses6')
+										span.dop-text
+											| Глажка, за 1 час
+											br
+											span.dop-price +400 р.
+									input#dop-houses7(type='checkbox', name='dop-houses', value='300')
+									label.no-select.dop-label(for='dop-houses7')
+										span.dop-text
+											| Смена постельного белья
+											br
+											span.dop-price +300 р.
+									input#dop-houses8(type='checkbox', name='dop-houses', value='200')
+									label.no-select.dop-label(for='dop-houses8')
+										span.dop-text
+											| Мытье посуды
+											br
+											span.dop-price +200 р.
+							.result
+								.calc
+									p Предварительная
+									div
+										span#sum-houses-text Стоимость услуг
+										span#sum-houses 3 000
+										span.ruble  руб.
+									div
+										span.sum-text Стоимость уборки
+										span#sum-houses-2.sum 3 000
+										span.ruble  руб.
+									div
+										span.sum-text Дополнительные услуги
+										span#sum-houses-3.sum 0
+										span.ruble  руб.
+								.warning 
+									p в зависимости от степени загрязнения стоимость может быть увеличена, по результатам оценки объекта менеджером
+								.lead
+									p Отправьте расчёт менеджеру
+									+form_calculator
+
+

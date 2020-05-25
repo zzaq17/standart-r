@@ -1,0 +1,55 @@
+.section-catalog
+	.container
+		display: grid
+		grid-template: auto / repeat(4, 1fr)
+		gap: 0 16px
+		overflow-x: auto
+		+mq('md')
+			grid-template: 1fr 1fr / repeat(2, 1fr)
+			gap: 40px 30px
+		+mq('xs')
+			grid-template: repeat(4, 1fr)/ auto
+			gap: 40px 30px
+		.catalog-elem
+			display: grid
+			grid-template: auto / auto
+			border-style: solid
+			border-width: 1px
+			border-color: #ddd
+			transition: background .3s,border .3s,border-radius .3s,box-shadow .3s
+			border-radius: 8px
+
+			& img
+				display: block
+				width: 100%
+				object-fit: cover
+				margin: 0 0 20px
+				+mq('xs')
+					max-height: 150px
+
+			& .info-block
+				padding: 10px
+				padding-bottom: 30px
+				display: grid
+				grid-template: auto 60px auto /auto
+				gap: 15px
+				& .price
+					color: $c300
+					font-weight: 600
+					font-size: 20px
+					// margin: 0 0 20px 0
+
+				& .title
+					font-size: 23px
+					color: $c700
+					font-weight: 700
+					line-height: 1
+
+
+				& .buttons
+					display: grid
+					grid-template: auto / auto auto
+					gap: 10px
+
+					a
+						width: 100%

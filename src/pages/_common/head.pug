@@ -1,0 +1,51 @@
+//- SEO PART
+case mainpage
+	when 1
+		title= title
+	default
+		title= title + " | Клининг «Стандарт»"
+meta(name="description", content="" +metaDescr)
+if robots
+	meta(name="robots" content="noindex, follow")
+else
+//- Base
+meta(charset="UTF-8")
+meta(name="viewport" content="width=device-width, initial-scale=1.0")
+meta(http-equiv="X-UA-Compatible" content="ie=edge")
+link(rel="stylesheet" href="../css/main.min.css")
+//- FavIcon
+link(rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png")
+link(rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png")
+link(rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png")
+link(rel="manifest" href="../img/site.webmanifest")
+link(rel="mask-icon" href="../img/safari-pinned-tab.svg" color="#5bbad5")
+link(rel="shortcut icon" href="../img/favicon.ico")
+meta(name="msapplication-TileColor" content="#da532c")
+meta(name="msapplication-config" content="../img/browserconfig.xml")
+meta(name="theme-color" content="#00bc80")
+meta(name="msapplication-navbutton-color" content="#00bc80")
+meta(name="apple-mobile-web-app-status-bar-style" content="#00bc80")
+//- OpenGraph
+meta(property="og:locale" content="ru_RU")
+meta(property="og:type" content="website")
+meta(property="og:title" content= title)
+meta(property="og:description", content="" +metaDescr)
+if subDomain
+	meta(property="og:url" content="https://"+subDomain+"standartcleaning"+pageUrl)
+else
+	meta(property="og:url" content="https://standartcleaning"+pageUrl)
+meta(property="og:site_name" content="Клининговая компания «Стандарт»")
+meta(property="og:image" content="../" +ogImage)
+meta(property="og:image:width" content="1200")
+meta(property="og:image:height" content="630")
+//- TwitterCard
+meta(name="twitter:card" content="summary_large_image")
+meta(name="twitter:description" content="" +metaDescr)
+meta(name="twitter:title" content="" +title)
+meta(name="twitter:image" content="../" +ogImage)
+//- Google & Yandex Verification
+meta(name="yandex-verification" content="4e2a7858aca8987c")
+// Yandex.Metrika counter
+script
+	include ../../js/analytics.js
+// Yandex.Metrika counter

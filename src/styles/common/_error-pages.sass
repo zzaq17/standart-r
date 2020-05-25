@@ -1,0 +1,48 @@
+.error-page
+	& .container
+		display: grid
+		grid-template: auto / 2fr 1fr
+		gap: 0 40px
+		+mq('sm')
+			grid-template: auto auto / auto
+
+		& .info-element
+			display: grid
+			justify-items: center
+			gap: 40px 0
+			align-self: stretch
+			justify-self: stretch
+			& h1
+				font-size: 20em
+				font-weight: 100
+				// text-align: center
+				line-height: 1
+				color: $c500
+				+mq('sm')
+					text-align: center
+					font-size: 10em
+			& p
+				font-size: 20px
+				max-width: 440px
+				margin: 10px 0
+				+mq('sm')
+					text-align: center
+			& ul
+				margin: 20px 0 20px 36px
+				list-style-image: url(../img/icon-16x16.png)
+				& li
+					font-size: 20px
+					margin: 16px 40px
+
+
+
+		& .travolta
+			display: grid
+			align-self: center
+			justify-self: center
+			& img
+				height: auto
+				width: auto
+				+mq('sm')
+					align-self: center
+					justify-self: center

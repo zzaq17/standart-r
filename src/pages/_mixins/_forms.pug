@@ -1,0 +1,216 @@
+//- MainPage Forms
+mixin form_mainpage-mainscreen
+	form(method="post" onsubmit="ym(25151147,'reachGoal','first-screen'); return true;")
+		.success
+			div
+				.title Спасибо за заявку!
+				div Мы перезвоним вам в ближайшее время.
+				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+		.title
+			h3 Рассчитайте стоимость
+		input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
+		input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+		//- hidden fields
+		input(type="hidden" name="DATA[TITLE]" value="Заявка с главной Жуковский")
+		input(type="hidden" name="DATA[UF_CRM_1590424887]" value=""+h1+"")
+		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+		input.clienID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+		button.btn__t-white.hvr-bob(type="submit")
+			i.fa.fa-send(aria-hidden='true')
+			span Отправить
+		.politika__mainpage
+			i.far.fa-check-square(aria-hidden='true')
+			a(href="../politika-opd") нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных
+
+mixin form_mainpage-cta
+	form.lazyload(method="post" onsubmit="ym(25151147,'reachGoal','cta'); return true;" data-bg="../"+formBackground+"")
+		.title
+			| Узнайте стоимость сейчас!
+		.success
+			div
+				.title Спасибо за заявку!
+					div Мы перезвоним вам в ближайшее время.
+					div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+		.form-elem
+			input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
+			input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+			//- hidden fields
+			input(type="hidden" name="DATA[TITLE]" value="Заявка с главной Жуковский")
+			input(type="hidden" name="DATA[UF_CRM_1590424887]" value=""+h1+"")
+			input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+			input.clienID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+			button.btn__t-white.hvr-bob(type='submit')
+				i.fa.fa-send(aria-hidden='true')
+				span Отправить
+		a.pd-wrapper(href="../politika-opd")
+			i.fa.fa-check-square-o(aria-hidden="true")
+			span
+				| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных компании «Стандарт»
+
+
+mixin form_mainpage-manager
+	form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); return true;")
+		.success
+			div
+				.title Спасибо за заявку!
+				div Мы перезвоним вам в ближайшее время.
+				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+		input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
+		input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+		//- hidden fields
+		input(type="hidden" name="DATA[TITLE]" value="Заявка с главной на выезд менеджера")
+		input(type="hidden" name="DATA[UF_CRM_1590424887]" value=""+h1+"")
+		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+		input.clienID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+		button.btn__t-white.hvr-bob(type='submit')
+			i.fa.fa-send(aria-hidden='true')
+			span Отправить
+		a.pd-wrapper(href='../politika-opd')
+			i.far.fa-check-square(aria-hidden='true')
+			| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных компании «Стандарт»
+
+//- END MainPage Forms
+
+//- First Screen Form
+mixin form_mainscreen
+	form(method="post" onsubmit="ym(25151147,'reachGoal','first-screen'); return true;")
+		.success
+			div
+				.title Спасибо за заявку!
+				div Мы перезвоним вам в ближайшее время.
+				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+		.title
+			| Рассчитайте стоимость
+		input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
+		input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+		//- hidden fields
+		input(type="hidden" name="DATA[TITLE]" value="Заявка на обратный звонок")
+		input(type="hidden" name="DATA[UF_CRM_1590424887]" value=""+h1+"")
+		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+		input(type="hidden" class="clienID" name="DATA[UF_CRM_1587037828276]" value="")
+		button.btn__green.hvr-bob(type='submit')
+			i.fab.fa-telegram-plane(aria-hidden='true')
+			span Отправить
+		a.politika(href="../politika-opd")
+			i.far.fa-check-square(aria-hidden='true')
+			| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных
+
+
+//- Usual form for NOT komm service and subservice pages
+mixin form_cta
+	if formBackground
+		section.section.cta
+			.container.lazyload(style='background-blend-mode: overlay; background-color: rgba(0, 0, 0, .5); background-position: center center; background-size: cover; background-repeat: no-repeat;' data-bg='../'+formBackground+'')
+				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); return true;")
+					.success
+						div
+							.title Спасибо за заявку!
+							div Мы перезвоним вам в ближайшее время.
+							div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+					h2 Узнайте стоимость уборки сейчас!
+					p Вызвать менеджера для оценки объекта, просчитать примерную стоимость, узнать про акции и спецпредложения можно, позвонив по телефону, либо оставив заявку на сайте
+					input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
+					input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+					//- hidden fields
+					input(type="hidden" name="DATA[TITLE]" value="Заявка на обратный звонок")
+					input(type="hidden" name="DATA[UF_CRM_1590424887]" value=""+h1+"")
+					input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+					input(type="hidden" class="clienID" name="DATA[UF_CRM_1587037828276]" value="")
+					button.btn__green.hvr-bob.form-item(type='submit')
+						span Отправить
+					a.pd-wrapper(href='../politika-opd')
+						i.far.fa-check-square(aria-hidden='true')
+						| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных компании «Стандарт»
+	else
+		section.section.cta
+			.container.lazyload(style='background-blend-mode: overlay; background-color: rgba(0, 0, 0, .5); background-position: center center; background-size: cover; background-repeat: no-repeat;' data-bg='../img/cta__background.jpg')
+				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); return true;")
+					.success
+						div
+							.title Спасибо за заявку!
+							div Мы перезвоним вам в ближайшее время.
+							div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+					h2 Узнайте стоимость уборки сейчас!
+					p Вызвать менеджера для оценки объекта, просчитать примерную стоимость, узнать про акции и спецпредложения можно, позвонив по телефону, либо оставив заявку на сайте
+					input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
+					input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+					//- hidden fields
+					input(type="hidden" name="DATA[TITLE]" value="Заявка на обратный звонок")
+					input(type="hidden" name="DATA[UF_CRM_1590424887]" value=""+h1+"")
+					input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+					input(type="hidden" class="clienID" name="DATA[UF_CRM_1587037828276]" value="")
+					button.btn__green.hvr-bob.form-item(type='submit')
+						span Отправить
+					a.pd-wrapper(href='../politika-opd')
+						i.far.fa-check-square(aria-hidden='true')
+						| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных компании «Стандарт»
+
+//- Form for komm pages
+mixin form_manager
+	form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); return true;")
+		.success
+			div
+				.title Спасибо за заявку!
+				div Мы перезвоним вам в ближайшее время.
+				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+		input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
+		input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+		//- hidden fields
+		input(type="hidden" name="DATA[TITLE]" value="Заявка на выезд менеджера")
+		input(type="hidden" name="DATA[UF_CRM_1590424887]" value=""+h1+"")
+		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+		input.clienID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+		button.btn__t-white.hvr-bob(type='submit')
+			i.fa.fa-send(aria-hidden='true')
+			span Отправить
+		a.pd-wrapper(href="../politika-opd")
+			i.fa.fa-check-square-o(aria-hidden="true")
+			span
+				| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных компании «Стандарт»
+
+//- Modal Window Forms
+mixin form_modal
+	form( method="post" onsubmit="ym(25151147,'reachGoal','consult-popup'); return true;")
+		.success
+			div
+				.title Спасибо за заявку!
+				div Мы перезвоним вам в ближайшее время.
+				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+		.title Заявка
+		.subtitle Заполните поля ниже и отправьте нам заявку
+		input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
+		input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+		//- hidden fields
+		input(type="hidden" name="DATA[TITLE]" value="Заявка на консультацию")
+		input(type="hidden" name="DATA[UF_CRM_1590424887]" value=""+h1+"")
+		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+		input(type="hidden" class="clienID" name="DATA[UF_CRM_1587037828276]" value="")
+		button.btn__t-white.hvr-bob(type="submit")
+			i.fas.fa-phone.consult-call(aria-hidden='true')
+			span Отправить
+		a.descr(href="../politika-opd")
+			i.far.fa-check-square(aria-hidden='true')
+			span нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных
+
+
+//- Calculator Form
+mixin form_calculator
+	form(method="post" onsubmit="ym(25151147,'reachGoal','calculator'); return true;")
+		.success
+			div
+				.title Спасибо за заявку!
+				div Мы перезвоним вам в ближайшее время.
+				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+		input.form-control.form-item(disabled type="text" name="DATA[NAME]" placeholder="Имя")
+		input.form-control.form-item.input_tel(disabled type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+		//- hidden fields
+		input(type="hidden" name="DATA[TITLE]" value="Заявка на обратный звонок")
+		input(type="hidden" name="DATA[UF_CRM_1567944617679]" value=""+h1+"")
+		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+		input(type="hidden" class="clienID" name="DATA[UF_CRM_1587037828276]" value="")
+		button.btn__green.hvr-bob(disabled type='submit')
+			i.fab.fa-telegram-plane(aria-hidden='true')
+			span Отправить
+		a.politika(href="../politika-opd")
+			i.far.fa-check-square(aria-hidden='true')
+			| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных

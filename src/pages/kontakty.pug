@@ -1,0 +1,76 @@
+extends _templates/_template_default
+
+block variables
+
+	- var subDomain = ''
+	- var pageUrl = '/kontakty'
+	- var title = 'Контакты'
+	- var metaDescr = 'Контакты клининговой компании ООО «Стандарт» в Жуковском и Раменском. Звоните с 9:00 до 21:00 по телефону +7 (495) 136-73-63. info@standartcleaning.ru'
+	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage.png'
+	- var h1 = 'Контактная информация'
+	- var h1Descr = ''
+	- var bcCat = ''
+	- var bcCatUrl = ''
+	- var nestingLevel = '1'
+	- var bc = 'Контакты'
+	- var category = 'default'
+
+block content
+	section.hero
+		h1= h1
+		+breadcrumbs_naked
+	div.section.section-contacts
+		.container
+			.wrapper.two-column
+				.part
+					.elem
+						p Наши офисы
+					.map-elem
+						p Жуковский Мясищева д. 1 оф. 406 БЦ Чайка
+						.map
+							script(src = "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5d7df7446b754e70853083d32b0cf7604fbeafa2b5e5c9954b8970d6989e2b7a&amp;width=100%25&amp;height=100%25&amp;lang=ru_RU&amp;scroll=true" async)
+					//- .map-elem
+					//- 	p Раменское Михалевича д. 51 оф. 48
+					//- 	.map
+					//- 		script(src = "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A57880affd983501ee6877fe3170a658a08738581fa702bc121f3ddbb716566d0&amp;width=100%25&amp;height=100%25&amp;lang=ru_RU&amp;scroll=true" async)
+				.part
+					.two-column
+						.elem.phones
+							p Телефоны
+							a(href="tel:+74951367363") (495) 136-73-63
+							a(href="tel:+79255348436") (925) 534-84-36
+							a(href="tel:+79252200281") (925) 220-02-81
+						.elem.emails
+							p email
+							p info@standartcleaning.ru
+							p standartcleaning@mail.ru
+							.social-buttons
+								a(href="https://instagram.com/standart_cleaning")
+									i.fab.fa-instagram
+								a(href="https://vk.com/standartcleaning")
+									i.fab.fa-vk
+								a(href="https://www.facebook.com/standartcleaningzhuk/")
+									i.fab.fa-facebook
+					.elem
+						form(method="post" onsubmit="ym(25151147,'reachGoal','contacts'); return true;")
+							.success
+								div
+									.title Спасибо!
+										div Мы получили ваше письмо.
+							p оставьте сообщение
+							p Напишите вашу жалобу или отзыв здесь. Это самый быстрый способ после телефона. Информация попадет только к директору и будет опубликована только с вашего разрешения.
+							.two
+								input(type="text" name="DATA[NAME]" placeholder="Имя")
+								input.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+							textarea(rows='3' name="DATA[COMMENTS]" placeholder='Ваше сообщение' required='' maxlength="1024")
+							//- hidden fields
+							input(type="hidden" name="DATA[TITLE]" value="Сообщение из Контактов")
+							input(type="hidden" name="DATA[UF_CRM_1589028179]" value=""+h1+"")
+							input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+							input.clienID(type="hidden" name="DATA[UF_CRM_1589028248]" value="")
+							button.btn__green.hvr-bob(type='submit')
+								i.fa.fa-send(aria-hidden='true')
+								span Отправить
+							a.politika(href="../politika-opd")
+								i.far.fa-check-square(aria-hidden='true')
+								span нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных

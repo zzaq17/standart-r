@@ -1,0 +1,60 @@
+.section-pricetable
+	padding: 40px 0 0
+
+	table
+
+		thead
+			border: 1px solid $c300
+			tr
+				background: $c300
+				td
+					padding: 10px
+					color: $c20
+					font-weight: 400
+					font-size: 17px
+					vertical-align: middle
+					min-width: 120px
+				td:first-child
+					width: 40%
+
+		tbody
+			tr
+				background: #fff
+				border-bottom: 1px solid #ddd
+
+				&:nth-child(even)
+					background: #f9f9f9
+
+				&:hover
+					background: #f3f3f3
+
+				td
+					vertical-align: middle
+					padding: 10px
+					padding-left: 20px
+					color: $c800
+					font-size: 18px
+					min-width: 120px
+
+.table-respond
+	overflow: auto
+	width: 100%
+	border-radius: 5px
+	box-shadow: 0px 2px 5px rgba(0,0,0, .2 )
+
+	table
+		width: 100%
+
+.full-price
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin: 35px 0 0
+
+	.btn
+		max-width: 240px
+
+	p
+		font-size: 15px
+		color: $c500
+

@@ -1,0 +1,128 @@
+// /*------------------Tooltip------------------*/
+
+// /* Add this attribute to the element that needs a tooltip */
+.tooltip
+	background-color: $c300
+	padding: 0.2em 0.4em
+	margin-left: 1em
+	color: $c20
+	border-radius: 50%
+	cursor: help
+
+
+.tooltip-text
+	font-family: $font
+	font-weight: 300
+	color: #fff
+	text-align: start
+	word-wrap: break-word
+	border-bottom: 1px dotted #fff
+	cursor: help
+
+
+.tooltip-h3
+	border-bottom: 2px dashed $c300
+	cursor: help
+
+
+[data-tooltip]
+	position: relative
+	z-index: 2
+	cursor: help
+
+
+// /* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after
+	visibility: hidden
+	opacity: 0
+	pointer-events: none
+
+
+// /* Position tooltip above the element */
+[data-tooltip]:before
+	width: 300px
+	position: absolute
+	bottom: 100%
+	left: 50%
+	margin-bottom: 5px
+	margin-left: -80px
+	padding: 1em
+
+	border-radius: 5px
+	background-color: $c300
+	border: 1px solid $c300
+
+	color: $c20
+	content: attr(data-tooltip)
+	text-align: left
+	font-size: 16px
+	font-weight: normal
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)
+	line-height: 1.4
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1)
+	transition: 0.4s
+
+#lamp::before
+	+mq('xs')
+		margin-left: -180px
+#linen::before
+	+mq('xs')
+		width: 130px
+		margin-left: -50px
+#dishes::before
+	+mq('xs')
+		width: 280px
+		margin-left: -100px
+
+.tooltip-text[data-tooltip]:before
+	+mq('sm')
+		height: 68px
+		top: 100%
+		left: 50%
+		margin-top: 5px
+		margin-bottom: 0
+		margin-left: -80px
+		border: 1px solid $c20
+
+
+// .tooltip-h3[data-tooltip]:before
+// 	position: absolute
+// 	bottom: -350%
+// 	left: 180%
+// 	margin-bottom: 5px
+// 	margin-left: -80px
+
+// /* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after
+	position: absolute
+	bottom: 100%
+	left: 50%
+	margin-left: -5px
+	width: 0
+	border-top: 5px solid $c300
+	border-right: 5px solid transparent
+	border-left: 5px solid transparent
+	content: " "
+	font-size: 0
+	line-height: 0
+	transition: 0.4s
+
+.tooltip-text[data-tooltip]:after
+	+mq('sm')
+		width: 0
+		height: 0
+		border-left: 5px solid transparent
+		border-right: 5px solid transparent
+		border-bottom: 5px solid $c20
+		bottom: 0
+		top: 17px
+
+
+
+// /* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after
+	visibility: visible
+	opacity: 1
+

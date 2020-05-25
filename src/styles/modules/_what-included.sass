@@ -1,0 +1,31 @@
+.section-what-included
+	.container
+		display: grid
+		grid-template: auto / 1fr 1fr
+		gap: 0 40px
+		+mq('sm')
+			grid-template: auto / auto
+
+		.section-title
+			grid-column: 1 / -1
+
+		.part
+			width: 100%
+			padding: 0 20px
+
+			p
+				font-size: 20px
+				font-weight: 600
+				font-feature-settings: "salt"
+				color: $c700
+
+			& ul
+				list-style-image: url(../img/icon-16x16.png)
+				margin: 20px 0
+				margin-left: 40px
+
+			& li
+				padding: 4px
+				font-size: 18px
+
+

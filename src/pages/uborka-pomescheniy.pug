@@ -1,0 +1,36 @@
+
+extends _templates/_template_service
+
+block variables
+
+	- var subDomain = ''
+	- var pageUrl = '/uborka-pomescheniy'
+	- var title = 'Уборка помещений в Жуковском в Раменском'
+	- var metaDescr = 'Уборка помещений в Жуковском'
+	- var ogImage = 'img/uborka-ofisa.jpeg'
+	- var h1 = 'Уборка помещений в Жуковском'
+	- var h1Descr = 'Убираем любые помещения после ремонта, на регулярной основе, генеральные уборки. Полное клининговое обслуживание и разовые заказы.'
+	- var bcCat = ''
+	- var bcCatUrl = ''
+	- var bc = 'Уборка помещений'
+	- var category = 'pomescheniya'
+
+	- var mainBackground = 'img/uborka-ofisa2.jpg'
+	- var formBackground = 'img/uborka-ofisa3.jpg'
+
+
+	- var priceH2 = 'Цены на уборку для нежилых помещений'
+
+	//- mixin pricetable
+	-
+		var thead = ['Уборка офисов', 'Цена']
+	-
+		var tbody = [
+				['Ежедневная (комплексная)', 'от 15 000 р. /мес.'],
+				['Генеральная уборка', '60 р. /м²'],
+				['Послестроительная уборка до 500 м²', '90 р. /м²'],
+				['Послестроительная уборка от 501 до 1500 м²', '70 р. /м²'],
+				['Послестроительная уборка от 1500 до 5000 м²', '60 р. /м²'],
+		]
+
+

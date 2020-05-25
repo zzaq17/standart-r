@@ -1,0 +1,115 @@
+.how-it-works,
+.section-how-it-works
+	& .how-it-works-wrap,
+	& .why-we-wrapper
+		display: grid
+		grid-template: auto / repeat(4, 1fr)
+		margin: 0 60px
+		gap: 0 16px
+		+mq('sublg')
+			grid-template: 1fr 1fr / 1fr 1fr
+			gap: 20px 10px
+			margin: 0 60px
+		+mq('sm')
+			margin: 0 20px
+		+mq('xs')
+			margin: 0 20px
+			grid-template: repeat(4, 1fr) / 1fr
+			justify-items: center
+			gap: 30px 0
+		& .how-it-works-elem,
+		& .why-we-elem
+			padding-left: 1em
+			display: grid
+			grid-template: 100px 40px auto / auto
+			+mq('sublg')
+				max-width: 320px
+				padding-left: 0
+				padding-right: 16px
+			+mq('xs')
+				grid-template: 85px 40px auto / auto
+			& .number
+				color: $c300
+				padding: 0 0 16px 20px
+				font-weight: 900
+				font-feature-settings: "salt"
+				font-size: 70px
+			& .title
+				color: $c700
+				font-size: 24px
+				+mq('sm')
+					font-size: 22px
+			& .descr
+				letter-spacing: .2px
+
+.section-how-it-works
+	& .why-we-wrapper
+		display: grid
+		grid-template: auto / 1fr 20px 1fr 20px 1fr 20px 1fr
+		margin: 0 60px
+		gap: 0 8px
+		+mq('sublg')
+			grid-template: 1fr 1fr / 1fr 1fr
+			gap: 20px 10px
+			margin: 0 60px
+		+mq('sm')
+			margin: 0 20px
+		+mq('xs')
+			margin: 0 20px
+			grid-template: 1fr 20px 1fr 20px 1fr 20px 1fr / auto
+			justify-items: center
+			gap: 35px 0
+		& .why-we-elem
+			padding-left: 1em
+			display: grid
+			grid-template: 100px 30px auto / auto
+			gap: 10px 0
+			+mq('sublg')
+				max-width: 320px
+				padding-left: 0
+				padding-right: 16px
+			+mq('xs')
+				grid-template: 80px auto auto / auto
+				justify-items: center
+				padding: 0
+			& img
+				height: 100%
+				width: auto
+			& .title
+				color: $c700
+				font-size: 24px
+				+mq('sm')
+					font-size: 22px
+			& .descr
+				display: grid
+				gap: 6px 0
+				+mq('xs')
+					justify-items: center
+					text-align: center
+				& p
+					letter-spacing: .4px
+					align-self: start
+					font-size: 17px
+				& a
+					color: $c500
+					font-size: 24px
+		& .arrow
+			align-self: center
+			+mq('sublg')
+				display: none
+			+mq('xs')
+				display: block
+				transform: rotate(90deg)
+		& .arrow::after
+			font-family: "Font Awesome 5 Free"
+			font-weight: 900
+			content: '\f054'
+			color: $c300
+			font-size: 26px
+
+
+
+
+
+
+

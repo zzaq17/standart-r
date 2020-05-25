@@ -1,0 +1,40 @@
+@import "../mixins/_extends"
+@import "../mixins/_mixin-buttons"
+
+.btn__green
+	+btn__green
+
+.btn__t-white
+	+btn__transp(white, 100%)
+
+.btn__t-green
+	+btn__transp($c300, 100%)
+
+.btn__white
+	@extend %btn__white
+
+
+.btn-sm__green
+	@extend %btn
+	@extend %height-sm
+
+	background-color: $c300
+	border: 2px solid transparent
+
+	color: $c20
+	&:hover
+		color: $c20
+
+.btn-sm__t-white
+	+btn-sm__transp(white, 100%)
+	&:hover
+		color: $c20
+
+.btn-sm__t-green
+	+btn-sm__transp($c300, 100%)
+	&:hover
+		color: $c300
+
+.btn-sm__white
+	+btn-sm__white
+

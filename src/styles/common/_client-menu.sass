@@ -1,0 +1,115 @@
+.menu
+	width: 100%
+	display: flex
+	align-items: center
+	justify-content: space-around
+
+.menu *
+	box-sizing: content-box
+
+.menu li
+	position: relative
+	display: flex
+	align-items: center
+	justify-items: center
+
+	background:#fff
+
+	font-size: 17px
+	font-weight: 400
+	color: $c800
+	letter-spacing: .4px
+
+.menu > li
+	justify-self: stretch
+
+.menu > li > span
+	justify-self: center
+.menu > li > span:hover
+	cursor: pointer
+
+
+.menu > li:after
+	display: block
+	content: ""
+	height: 4px
+	background-color: $c300
+	width: 0%
+	bottom: -32px
+	left: 50%
+	position: absolute
+	transition: width .3s ease-in-out
+	transform: translateX(-50%)
+
+.menu > li:hover:after,
+.menu > li:focus:after
+	width: 110%
+	transition: width .3s ease-in-out
+
+.menu a
+	// /* стилизация ссылок */
+	color: $c700
+	font-weight: 400
+	font-size: 17px
+	letter-spacing: .4px
+	justify-self: left
+	text-shadow: 0 1px rgba(0, 0, 0, .1)
+
+.menu li a:after
+	font-family: "fa-solid"
+	content: "\f105"
+	padding-left: .5em
+	font-size: 14px
+	color: $c300
+
+.menu li a:only-child:after
+	content: ''
+
+.menu li ul
+	position: absolute
+	min-width: 180px
+	top: 18px
+	left: -5px
+	border-top: none
+
+	.li-invisible
+		background: transparent
+		height: 17px
+		border: none
+		&:hover
+			background: transparent
+
+/* убираем лишние параметры от .menu li для подуровней */
+.menu li ul li
+	height: 40px
+	border-top: 1px solid #ddd
+	border-left: 1px solid #efefef
+	border-right: 1px solid #efefef
+	width: 230px
+	background: #fff
+	margin: 0
+	padding: .5em 1em
+	&:last-child
+		border-bottom: 1px solid #ddd
+
+.services-menu > ul > li > ul > li.active
+	background: #defcf2
+	cursor: default
+	pointer-events: none
+	&>a
+		cursor: default
+		pointer-events: none
+
+.menu li li:hover
+	background: #defcf2
+
+.menu li li ul
+	// начиная со второго подуровня идет вертикальное меню, потому нужно подвинуть его влево на ширину родителя
+	min-width: 230px
+	left: 100%
+	top: -1px
+
+.menu i
+		padding-left: 0.8em
+		vertical-align: middle
+		color: $c300
