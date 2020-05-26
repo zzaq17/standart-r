@@ -1,0 +1,30 @@
+extends _templates/_template_subservice
+
+block variables
+		//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/himchistka/himchistka-igrushek'
+	- var mainpage = ''
+	- var title = 'Химчистка игрушек'
+	- var metaDescr = 'Химчистка мягких игрушек с выездом на дом профессионально и с гарантией. Чистим гипоаллергенными средствами безопасными для детей. Цены химчистки от 250 р.'
+	- var ogImage = 'img/kawaii.jpg'
+		//- main screen
+	- var h1 = 'Химчистка мягких игрушек от 250 рублей за штуку с выездом к клиенту'
+	- var h1Descr = 'Освежим мягкие игрушки, выведем пятна, сделаем снова пушистыми и приятными. Оставим приятный запах и антистатический эффект на долго.'
+		//- breadcrumbs
+	- var bcCat = 'Химчистка в Раменском'
+	- var bcCatUrl = 'himchistka/'
+	- var bc = 'Химчистка мягких игрушек с выездом к клиенту'
+		//- backgrounds
+	- var mainBackground = 'img/kawaii.jpg'
+	- var formBackground = 'img/kawaii-1.jpg'
+		//- settings
+	- var nestingLevel = '2'
+	- var category = 'himchistka'
+		//- mixin otzyvy
+	-
+		var otzyvy = [
+				{'name': 'Виктор', 'descr': 'Диван снова белый. Спасибо мастеру! Берегите таких сотрудников!', 'img': '""../img/review__Viktor.jpg'},
+				{'name': 'Михаил', 'descr': 'У же не первый раз пользуюсь услугами Стандарта, последний раз заказывал химчистку дивана и кресла. Как всегда ребята с задачей справились - всё как будто новое.', 'img': '""../img/review__Mihail.jpg'},
+				{'name': 'Елена', 'descr': 'Заказывала химчистку ковра, было огромное пятно от вина, думала, что не получится вывести. Но клинер Стандарта справилась.  Спасибо!', 'img': '""../img/review__Elena.jpg'},
+	]

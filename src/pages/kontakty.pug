@@ -1,18 +1,22 @@
 extends _templates/_template_default
 
 block variables
-
-	- var subDomain = ''
+		//- head part
+	- var subDomain = 'ramenskoye'
 	- var pageUrl = '/kontakty'
+	- var mainpage = ''
 	- var title = 'Контакты'
-	- var metaDescr = 'Контакты клининговой компании ООО «Стандарт» в Жуковском и Раменском. Звоните с 9:00 до 21:00 по телефону +7 (495) 136-73-63. info@standartcleaning.ru'
-	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage.png'
+	- var metaDescr = 'Полная контактная информация клининговой компании «Стандарт» - телефоны, email и адреса офисовs'
+	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage-1.png'
+		//- main screen
 	- var h1 = 'Контактная информация'
 	- var h1Descr = ''
+		//- breadcrumbs
 	- var bcCat = ''
 	- var bcCatUrl = ''
+	- var bc = 'Контактная информация'
+		//- settings
 	- var nestingLevel = '1'
-	- var bc = 'Контакты'
 	- var category = 'default'
 
 block content

@@ -1,0 +1,34 @@
+extends _templates/_template_kommerce
+
+block variables
+		//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/uborka-ofisov/ezhednevnaya-uborka-ofisa'
+	- var mainpage = ''
+	- var title = 'Ежедневная уборка офиса в Раменском'
+	- var metaDescr = 'Регулярная ежедневная уборка офисов с комфортным персоналом и по адекватным ценам от клининговой компании Стандарт'
+	- var ogImage = 'img/uborka-ofisa-1680.jpg'
+		//- main screen
+	- var h1 = 'Ежедневная уборка офисов в Раменском'
+	- var h1Descr = 'Убираем офисные помещения на регулярной основе: вечерние, утренние, еженедельные и другие виды. Полное клининговое обслуживание и разовые заказы.'
+		//- breadcrumbs
+	- var bcCat = 'Уборка офисов в Раменском'
+	- var bcCatUrl = 'uborka-ofisov/'
+	- var bc = 'Ежедневная уборка офисов в Раменском'
+		//- backgrounds
+	- var mainBackground = 'img/uborka-ofisa2.jpg'
+	- var formBackground = 'img/uborka-ofisa3.jpg'
+		//- settings
+	- var nestingLevel = '2'
+	- var category = 'ofisy'
+	- var cleaningType = 'regular'
+		//- mixin pricetable
+	- var priceH2 = 'Цены на уборку для офисов'
+	-
+		var thead = ['Уборка офисов', 'Цена']
+	-
+		var tbody = [
+				['Ежедневная (комплексная)', 'от 15 000 р. /мес.'],
+
+		]
+

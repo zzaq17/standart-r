@@ -1,0 +1,34 @@
+extends _templates/_template_kommerce
+
+block variables
+		//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/uborka-kommercheskoy-nedvizhimosti/uborka-territorii-predpriyatij'
+	- var mainpage = ''
+	- var title = 'Уборка территории предприятий в Раменском'
+	- var metaDescr = 'Уборка территории предприятия профессиональным оборудованием и средствами. Полное клининговое обслуживание компаний в Раменском'
+	- var ogImage = 'img/uborka-territorii.jpg'
+		//- main screen
+	- var h1 = 'Уборка территории предприятий в Раменском'
+	- var h1Descr = 'Убираем и поддерживаем чистоту на территории предприятий, бизнес- и торговых центров. Всё необходимое оборудование.'
+		//- breadcrumbs
+	- var bcCat = 'Уборка коммерческой недвижимости'
+	- var bcCatUrl = 'uborka-kommercheskoy-nedvizhimosti/'
+	- var bc = 'Уборка территории предприятий в Раменском'
+		//- backgrounds
+	- var mainBackground = 'img/uborka-territorii.jpg'
+		//- settings
+	- var nestingLevel = '2'
+	- var category = 'komm'
+		//- mixin pricetable
+	- var priceH2 = 'Цены на уборку коммерческой недвижимости'
+	-
+		var thead = ['Уборка коммерческих объектов', 'Цена']
+	-
+		var tbody = [
+				['Ежедневная (комплексная)', 'от 15 000 р. /мес.'],
+				['Генеральная уборка', '60 р. /м²'],
+				['Послестроительная уборка до 500 м²', '90 р. /м²'],
+				['Послестроительная уборка от 501 до 1500 м²', '70 р. /м²'],
+				['Послестроительная уборка от 1500 до 5000 м²', '60 р. /м²'],
+		]

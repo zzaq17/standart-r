@@ -1,0 +1,40 @@
+extends _templates/_template_subservice
+
+block variables
+		//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/himchistka/himchistka-matrasov'
+	- var mainpage = ''
+	- var title = 'Химчистка матрасов'
+	- var metaDescr = 'Чистка спальных мест, кроватей и матрасов с выездом на дом от 1500 р. в Раменском. Устранение запахов, пятен и разводов недорого и с гарантией результата.'
+	- var ogImage = 'img/himchistka-matrasov.jpg'
+		//- main screen
+	- var h1 = 'Химчистка матрасов с выездом к клиенту'
+	- var h1Descr = 'Освежим спальное место, устраним запахи, выведем пятна'
+		//- breadcrumbs
+	- var bcCat = 'Химчистка в Раменском'
+	- var bcCatUrl = 'himchistka/'
+	- var bc = 'Химчистка матрасов с выездом к клиенту'
+		//- backgrounds
+	- var mainBackground = 'img/himchistka-matrasov.jpg'
+	- var formBackground = 'img/himchistka-myagkoj-mebeli-1500.jpg'
+		//- settings
+	- var nestingLevel = '2'
+	- var category = 'himchistka'
+		//- mixin otzyvy
+	-
+		var otzyvy = [
+				{'name': 'Виктор', 'descr': 'Диван снова белый. Спасибо мастеру! Берегите таких сотрудников!', 'img': '""../img/review__Viktor.jpg'},
+				{'name': 'Михаил', 'descr': 'У же не первый раз пользуюсь услугами Стандарта, последний раз заказывал химчистку дивана и кресла. Как всегда ребята с задачей справились - всё как будто новое.', 'img': '""../img/review__Mihail.jpg'},
+				{'name': 'Елена', 'descr': 'Заказывала химчистку ковра, было огромное пятно от вина, думала, что не получится вывести. Но клинер Стандарта справилась.  Спасибо!', 'img': '""../img/review__Elena.jpg'},
+	]
+		//- mixin pricetable
+	- var priceH2 = 'Цены на химчистку спального места'
+	-
+		var thead = ['Цены на химчистку спального места',	'Цена']
+	-
+		var tbody = [
+				['Матрас с двух сторон',	'от 1 500 р.'],
+				['Подушка',	'от 350 р.'],
+				['Удаление запахов',	'от 500 р.'],
+		]

@@ -1,18 +1,23 @@
+
 extends _templates/_template_default
 
 block variables
-
-	- var subDomain = ''
+		//- head part
+	- var subDomain = 'ramenskoye'
 	- var pageUrl = '/o-kompanii'
+	- var mainpage = ''
 	- var title = 'О компании'
-	- var metaDescr = 'Клининговая компания ""Стандарт Клининг""'
-	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage.png'
+	- var metaDescr = 'Клининговая компания «Стандарт» в Раменском поможет освободить время для более важных дел, чем уборка квартиры, дома.'
+	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage-1.png'
+		//- main screen
 	- var h1 = 'О компании'
 	- var h1Descr = ''
+		//- breadcrumbs
 	- var bcCat = ''
 	- var bcCatUrl = ''
-	- var nestingLevel = '1'
 	- var bc = 'О компании'
+		//- settings
+	- var nestingLevel = '1'
 	- var category = 'default'
 
 block content

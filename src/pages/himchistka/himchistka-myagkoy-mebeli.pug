@@ -1,0 +1,43 @@
+extends _templates/_template_subservice
+
+block variables
+		//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/himchistka/himchistka-myagkoy-mebeli'
+	- var mainpage = ''
+	- var title = 'Химчистка мягкой мебели'
+	- var metaDescr = 'Химчистка мягкой мебели с выездом на дом профессионально и с гарантией. Чистим натуральные и синтетические ткани и обивку от 300 р.'
+	- var ogImage = 'img/himchistka-divanov.jpg'
+		//- main screen
+	- var h1 = 'Химчистка мягкой мебели с выездом к клиенту'
+	- var h1Descr = 'Вернём мягкой мебели первозданный вид. Уберем разводы и пятна, не навредив структуре ткани.'
+		//- breadcrumbs
+	- var bcCat = 'Химчистка в Раменском'
+	- var bcCatUrl = 'himchistka/'
+	- var bc = 'Химчистка мягкой мебели с выездом к клиенту'
+		//- backgrounds
+	- var mainBackground = 'img/himchistka-myagkoj-mebeli-1500.jpg'
+	- var formBackground = 'img/himchistka-divanov-1680.jpg'
+		//- settings
+	- var nestingLevel = '2'
+	- var category = 'himchistka'
+		//- mixin otzyvy
+	-
+		var otzyvy = [
+			{'name': 'Виктор', 'descr': 'Диван снова белый. Спасибо мастеру! Берегите таких сотрудников!', 'img': '""../img/review__Viktor.jpg'},
+			{'name': 'Михаил', 'descr': 'Уже не первый раз пользуюсь услугами Стандарта, последний раз заказывал химчистку дивана и кресла. Как всегда ребята с задачей справились - всё как будто новое.', 'img': '""../img/review__Mihail.jpg'},
+			{'name': 'Елена', 'descr': 'Заказывала химчистку ковра, было огромное пятно от вина, думала, что не получится вывести. Но клинер Стандарта справилась.  Спасибо!', 'img': '""../img/review__Elena.jpg'},
+	]
+		//- mixin pricetable
+	- var priceH2 = 'Цены на химчистку с выездом'
+	-
+		var thead = ['Химчистка', 'Цены']
+	-
+		var tbody = [
+			['Диван', 'от 1 500 р.'],
+			['Спальное место', 'от 1 500 р.'],
+			['Стул со спинкой', 'от 300 р.'],
+			['Кресло', 'от 1 000 р.'],
+			['Подушка', 'от 350 р.'],
+			['Удаление запахов', 'от 500 р.'],
+		]

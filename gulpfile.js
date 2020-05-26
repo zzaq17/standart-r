@@ -54,8 +54,8 @@ gulp.task('deploy', function() {
 	/*'dist/.htaccess',*/
 	];
 	return gulp.src(globs, {buffer: false})
-	// .pipe(conn.dest('/www'));
-	.pipe(conn.dest('/testboxe.ru/htdocs/zhukovsky'));
+	// .pipe(conn.dest('/ramenskoye'));
+	.pipe(conn.dest('/testboxe.ru/htdocs/testramen'));
 
 });
 

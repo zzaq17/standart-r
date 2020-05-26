@@ -1,0 +1,43 @@
+extends _templates/_template_subservice
+
+block variables
+		//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/himchistka/himchistka-kovrov'
+	- var mainpage = ''
+	- var title = 'Химчистка ковров'
+	- var metaDescr = 'Чистка ковров, ковролина и других ковровых покрытий из натуральных и синтетических материалов от 150 р. за кв. м в Раменском'
+	- var ogImage = 'img/himchistka-kovrov-1680.jpg'
+		//- main screen
+	- var h1 = 'Химчистка ковров и ковролина с выездом к клиенту'
+	- var h1Descr = 'Освежим любое ковровое покрытие, поднимем ворс, выведем пятна. Оставим приятный запах и антистатический эффект на долго.'
+		//- breadcrumbs
+	- var bcCat = 'Химчистка'
+	- var bcCatUrl = 'himchistka/'
+	- var bc = 'Химчистка ковров'
+		//- backgrounds
+	- var mainBackground = 'img/himchistka-kovrov.jpg'
+	- var formBackground = 'img/himchistka-kovrov-2.jpg'
+		//- settings
+	- var nestingLevel = '2'
+	- var category = 'himchistka'
+		//- mixin otzyvy
+	-
+		var otzyvy = [
+			{'name': 'Виктор', 'descr': 'Диван снова белый. Спасибо мастеру! Берегите таких сотрудников!', 'img': '""../img/review__Viktor.jpg'},
+			{'name': 'Михаил', 'descr': 'У же не первый раз пользуюсь услугами Стандарта, последний раз заказывал химчистку дивана и кресла. Как всегда ребята с задачей справились - всё как будто новое.', 'img': '""../img/review__Mihail.jpg'},
+			{'name': 'Елена', 'descr': 'Заказывала химчистку ковра, было огромное пятно от вина, думала, что не получится вывести. Но клинер Стандарта справилась.  Спасибо!', 'img': '""../img/review__Elena.jpg'},
+	]
+		//- mixin pricetable
+	- var priceH2 = 'Цены на химчистку ковров с выездом на дом'
+	-
+		var thead = ['Химчистка', 'Цены']
+	-
+		var tbody = [
+				['Ковер синтетический',	'от 150 р. /м²'],
+				['Ковер из натуральных тканей',	'от 150 р. /м²'],
+				['Ковер с высоким ворсом',	'от 150 р. /м²'],
+				['Ковер с низким ворсом',	'от 150 р. /м²'],
+				['Ковер ручной работы',	'от 150 р. /м²'],
+				['Ковролин', 'от 150 р. /м²'],
+		]

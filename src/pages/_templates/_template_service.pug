@@ -6,7 +6,7 @@ html(lang='ru')
 	head
 		block head
 		include ../_common/head
-		
+
 	body
 		include ../_common/preloader
 		include ../_mixins/mixins
@@ -39,12 +39,7 @@ html(lang='ru')
 					include ../_includes/_section-work-review__komm
 
 			+how-it-works
-
-			if seotext
-				section.section.section-info-inner
-					.container
-						block seotext
-			else
+			block seotext
 
 		include ../_common/footer
 

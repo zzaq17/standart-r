@@ -1,19 +1,24 @@
 extends _templates/_template_default
 
 block variables
-
-	- var subDomain = ''
+		//- head part
+	- var subDomain = 'ramenskoye'
 	- var pageUrl = '/akcii'
+	- var mainpage = ''
 	- var title = 'Акции и скидки'
-	- var metaDescr = 'Акции и скидки на услуги клининговой компании ООО«Стандарт« в Жуковском'
-	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage.png'
+	- var metaDescr = 'Сэкономьте с акциями на услуги клининговой компании «Стандарт» в Раменском'
+	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage-1.png'
+		//- main screen
 	- var h1 = 'Акции и Скидки на клининговые услуги'
 	- var h1Descr = ''
+		//- breadcrumbs
 	- var bcCat = ''
 	- var bcCatUrl = ''
+	- var bc = 'Акции и Скидки на клининговые услуги'
+		//- settings
 	- var nestingLevel = '1'
-	- var bc = 'Акции и скидки'
 	- var category = 'default'
+
 
 block content
 	section.hero

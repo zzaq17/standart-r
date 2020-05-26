@@ -1,37 +1,40 @@
 extends _templates/_template_service
 
 block variables
-
-	- var subDomain = ''
-	- var pageUrl = '/himchistka'
-	- var title = 'Химчистка в Жуковском'
-	- var metaDescr = 'Химчистка на дому профессионально и с гарантией'
-	- var ogImage = 'img/himchistka-myagkoj-mebeli.jpg'
-
-	- var h1 = 'Химчистка в Жуковском, Раменском и Люберцах на дому'
+		//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/himchistka/'
+	- var mainpage = ''
+	- var title = 'Химчистка в Раменском'
+	- var metaDescr = 'Химчистка в Раменском на дому профессионально и с гарантией чистоты. Чистка диванов, ковров и предметов интерьера с выездом к клиенту.'
+	- var ogImage = 'img/himchistka-myagkoj-mebeli-1500.jpg'
+		//- main screen
+	- var h1 = 'Химчистка в Раменском'
 	- var h1Descr = 'Вернём ковровым покрытиям, мебели и матрасам первозданный вид. Уберем разводы и пятна, не навредив структуре ткани.'
-
+		//- breadcrumbs
 	- var bcCat = ''
 	- var bcCatUrl = ''
-	- var nestingLevel = '1'
-	- var bc = 'Химчистка'
-	- var category = 'himchistka'
-
+	- var bc = 'Химчистка в Раменском'
+		//- backgrounds
 	- var mainBackground = 'img/himchistka-myagkoj-mebeli-1500.jpg'
 	- var formBackground = 'img/himchistka-divanov-1680.jpg'
+		//- settings
+	- var nestingLevel = '1'
+	- var category = 'himchistka'
+		//- mixin otzyvy
 	-
 		var otzyvy = [
-				{'name': 'Виктор', 'descr': 'Диван снова белый. Спасибо мастеру! Берегите таких сотрудников!', 'img': '../img/review__Viktor.jpg'},
-				{'name': 'Михаил', 'descr': 'У же не первый раз пользуюсь услугами Стандарта, последний раз заказывал химчистку дивана и кресла. Как всегда ребята с задачей справились - всё как будто новое.', 'img': '../img/review__Mihail.jpg'},
-				{'name': 'Елена', 'descr': 'Заказывала химчистку ковра, было огромное пятно от вина, думала, что не получится вывести. Но клинер Стандарта справилась.  Спасибо!', 'img': '../img/review__Elena.jpg'},
-		]
+				{'name': 'Виктор', 'descr': 'Диван снова белый. Спасибо мастеру! Берегите таких сотрудников!', 'img': '""../img/review__Viktor.jpg'},
+				{'name': 'Михаил', 'descr': 'Уже не первый раз пользуюсь услугами Стандарта, последний раз заказывал химчистку дивана и кресла. Как всегда ребята с задачей справились - всё как будто новое.', 'img': '""../img/review__Mihail.jpg'},
+				{'name': 'Елена', 'descr': 'Заказывала химчистку ковра, было огромное пятно от вина, думала, что не получится вывести. Но клинер Стандарта справилась.  Спасибо!', 'img': '""../img/review__Elena.jpg'},
+	]
 		//- mixin subservices
 	-
 		var subservices = [
-				{'name': 'Химчистка ковровых покрытий', 'price': '150 р. / м²', 'img': '../img/himchistka-kovrov-high-480.jpg', 'pageUrl': '../himchistka/himchistka-kovrov-s-vyezdom-na-dom', 'popup': 'service1'},
-				{'name': 'Химчистка мягкой мебели', 'price': 'от 500 р.', 'img': '../img/himchistka-myagkoj-mebeli-high-480.jpg', 'pageUrl': '../himchistka/himchistka-myagkoy-mebeli-na-domu', 'popup': 'service2'},
-				{'name': 'Химчистка диванов', 'price': 'от 1 500 р.', 'img': '../img/udalenie-pyaten-i-zapahov-high-480.jpg', 'pageUrl': '../himchistka/himchistka-divanov-s-vyezdom', 'popup': 'service3'},
-				{'name': 'Химчистка спального места', 'price': '1 000 р.', 'img': '../img/himchistka-matrasov-high-480.jpg', 'pageUrl': '../himchistka/himchistka-matrasov-na-domu', 'popup': 'service4'},
+				{'name': 'Химчистка ковровых покрытий', 'price': '150 р. / м²', 'img': '../img/himchistka-kovrov-high-480.jpg', 'pageUrl': '../himchistka/himchistka-kovrov-s-vyezdom-na-dom.html', 'popup': 'service1'},
+				{'name': 'Химчистка мягкой мебели', 'price': 'от 500 р.', 'img': '../img/himchistka-myagkoj-mebeli-high-480.jpg', 'pageUrl': '../himchistka/himchistka-myagkoy-mebeli-na-domu.html', 'popup': 'service2'},
+				{'name': 'Химчистка диванов', 'price': 'от 1 500 р.', 'img': '../img/udalenie-pyaten-i-zapahov-high-480.jpg', 'pageUrl': '../himchistka/himchistka-divanov-s-vyezdom.html', 'popup': 'service3'},
+				{'name': 'Химчистка спального места', 'price': '1 000 р.', 'img': '../img/himchistka-matrasov-high-480.jpg', 'pageUrl': '../himchistka/himchistka-matrasov-na-domu.html', 'popup': 'service4'},
 		]
 		//- mixin additional
 	-
@@ -42,11 +45,8 @@ block variables
 			{'name':'Химчистка салона автомобиля', 'price': 'от 3 500 р.'},
 			{'name':'Удаление запахов в автомобиле', 'price': 'от 500 р..'}
 		]
-
+		//- mixin pricetable
 	- var priceH2 = 'Цены на химчистку с выездом'
-
-	//- mixin pricetable
-
 	-
 		var thead = ['Химчистка', 'Цены']
 	-
@@ -60,15 +60,13 @@ block variables
 				['Жалюзи', 'от 250 р.'],
 				['Удаление запахов', 'от 500 р.'],
 		]
-
-
-
-
+		
 block seotext
-	.title
-		h2 Химчистка предметов интерьера
-	.descr
-		p Мы предлагаем сделать химчистку на дому: ковров, ковролина, диванов, кресел, стульев, матрасов и подушек!
-		p Для проведения химчистки мы используем профессиональное оборудование и химию. Специализированные аппараты Kercher и химию Kiehl. Использование профессионального оборудования позволяет произвести качественную химчистку с отличным результатом.
-		p Даже после мойки ковра вручную шампунем, использование профессионального пылесоса для химчистки все равно выявляет загрязнение. Вы можете убедится в этом сами. Когда увидите какого цвета всасываемый профессиональным аппаратом раствор.
-		p После получения вашей заявки, наш менеджер бесплатно выезжает на ваш объект  и оценивает необходимые работы! Затем в удобное для вас время мы приезжаем и осуществляем химчистку!
+	section.section.section-info-inner
+		.container
+			.title
+				h2 Химчистка предметов интерьера
+			.descr
+				p Компания ООО “Стандарт” осуществляет химчистку на дому: ковров, ковролина, диванов, кресел, стульев, матрасов и подушек!
+				p Для проведения химчистки мы используем профессиональное оборудование и химию. Специализированные аппараты фирмы Kercher и химию Kiehl. Использование профессионального оборудования позволяет произвести качественную химчистку с отличным результатом.
+				p Даже после мойки ковра вручную шампунем, использование профессионального пылесоса для химчистки все равно выявляет загрязнение. Вы можете убедится в этом сами. Когда увидите какого цвета всасываемый профессиональным аппаратом раствор.– после получения вашей заявки, наш менеджер бесплатно выезжает на ваш объект  и оценивает необходимые работы! Затем в удобное для вас время мы приезжаем и осуществляем химчистку!

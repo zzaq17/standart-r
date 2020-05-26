@@ -1,0 +1,33 @@
+extends _templates/_template_kommerce
+
+block variables
+		//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/uborka-ofisov/regulyarnana-uborka-v-ofise'
+	- var mainpage = ''
+	- var title = 'Регулярная уборка в офисе'
+	- var metaDescr = 'Уборка в офисе на постоянной основе - вечером, утром или полный день. Возможна уборка несколько раз в неделю. Выгодные условия на абонентское обслуживание!'
+	- var ogImage = 'img/uborka-ofisa-1680.jpg'
+		//- main screen
+	- var h1 = 'Поддерживающя уборка офисов в Раменском'
+	- var h1Descr = 'Убираем офисные помещения на регулярной основе: вечерние, утренние, еженедельные и т.д. Полное клининговое обслуживание и разовые заказы.'
+		//- breadcrumbs
+	- var bcCat = 'Уборка офисов в Раменском'
+	- var bcCatUrl = 'uborka-ofisov/'
+	- var bc = 'Поддерживающя уборка офисов в Раменском'
+		//- backgrounds
+	- var mainBackground = 'img/uborka-ofisa2.jpg'
+	- var formBackground = 'img/pexels-photo-380768.jpeg'
+		//- settings
+	- var nestingLevel = '2'
+	- var category = 'ofisy'
+	- var cleaningType = 'regular'
+		//- mixin pricetable
+	- var priceH2 = 'Цены на регулярную уборку для офисов'
+	-
+		var thead = ['Уборка офисов', 'Цена']
+	-
+		var tbody = [
+				['Ежедневная (комплексная)', 'от 15 000 р. /мес.'],
+		]
+

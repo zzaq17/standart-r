@@ -1,22 +1,23 @@
 extends _templates/_template_default
 
 block variables
-
-	- var subDomain = ''
+		//- head part
+	- var subDomain = 'ramenskoye'
 	- var pageUrl = '/kalkulyator-kliningovyh-uslug-dlya-kvartir'
-	- var title = 'Калькулятор клининговых услуг для квартир и коттеджей'
-	- var metaDescr = 'Рассчитайте примерную стоимость клининга для вашей квартиры от клининговой компании «Стандарт». Выберите дополнительные услуги и вид уборки.'
-	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage.png'
-
+	- var mainpage = ''
+	- var title = 'Калькулятор клининговых услуг'
+	- var metaDescr = 'Рассчитайте примерную стоимость уборки дома или квартиры с помощью калькулятора. Расчёт для регулярных, генеральных, экспресс-уборок и уборок после ремонта.'
+	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage-1.png'
+		//- main screen
 	- var h1 = 'Калькулятор клининговых услуг'
 	- var h1Descr = ''
-
+		//- breadcrumbs
 	- var bcCat = ''
 	- var bcCatUrl = ''
+	- var bc = 'Калькулятор клининговых услуг'
+		//- settings
 	- var nestingLevel = '1'
-	- var bc = 'Калькулятор клининговых услуг для квартир и коттеджей'
 	- var category = 'default'
-
 
 block content
 	section.hero
@@ -87,8 +88,8 @@ block content
 							.step.three
 								p Шаг 3. Выберите дополнительные услуги
 								.dop-gen-checkboxes
-									p 
-										| Генеральные уборки 
+									p
+										| Генеральные уборки
 										br
 										span.small (уже включены в Генеральную уборку)
 									//- .dop-gen-wrap
@@ -194,7 +195,7 @@ block content
 										span.sum-text Дополнительные услуги
 										span#sum-3.sum 0
 										span.ruble  руб.
-								.warning 
+								.warning
 									p в зависимости от степени загрязнения стоимость может быть увеличена, по результатам оценки объекта менеджером
 								.lead
 									p Отправьте расчёт менеджеру
@@ -243,8 +244,8 @@ block content
 							.step.three
 								p Шаг 3. Выберите дополнительные услуги
 								.dop-checkboxes
-									p 
-										| Генеральные уборки 
+									p
+										| Генеральные уборки
 										br
 										span.small (уже включены в Генеральную уборку)
 									input#dop-gen-houses1(type='checkbox', name='dop-houses', value='2500')
@@ -349,7 +350,7 @@ block content
 										span.sum-text Дополнительные услуги
 										span#sum-houses-3.sum 0
 										span.ruble  руб.
-								.warning 
+								.warning
 									p в зависимости от степени загрязнения стоимость может быть увеличена, по результатам оценки объекта менеджером
 								.lead
 									p Отправьте расчёт менеджеру
