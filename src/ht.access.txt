@@ -1,7 +1,3 @@
-ErrorDocument 403 / error403.html
-ErrorDocument 404 / error404.html
-ErrorDocument 500 / error500.html
-
 ############################################################################
 #### Стандартный .htaccess для проектов студии Клондайк, версия 4.6     ####
 ############################################################################
@@ -64,6 +60,9 @@ AddOutputFilterByType DEFLATE font/opentype
 AddOutputFilterByType DEFLATE font/otf
 AddOutputFilterByType DEFLATE font/ttf
 AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE image/jpg
+AddOutputFilterByType DEFLATE image/jpeg
+AddOutputFilterByType DEFLATE image/png
 AddOutputFilterByType DEFLATE image/x-icon
 AddOutputFilterByType DEFLATE text/css
 AddOutputFilterByType DEFLATE text/html
@@ -79,6 +78,7 @@ ExpiresByType image/jpeg "access plus 1 year"
 ExpiresByType image/svg "access plus 1 year"
 ExpiresByType image/gif "access plus 1 year"
 ExpiresByType image/png "access plus 1 year"
+ExpiresByType video/mp4 "access plus 1 year"
 ExpiresByType text/javascript "access plus 1 year"
 ExpiresByType text/css "access plus 1 year"
 ExpiresByType application/javascript "access plus 1 year"
@@ -105,3 +105,7 @@ Header set Cache-Control "max-age=31536000, private"
 ############################################################################
 #### Конец общей части, далее следует собственные директивы .htaccess   ####
 ############################################################################
+
+ErrorDocument 403 /error403.html
+ErrorDocument 404 /error404.html
+ErrorDocument 500 /error500.html

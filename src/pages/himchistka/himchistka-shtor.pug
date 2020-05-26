@@ -1,7 +1,7 @@
-extends _templates/_template_subservice
+extends ../_templates/_template_subservice
 
 block variables
-		//- head part
+	//- head part
 	- var subDomain = 'ramenskoye'
 	- var pageUrl = '/himchistka/himchistka-shtor'
 	- var mainpage = ''
@@ -27,7 +27,7 @@ block variables
 				{'name': 'Виктор', 'descr': 'Диван снова белый. Спасибо мастеру! Берегите таких сотрудников!', 'img': '""../img/review__Viktor.jpg'},
 				{'name': 'Михаил', 'descr': 'Уже не первый раз пользуюсь услугами Стандарта, последний раз заказывал химчистку дивана и кресла. Как всегда ребята с задачей справились - всё как будто новое.', 'img': '""../img/review__Mihail.jpg'},
 				{'name': 'Елена', 'descr': 'Заказывала химчистку ковра, было огромное пятно от вина, думала, что не получится вывести. Но клинер Стандарта справилась.  Спасибо!', 'img': '""../img/review__Elena.jpg'},
-	]
+		]
 		//- mixin pricetable
 	- var priceH2 = 'Цены нах имчистку штор'
 	-

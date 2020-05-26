@@ -1,20 +1,20 @@
-extends _templates/_template_kommerce
+extends ../_templates/_template_kommerce
 
 block variables
-		//- head part
+	//- head part
 	- var subDomain = 'ramenskoye'
-	- var pageUrl = '/uborka-kommercheskoy-nedvizhimosti/uborka-kafe'
+	- var pageUrl = '/uborka-kommercheskoy-nedvizhimosti/uborka-restoranov'
 	- var mainpage = ''
-	- var title = 'Уборка кафе в Раменском'
-	- var metaDescr = 'Уборка кафе профессиональным оборудованием и средствами. Полное клининговое обслуживание компаний в Раменском'
+	- var title = 'Уборка ресторанов'
+	- var metaDescr = 'Уборка ресторанов профессиональным оборудованием и средствами. Полное клининговое обслуживание компаний в Раменском'
 	- var ogImage = 'img/restoran5-e1552923019179.jpg'
 		//- main screen
-	- var h1 = 'Уборка кафе в Раменском'
-	- var h1Descr = 'Убираем магазины и супермаркеты после ремонта, на регулярной основе и проводим генеральные уборки. Комплекс клининговых услуг.'
+	- var h1 = 'Уборка ресторанов'
+	- var h1Descr = 'Убираем рестораны после ремонта, на регулярной основе и проводим генеральные уборки. Весь комплекс клининговых услуг.'
 		//- breadcrumbs
 	- var bcCat = 'Уборка коммерческой недвижимости'
 	- var bcCatUrl = 'uborka-kommercheskoy-nedvizhimosti/'
-	- var bc = 'Уборка кафе в Раменском'
+	- var bc = 'Уборка ресторанов'
 		//- backgrounds
 	- var mainBackground = 'img/restoran5-e1552923019179.jpg'
 		//- settings
@@ -23,7 +23,7 @@ block variables
 		//- mixin pricetable
 	- var priceH2 = 'Цены на уборку коммерческой недвижимости'
 	-
-		var thead = ['Уборка кафе', 'Цена']
+		var thead = ['Уборка ресторанов', 'Цена']
 	-
 		var tbody = [
 				['Ежедневная (комплексная)', 'от 15 000 р. /мес.'],

@@ -1,7 +1,7 @@
-extends _templates/_template_subservice
+extends ../_templates/_template_subservice
 
 block variables
-		//- head part
+	//- head part
 	- var subDomain = 'ramenskoye'
 	- var pageUrl = '/uborka-kvartir/uborka-2h-komnatnoy-kvartiry'
 	- var mainpage = ''
@@ -28,7 +28,7 @@ block variables
 				{'name': 'Tata', 'descr': 'Спасибо большое за уборки! Они просто спасают!', 'img': '""../img/review__Tata.jpg'},
 				{'name': 'Александр', 'descr': 'Вызывал на уборку квартиры. Все требования и пожелания были учтены. Очень порадовала цена и качество уборки. Всем рекомендую.', 'img': '""../img/review__Aleksandr.jpg'},
 				{'name': 'Ольга', 'descr': 'Если кто из раменского или жуковского, то очень рекомендую Стандарт. Они уже месяцев 5 у нас убирают - аккуратные барышни, пылесосы тихие, все чистенькое. Ничего лишнего не делают, убрали быстро (минут 15) и до следующей недели))', 'img': '""../img/review__Olga2.jpg'},
-	]
+		]
 	-
 		var thead = ['Уборка квартир', 'однокомнатная <br/>от 0 до 50 м²', 'двухкомнатная <br/>от 51 до 70 м²', 'трехкомнатная <br/>от 71 до 100 м²', 'больше трех <br/>от 101 м²']
 	-

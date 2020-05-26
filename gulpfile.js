@@ -46,7 +46,7 @@ gulp.task('deploy', function() {
 		user:      'host1328462',
 		password:  'kirpix',
 
-		parallel:  20
+		parallel:  10
 	});
 
 	var globs = [
