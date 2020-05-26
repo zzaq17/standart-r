@@ -1,5 +1,4 @@
-
-extends _templates/_template_default
+extends ../_templates/_template_default
 
 block variables
 	- var title = 'Ошибка 404. Такой страницы не существует'
@@ -20,4 +19,4 @@ block content
 				//- 		li Ссылка с ошибочным адресом или на страницу, которую давно удалили
 				//- 		li Технические проблемы. В этом случае мы получим сигнал и исправим ошибку
 			.travolta-element
-				img(src="../../img/404.gif").travolta
+				img(src="../../img/404.gif" alt="").travolta

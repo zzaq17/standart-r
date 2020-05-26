@@ -1,20 +1,19 @@
 {
   "name": "standart-r",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ramenskoye",
   "main": "gulpfile.js",
   "scripts": {
     "s": "gulp start",
     "b": "gulp build",
-    "d": "gulp build && gulp imagemin && gulp deploy",
-    "l": "gulp build && gulp lighthouse"
+    "d": "gulp build && gulp imagemin && gulp deploy"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/zzaq17/standart-r.git"
   },
   "keywords": [],
-  "author": "AZ",
+  "author": "Andrey Zakharov",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.6",

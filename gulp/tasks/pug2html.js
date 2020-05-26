@@ -1,86 +1,61 @@
 const gulp = require('gulp')
 const plumber = require('gulp-plumber')
 const pug = require('gulp-pug')
-// const htmlValidator = require('gulp-w3c-html-validator')
 const config = require('../config')
-
-// module.exports = function pug2html() {
-// 	return gulp.src('src/pages/*.pug')
-// 		.pipe(plumber())
-// 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
-// 		.pipe(htmlValidator())
-// 		.pipe(gulp.dest('build'))
-
-// }
 
 module.exports = {
 	pug: function() {
 	return gulp.src('src/pages/*.pug')
 		.pipe(plumber())
 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
-		// .pipe(htmlValidator())
 		.pipe(gulp.dest('build'))
 	},
-
 	pugf1: function() {
 	return gulp.src('src/pages/uborka-kvartir/*.pug')
 		.pipe(plumber())
 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
-		// .pipe(htmlValidator())
 		.pipe(gulp.dest('build/uborka-kvartir'))
 	},
-
 	pugf2: function() {
 		return gulp.src('src/pages/uborka-domov/*.pug')
 		.pipe(plumber())
 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
-		// .pipe(htmlValidator())
 		.pipe(gulp.dest('build/uborka-domov'))
 	},
 	pugf3: function() {
 	return gulp.src('src/pages/uborka-ofisov/*.pug')
 		.pipe(plumber())
 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
-		// .pipe(htmlValidator())
 		.pipe(gulp.dest('build/uborka-ofisov'))
 	},
-
 	pugf4: function() {
 		return gulp.src('src/pages/himchistka/*.pug')
 		.pipe(plumber())
 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
-		// .pipe(htmlValidator())
 		.pipe(gulp.dest('build/himchistka'))
 	},
 	pugf5: function() {
-	return gulp.src('src/pages/moyka-okon-i-balkonov/*.pug')
+	return gulp.src('src/pages/moyka-okon-v-ramenskom/*.pug')
 		.pipe(plumber())
 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
-		// .pipe(htmlValidator())
-		.pipe(gulp.dest('build/moyka-okon-i-balkonov'))
+		.pipe(gulp.dest('build/moyka-okon-v-ramenskom'))
 	},
-
 	pugf6: function() {
 		return gulp.src('src/pages/uborka-pomescheniy/*.pug')
 		.pipe(plumber())
 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
-		// .pipe(htmlValidator())
 		.pipe(gulp.dest('build/uborka-pomescheniy'))
 	},
 	pugf7: function() {
-	return gulp.src('src/pages/fotografii-rabot/*.pug')
+	return gulp.src('src/pages/uborka-kommercheskoy-nedvizhimosti/*.pug')
 		.pipe(plumber())
 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
-		// .pipe(htmlValidator())
-		.pipe(gulp.dest('build/fotografii-rabot'))
+		.pipe(gulp.dest('build/uborka-kommercheskoy-nedvizhimosti'))
 	},
-
-	pugf8: function() {
-		return gulp.src('src/pages/blog/*.pug')
+	errors: function() {
+		return gulp.src('src/pages/errors/*.pug')
 		.pipe(plumber())
 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
-		// .pipe(htmlValidator())
-		.pipe(gulp.dest('build/blog'))
+		.pipe(gulp.dest('build/errors'))
 	}
-
 }
