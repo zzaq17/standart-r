@@ -109,3 +109,20 @@ Header set Cache-Control "max-age=31536000, private"
 ErrorDocument 403 /error403.html
 ErrorDocument 404 /error404.html
 ErrorDocument 500 /error500.html
+
+# Постраничные редиректы
+
+Redirect 301 /kliningovye-uslugi.html https://ramenskoye.standartcleaning.ru/
+Redirect 301 /chistka-divanov.html https://ramenskoye.standartcleaning.ru/himchistka/
+Redirect 301 /himchistka-mjagkoj-mebeli-na-domu.html https://ramenskoye.standartcleaning.ru/himchistka/
+Redirect 301 /himchistka-kovrov.html https://ramenskoye.standartcleaning.ru/himchistka/
+Redirect 301 /mojka-okon.html https://ramenskoye.standartcleaning.ru/moyka-okon-v-ramenskom/
+Redirect 301 /mojka-okon-alpinistami.html https://ramenskoye.standartcleaning.ru/moyka-okon-v-ramenskom/moyka-okon-alpinistami/
+Redirect 301 /kliningovaja-kompanija.html https://ramenskoye.standartcleaning.ru/o-kompanii/
+Redirect 301 /uborka-kottedzhej.html https://ramenskoye.standartcleaning.ru/uborka-domov/
+Redirect 301 /uborka-territoryi.html https://ramenskoye.standartcleaning.ru/uborka-domov/
+Redirect 301 /stoimost-uborki-kvartir.html https://ramenskoye.standartcleaning.ru/uborka-kvartir/regulyarnaya-uborka-kvartiry/
+Redirect 301 /uborka-pomeschenij.html https://ramenskoye.standartcleaning.ru/uborka-pomescheniy/
+Redirect 301 /uborka-posle-meropriyatij.html https://ramenskoye.standartcleaning.ru/uborka-posle-meropriyatiy/
+Redirect 301 /klining-kommercheskoj-nedvizhimosti.html https://ramenskoye.standartcleaning.ru/uborka-kommercheskoy-nedvizhimosti/
+Redirect 301 /postojannaja-uborka-doma.html https://ramenskoye.standartcleaning.ru/uborka-kvartir/regulyarnaya-uborka-kvartiry/

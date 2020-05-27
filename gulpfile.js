@@ -26,13 +26,13 @@ gulp.task('imagemin', function() {
 gulp.task('deploy', function() {
 
 	var conn = ftp.create({
-		// host:      'ftp70.hostland.ru',
-		// user:      'host1681653_dev',
-		// password:  'kirpix',
-
-		host:      'ftp21.hostland.ru',
-		user:      'host1328462_full',
+		host:      'ftp70.hostland.ru',
+		user:      'host1681653_dev',
 		password:  'kirpix',
+
+		// host:      'ftp21.hostland.ru',
+		// user:      'host1328462_full',
+		// password:  'kirpix',
 
 		parallel:  10
 	});
@@ -42,8 +42,8 @@ gulp.task('deploy', function() {
 	/*'dist/.htaccess',*/
 	];
 	return gulp.src(globs, {buffer: false})
-	// .pipe(conn.dest('/ramenskoye'));
-	.pipe(conn.dest('/testramen'));
+	.pipe(conn.dest('/ramenskoye'));
+	// .pipe(conn.dest('/testramen'));
 
 });
 
