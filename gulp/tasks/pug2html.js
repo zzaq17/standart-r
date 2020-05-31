@@ -5,7 +5,7 @@ const config = require('../config')
 
 module.exports = {
 	pug: function() {
-	return gulp.src('src/pages/*.pug')
+	return gulp.src(['src/pages/*.pug', '!src/pages/test*.pug'])
 		.pipe(plumber())
 		.pipe(pug({ pretty: config.pug2html.beautifyHtml }))
 		.pipe(gulp.dest('build'))
