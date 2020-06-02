@@ -129,6 +129,9 @@
 			justify-items: center
 			color: #555
 			opacity: 0.5
+			+mq('xs')
+				text-align: center
+				justify-self: center
 
 			& a
 				color: #555
@@ -457,6 +460,9 @@
 					grid-template: auto / auto auto
 					gap: 0 10px
 					justify-items: center
+					+mq('xs')
+						text-align: center
+						justify-self: center
 
 					& a
 						color: #ddd
@@ -472,7 +478,3 @@
 					& *:hover
 						color: #ddd
 						opacity: 1
-
-
-
-

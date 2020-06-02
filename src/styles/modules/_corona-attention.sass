@@ -1,0 +1,21 @@
+.section-attention
+	padding: 0
+	.container
+		background-color: $c50t
+		margin: 10px auto
+		padding: 30px 40px
+		border: 1px solid $c50
+		border-radius: 10px
+
+		.title>h2
+			font-size: 22px
+			font-weight: 600
+			color: $c300
+			margin-bottom: 20px
+		.info
+			display: grid
+			grid-template: auto / repeat(4, 1fr)
+			+mq('sm')
+				grid-template: repeat(4, auto) / auto
+			gap: 30px 40px
+

@@ -1,4 +1,3 @@
-
 var gulp = require('gulp'),
 	serve = require('./gulp/tasks/serve'),
 	pug = require('./gulp/tasks/pug2html'),
@@ -6,6 +5,7 @@ var gulp = require('gulp'),
 	script = require('./gulp/tasks/script'),
 	send = require('./gulp/tasks/fonts'),
 	clean = require('./gulp/tasks/clean'),
+	gutil = require('gulp-util'),
 	ftp = require('vinyl-ftp'),
 	imagemin = require('gulp-imagemin')
 
@@ -34,7 +34,9 @@ gulp.task('deploy', function() {
 		// user:      'host1328462_full',
 		// password:  'kirpix',
 
-		parallel:  10
+		parallel:  15,
+
+		log: gutil.log
 	});
 
 	var globs = [
@@ -51,5 +53,5 @@ const dev = gulp.parallel(pug.pug, pug.pugf1, pug.pugf2, pug.pugf3, pug.pugf4, p
 
 const build = gulp.series(clean, dev)
 
-module.exports.start = gulp.series(setMode(), build/*, 'imagemin'*/, serve)
+module.exports.start = gulp.series(setMode(), build, serve)
 module.exports.build = gulp.series(setMode(true), build)
