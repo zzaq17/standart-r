@@ -1,4 +1,3 @@
-// @ts-nocheck
 (function (m, e, t, r, i, k, a) {
 	m[i] = m[i] || function () {
 		(m[i].a = m[i].a || []).push(arguments)
@@ -11,3 +10,8 @@ ym(25151147, "init", {
 	trackLinks: true,
 	accurateTrackBounce: true
 });
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-163752787-1');

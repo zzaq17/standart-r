@@ -132,6 +132,24 @@ body
 		max-width: 320px
 		margin: auto
 
+.container-wrapper
+	display: grid
+	// grid-template: auto / repeat(4, 1fr)
+	margin: 0 60px
+	gap: 0 16px
+	+mq('sublg')
+		// grid-template: 1fr 1fr / 1fr 1fr
+		gap: 20px 10px
+		margin: 0 60px
+	+mq('sm')
+		margin: 0 20px
+	+mq('xs')
+		margin: 0 20px
+		// grid-template: repeat(4, 1fr) / 1fr
+		justify-items: center
+		gap: 30px 0
+
+
 .section-title
 	color: $c800
 	font-size: 40px

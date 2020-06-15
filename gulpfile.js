@@ -34,7 +34,7 @@ gulp.task('deploy', function() {
 		// user:      'host1328462_full',
 		// password:  'kirpix',
 
-		parallel:  15,
+		parallel:  10,
 
 		log: gutil.log
 	});
