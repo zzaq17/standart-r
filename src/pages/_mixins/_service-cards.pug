@@ -1,0 +1,14 @@
+mixin service-cards(part)
+	if part
+		each card in part
+			a.card(class="" +card['class'] href=".." +card['href'])
+				.icon
+					img.svg(src="../../img/section-services/"+card['svg'] alt="")
+				.title
+					h3= card['card-title']
+				.descr
+					p= card['descr']
+				.btn-text
+					span Cмотреть подробнее
+					i.fas.fa-long-arrow-alt-right(aria-hidden='true')
+	else

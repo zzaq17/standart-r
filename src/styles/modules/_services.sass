@@ -1,0 +1,87 @@
+.section-services
+	.container
+		display: grid
+		grid-template: auto auto / repeat(4, 1fr)
+		+mq('sm')
+			grid-template: 1fr 1fr / 1fr 1fr
+			gap: 50px
+		+mq('xs')
+			grid-template: repeat(4, 1fr) / auto
+		gap: 20px
+		.card
+			display: grid
+			grid-template: 80px 60px auto auto / auto
+			border-radius: 10px
+			// box-shadow: 0 3px 5px rgba(0,0,0,.1)
+			padding: 30px 20px
+			+mq('sm')
+				padding: 30px 20px
+				grid-template: 80px 45px auto auto / auto
+			transition: .5s all ease-in
+			&:hover
+				background-color: $c300
+				transition: .5s all ease-in
+			&:hover .icon .svg path,
+			&:hover .icon .svg polygon
+				transition: .4s all ease-in
+				fill: $c20
+			&:hover .title h3,
+			&:hover .descr p,
+			&:hover .btn-text span
+				color: $c20
+				transition: .4s all ease-in
+			.icon
+				justify-self: center
+				transition: .6s all ease-in
+				svg,
+				img
+					max-width: 70px
+					max-height: 70px
+					+mq('sm')
+						max-width: 80px
+						max-height: 80px
+			.title
+				margin-top: 30px
+				+mq('sm')
+					margin-top: 20px
+				h3
+					font-weight: 800
+					font-size: 24px
+					color: $c700
+					transition: .4s all ease-in
+			.descr
+				padding-top: 15px
+				align-self: top
+				display: grid
+				align-items: start
+				transition: .5s all ease-in
+				+mq('sm')
+					overflow: hidden
+					height: 110px
+					text-overflow: ellipsis
+					display: -webkit-box
+					-webkit-line-clamp: 4
+					-webkit-box-orient: vertical
+
+				p
+					font-weight: 400
+					font-size: 16px
+					line-height: 1.5
+					color: $cg
+					transition: .4s all ease-in
+			.btn-text
+				margin-top: 30px
+				span
+					margin-right: 10px
+					color: $c700
+					font-weight: 800
+					letter-spacing: .5px
+					transition: .4s all ease-in
+				i
+					color: white
+					align-self: center
+		.second-line
+			+mq('sm')
+				display: none
+				visibility: hidden
+

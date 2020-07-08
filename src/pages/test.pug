@@ -1,1 +1,25 @@
-background-image: url("https://ljubercy.standartcleaning.ru/wp-content/uploads/2019/03/uslugi-sadovnika-high-1200-1.jpg");
+extends _templates/_template_main
+
+block variables
+	- var subDomain = ''
+	- var title = 'Тест'
+	-
+		var serviceCards1 = [
+							{'class':'first-line', 'href':'/uborka-kvartir.html', 'svg':'apartment.svg', 'card-title':'Уборка квартир', 'descr':'Поддерживающие, генеральные и уборки после ремонта. Поможет сберечь ваши силы и время, сделает квартиру уютной. Используем дорогую гипоаллергенную химию — пыль меньше накапливается, убирает запахи'},
+							{'class':'first-line', 'href':'/uborka-domov.html', 'svg':'home.svg', 'card-title':'Уборка домов', 'descr':'Уборка частных домов требует много времени. Наши клинеры сделают уборку быстрее и качественнее, какая бы не стояла задача — уборка после ремонта, генеральная или регулярная — ваш дом будет сиять и радовать глаз'},
+							{'class':'first-line', 'href':'/uborka-ofisov.html', 'svg':'empire-state-building.svg', 'card-title':'Уборка офисов', 'descr':'Эффективный способ поддержания чистоты. Уборка офиса клининговой компанией обойдется дешевле за счёт закупки моющих средств, инвентаря, оплаты труда уборщиц. Главное не тратите время на контроль работы'},
+							{'class':'first-line', 'href':'/uborka-pomescheniy.html', 'svg':'factory-plant.svg', 'card-title':'Уборка помещений', 'descr':'Клининг для компаний — комплексные услуги по поддержанию порядка и чистоты в помещениях бизнес-центров, ресторанов, торговых, складских и производственных помещений. Обученные и проверенные сотрудники'},
+							]
+	-
+		var serviceCards2 = [
+							{'class':'second-line', 'href':'/moyka-okon-i-balkonov.html', 'svg':'clean.svg', 'card-title':'Мойка окон', 'descr':'Мойка окон для квартир, коттеджей, офисов и для коммерческих объектов. Это сложная задача, если окна панорамные, сильно загрязнены или на высоте. Моем любое остекление: от окон в квартире до витрин'},
+							{'class':'second-line', 'href':'/himchistka.html', 'svg':'bubbles.svg', 'card-title':'Химчистка на дому', 'descr':'Вернем чистоту и свежесть коврам и мягкой мебели. Мощное оборудование и безопасная химия помогут вывести въевшиеся пятна от соков, грязи и разводы от моющих средств. Также чистим шторы, игрушки и салон авто'},
+							{'class':'second-line', 'href':'/uborka-pomescheniy/uborka-posle-remonta.html', 'svg':'roller.svg', 'card-title':'После ремонта', 'descr':'После строительства и ремонта требуется разовая, но трудоёмкая уборка. Полностью уберем бетонную пыль, следы шпатлёвки, клея и краски, не навредив отделке. Менеджер назовёт точные сроки и цены после выезда'},
+							{'class':'second-line', 'href':'/uborka-pomescheniy/generalnaya-uborka.html', 'svg':'cleaning-tools.svg', 'card-title':'Генеральная уборка', 'descr':'Убираем санузлы, кухни, комнаты и помещения. Услугу часто заказывают для больших помещений и площадей, а также перед переездом в съёмную квартиру. Рекомендуем проводить один раз в 1-3 месяца'},
+							]
+
+block content
+	section.section.section-services
+		.container
+			+service-cards(serviceCards1)
+			+service-cards(serviceCards2)
