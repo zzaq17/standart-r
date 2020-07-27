@@ -1,6 +1,6 @@
 //- MainPage Forms
 mixin form_mainpage-mainscreen
-	form(method="post" onsubmit="ym(25151147,'reachGoal','first-screen'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','first-screen'); ga ('send', 'event', 'lead', 'sended'); return true;")
 		.success
 			div
 				.title Спасибо за заявку!
@@ -23,7 +23,7 @@ mixin form_mainpage-mainscreen
 			a(href="https://standartcleaning.ru/politika-opd") нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных
 
 mixin form_mainpage-cta
-	form.lazyload(method="post" onsubmit="ym(25151147,'reachGoal','cta'); return true;" data-bg="../"+formBackground+"")
+	form.lazyload(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ga ('send', 'event', 'lead', 'sended'); return true;" data-bg="../"+formBackground+"")
 		.title
 			| Узнайте стоимость сейчас!
 		.success
@@ -49,7 +49,7 @@ mixin form_mainpage-cta
 
 
 mixin form_mainpage-manager
-	form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ga ('send', 'event', 'lead', 'sended'); return true;")
 		.success
 			div
 				.title Спасибо за заявку!
@@ -73,7 +73,7 @@ mixin form_mainpage-manager
 
 //- First Screen Form
 mixin form_mainscreen
-	form(method="post" onsubmit="ym(25151147,'reachGoal','first-screen'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','first-screen'); ga ('send', 'event', 'lead', 'sended'); return true;")
 		.success
 			div
 				.title Спасибо за заявку!
@@ -101,7 +101,7 @@ mixin form_cta
 	if formBackground
 		section.section.cta
 			.container.lazyload(style='background-blend-mode: overlay; background-color: rgba(0, 0, 0, .5); background-position: center center; background-size: cover; background-repeat: no-repeat;' data-bg='../'+formBackground+'')
-				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); return true;")
+				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ga ('send', 'event', 'lead', 'sended'); return true;")
 					.success
 						div
 							.title Спасибо за заявку!
@@ -124,7 +124,7 @@ mixin form_cta
 	else
 		section.section.cta
 			.container.lazyload(style='background-blend-mode: overlay; background-color: rgba(0, 0, 0, .5); background-position: center center; background-size: cover; background-repeat: no-repeat;' data-bg='../img/cta__background.jpg')
-				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); return true;")
+				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ga ('send', 'event', 'lead', 'sended'); return true;")
 					.success
 						div
 							.title Спасибо за заявку!
@@ -147,7 +147,7 @@ mixin form_cta
 
 //- Form for komm pages
 mixin form_manager
-	form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ga ('send', 'event', 'lead', 'sended'); return true;")
 		.success
 			div
 				.title Спасибо за заявку!
@@ -170,7 +170,7 @@ mixin form_manager
 
 //- Modal Window Forms
 mixin form_modal
-	form( method="post" onsubmit="ym(25151147,'reachGoal','consult-popup'); return true;")
+	form( method="post" onsubmit="ym(25151147,'reachGoal','consult-popup'); ga ('send', 'event', 'lead', 'sended'); return true;")
 		.success
 			div
 				.title Спасибо за заявку!
@@ -195,7 +195,7 @@ mixin form_modal
 
 //- Calculator Form
 mixin form_calculator
-	form(method="post" onsubmit="ym(25151147,'reachGoal','calculator'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','calculator'); ga ('send', 'event', 'lead', 'sended'); return true;")
 		.success
 			div
 				.title Спасибо за заявку!
