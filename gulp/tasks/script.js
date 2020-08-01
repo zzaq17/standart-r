@@ -11,7 +11,7 @@ module.exports = function script() {
 	'src/local_modules/ihavecookies/jquery.ihavecookies.min.js', // ShowingCookies
 	'src/local_modules/mask-plugin/jquery.mask.min.js', // Mask for inputs
 	// 'src/local_modules/SourceBuster/sourcebuster.min.js', // sourcebuster
-	// 'src/local_modules/activity60/jquery.activity.min.js', // Goal 60 sec
+	'src/local_modules/activity60/jquery.activity.min.js', // Goal 60 sec
 	'src/js/calc_flat.js', // Calculator Part
 	'src/js/calc_houses.js', // Calculator Part
 	'src/js/thousandSeparator.js', // Calculator Part

@@ -1,99 +1,128 @@
 //- MainPage Forms
 mixin form_mainpage-mainscreen
-	form(method="post" onsubmit="ym(25151147,'reachGoal','first-screen'); ga ('send', 'event', 'lead', 'sended'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','first-screen'); ym(25151147,'reachGoal','lead'); gtag('event', 'first-screen', { 'event_category': 'lead', 'event_label': 'first-screen'}); return true;")
+
 		.success
 			div
 				.title Спасибо за заявку!
 				div Мы перезвоним вам в ближайшее время.
 				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+
 		.title
 			h3 Рассчитайте стоимость
+
 		input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
 		input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+
 		//- hidden fields
 		input(type="hidden" name="DATA[TITLE]" value="Заявка с главной Раменское")
 		input(type="hidden" name="DATA[UF_CRM_1590424887]" value="Раменское"+h1+"")
 		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
-		input.clienID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+		input.clientID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+
 		button.btn__t-white.hvr-bob(type="submit")
 			i.fa.fa-send(aria-hidden='true')
 			span Отправить
+
 		.politika__mainpage
 			i.far.fa-check-square(aria-hidden='true')
 			a(href="https://standartcleaning.ru/politika-opd") нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных
 
+
+
 mixin form_mainpage-cta
-	form.lazyload(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ga ('send', 'event', 'lead', 'sended'); return true;" data-bg="../"+formBackground+"")
+	form.lazyload(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ym(25151147,'reachGoal','lead'); gtag('event', 'cta', { 'event_category': 'lead', 'event_label': 'cta'}); return true;" data-bg="../"+formBackground+"")
+
 		.title
 			| Узнайте стоимость сейчас!
+
 		.success
 			div
 				.title Спасибо за заявку!
 					div Мы перезвоним вам в ближайшее время.
 					div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+
 		.form-elem
 			input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
 			input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+
 			//- hidden fields
 			input(type="hidden" name="DATA[TITLE]" value="Заявка с главной Раменское")
 			input(type="hidden" name="DATA[UF_CRM_1590424887]" value="Раменское"+h1+"")
 			input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
-			input.clienID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+			input.clientID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+
 			button.btn__t-white.hvr-bob(type='submit')
 				i.fa.fa-send(aria-hidden='true')
 				span Отправить
+
 		a.pd-wrapper(href="https://standartcleaning.ru/politika-opd")
 			i.fa.fa-check-square-o(aria-hidden="true")
 			span
 				| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных компании «Стандарт»
 
 
+
 mixin form_mainpage-manager
-	form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ga ('send', 'event', 'lead', 'sended'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ym(25151147,'reachGoal','lead'); gtag('event', 'cta', { 'event_category': 'lead', 'event_label': 'cta'}); return true;")
+
 		.success
 			div
 				.title Спасибо за заявку!
 				div Мы перезвоним вам в ближайшее время.
 				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+
 		input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
 		input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+
 		//- hidden fields
 		input(type="hidden" name="DATA[TITLE]" value="Заявка из на выезд менеджера")
 		input(type="hidden" name="DATA[UF_CRM_1590424887]" value="Раменское"+h1+"")
 		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
-		input.clienID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+		input.clientID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+
 		button.btn__t-white.hvr-bob(type='submit')
 			i.fa.fa-send(aria-hidden='true')
 			span Отправить
+
 		a.pd-wrapper(href='https://standartcleaning.ru/politika-opd')
 			i.far.fa-check-square(aria-hidden='true')
 			| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных компании «Стандарт»
 
 //- END MainPage Forms
 
+
+
 //- First Screen Form
 mixin form_mainscreen
-	form(method="post" onsubmit="ym(25151147,'reachGoal','first-screen'); ga ('send', 'event', 'lead', 'sended'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','first-screen'); ym(25151147,'reachGoal','lead'); gtag('event', 'first-screen', { 'event_category': 'lead', 'event_label': 'first-screen'}); return true;")
+
 		.success
 			div
 				.title Спасибо за заявку!
 				div Мы перезвоним вам в ближайшее время.
 				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+
 		.title
 			| Рассчитайте стоимость
+
 		input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
 		input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+
 		//- hidden fields
 		input(type="hidden" name="DATA[TITLE]" value="Заявка на обратный звонок")
 		input(type="hidden" name="DATA[UF_CRM_1590424887]" value="Раменское"+h1+"")
 		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
-		input(type="hidden" class="clienID" name="DATA[UF_CRM_1587037828276]" value="")
+		input(type="hidden" class="clientID" name="DATA[UF_CRM_1587037828276]" value="")
+
 		button.btn__green.hvr-bob(type='submit')
 			i.fab.fa-telegram-plane(aria-hidden='true')
 			span Отправить
+
 		a.politika(href="https://standartcleaning.ru/politika-opd")
 			i.far.fa-check-square(aria-hidden='true')
 			| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных
+
 
 
 //- Usual form for NOT komm service and subservice pages
@@ -101,53 +130,69 @@ mixin form_cta
 	if formBackground
 		section.section.cta
 			.container.lazyload(style='background-blend-mode: overlay; background-color: rgba(0, 0, 0, .5); background-position: center center; background-size: cover; background-repeat: no-repeat;' data-bg='../'+formBackground+'')
-				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ga ('send', 'event', 'lead', 'sended'); return true;")
+
+				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ym(25151147,'reachGoal','lead'); gtag('event', 'cta', { 'event_category': 'lead', 'event_label': 'cta'}); return true;")
+
 					.success
 						div
 							.title Спасибо за заявку!
 							div Мы перезвоним вам в ближайшее время.
 							div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+
 					h2 Узнайте стоимость уборки сейчас!
 					p Вызвать менеджера для оценки объекта, просчитать примерную стоимость, узнать про акции и спецпредложения можно, позвонив по телефону, либо оставив заявку на сайте
+
 					input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
 					input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+
 					//- hidden fields
 					input(type="hidden" name="DATA[TITLE]" value="Заявка на обратный звонок")
 					input(type="hidden" name="DATA[UF_CRM_1590424887]" value="Раменское"+h1+"")
 					input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
-					input(type="hidden" class="clienID" name="DATA[UF_CRM_1587037828276]" value="")
+					input(type="hidden" class="clientID" name="DATA[UF_CRM_1587037828276]" value="")
+
 					button.btn__green.hvr-bob.form-item(type='submit')
 						span Отправить
+
 					a.pd-wrapper(href='https://standartcleaning.ru/politika-opd')
 						i.far.fa-check-square(aria-hidden='true')
 						| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных компании «Стандарт»
 	else
 		section.section.cta
 			.container.lazyload(style='background-blend-mode: overlay; background-color: rgba(0, 0, 0, .5); background-position: center center; background-size: cover; background-repeat: no-repeat;' data-bg='../img/cta__background.jpg')
-				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ga ('send', 'event', 'lead', 'sended'); return true;")
+
+				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ym(25151147,'reachGoal','lead'); gtag('event', 'cta', { 'event_category': 'lead', 'event_label': 'cta'}); return true;")
+
 					.success
 						div
 							.title Спасибо за заявку!
 							div Мы перезвоним вам в ближайшее время.
 							div Если сейчас не рабочее время, то мы позвоним утром после 9:00
+
 					h2 Узнайте стоимость уборки сейчас!
 					p Вызвать менеджера для оценки объекта, просчитать примерную стоимость, узнать про акции и спецпредложения можно, позвонив по телефону, либо оставив заявку на сайте
+
 					input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
 					input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+
 					//- hidden fields
 					input(type="hidden" name="DATA[TITLE]" value="Заявка на обратный звонок")
 					input(type="hidden" name="DATA[UF_CRM_1590424887]" value="Раменское"+h1+"")
 					input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
-					input(type="hidden" class="clienID" name="DATA[UF_CRM_1587037828276]" value="")
+					input(type="hidden" class="clientID" name="DATA[UF_CRM_1587037828276]" value="")
+
 					button.btn__green.hvr-bob.form-item(type='submit')
 						span Отправить
+
 					a.pd-wrapper(href='https://standartcleaning.ru/politika-opd')
 						i.far.fa-check-square(aria-hidden='true')
 						| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных компании «Стандарт»
 
+
+
 //- Form for komm pages
 mixin form_manager
-	form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ga ('send', 'event', 'lead', 'sended'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ym(25151147,'reachGoal','lead'); gtag('event', 'cta', { 'event_category': 'lead', 'event_label': 'cta'}); return true;")
 		.success
 			div
 				.title Спасибо за заявку!
@@ -155,22 +200,27 @@ mixin form_manager
 				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
 		input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
 		input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+
 		//- hidden fields
 		input(type="hidden" name="DATA[TITLE]" value="Заявка на выезд менеджера")
 		input(type="hidden" name="DATA[UF_CRM_1590424887]" value="Раменское"+h1+"")
 		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
-		input.clienID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+		input.clientID(type="hidden" name="DATA[UF_CRM_1587037828276]" value="")
+
 		button.btn__t-white.hvr-bob(type='submit')
 			i.fa.fa-send(aria-hidden='true')
 			span Отправить
+
 		a.pd-wrapper(href="https://standartcleaning.ru/politika-opd")
 			i.fa.fa-check-square-o(aria-hidden="true")
 			span
 				| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных компании «Стандарт»
 
+
+
 //- Modal Window Forms
 mixin form_modal
-	form( method="post" onsubmit="ym(25151147,'reachGoal','consult-popup'); ga ('send', 'event', 'lead', 'sended'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','consult-popup'); ym(25151147,'reachGoal','lead'); gtag('event', 'consult-popup', { 'event_category': 'lead', 'event_label': 'consult-popup'}); return true;")
 		.success
 			div
 				.title Спасибо за заявку!
@@ -178,24 +228,29 @@ mixin form_modal
 				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
 		.title Заявка
 		.subtitle Заполните поля ниже и отправьте нам заявку
+
 		input.form-control.form-item(type="text" name="DATA[NAME]" placeholder="Имя")
 		input.form-control.form-item.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+
 		//- hidden fields
 		input(type="hidden" name="DATA[TITLE]" value="Заявка на консультацию")
 		input(type="hidden" name="DATA[UF_CRM_1590424887]" value="Раменское"+h1+"")
 		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
-		input(type="hidden" class="clienID" name="DATA[UF_CRM_1587037828276]" value="")
-		button.btn__t-white.hvr-bob(type="submit")
+		input(type="hidden" class="clientID" name="DATA[UF_CRM_1587037828276]" value="")
+
+		button.btn__green.hvr-bob(type="submit")
 			i.fas.fa-phone.consult-call(aria-hidden='true')
 			span Отправить
+
 		a.descr(href="https://standartcleaning.ru/politika-opd")
 			i.far.fa-check-square(aria-hidden='true')
 			span нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных
 
 
+
 //- Calculator Form
 mixin form_calculator
-	form(method="post" onsubmit="ym(25151147,'reachGoal','calculator'); ga ('send', 'event', 'lead', 'sended'); return true;")
+	form(method="post" onsubmit="ym(25151147,'reachGoal','calculator'); ym(25151147,'reachGoal','lead'); gtag('event', 'calculator', { 'event_category': 'lead', 'event_label': 'calculator'}); return true;")
 		.success
 			div
 				.title Спасибо за заявку!
@@ -203,14 +258,77 @@ mixin form_calculator
 				div Если сейчас не рабочее время, то мы позвоним утром после 9:00
 		input.form-control.form-item(disabled type="text" name="DATA[NAME]" placeholder="Имя")
 		input.form-control.form-item.input_tel(disabled type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+
 		//- hidden fields
 		input(type="hidden" name="DATA[TITLE]" value="Заявка на обратный звонок")
 		input(type="hidden" name="DATA[UF_CRM_1567944617679]" value="Раменское"+h1+"")
 		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
-		input(type="hidden" class="clienID" name="DATA[UF_CRM_1587037828276]" value="")
+		input(type="hidden" class="clientID" name="DATA[UF_CRM_1587037828276]" value="")
+
 		button.btn__green.hvr-bob(disabled type='submit')
 			i.fab.fa-telegram-plane(aria-hidden='true')
 			span Отправить
 		a.politika(href="https://standartcleaning.ru/politika-opd")
 			i.far.fa-check-square(aria-hidden='true')
 			| нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных
+
+
+
+//- Contacts page form
+mixin form_contacts
+	form(method="post" onsubmit="ym(25151147,'reachGoal','contacts'); ym(25151147,'reachGoal','message'); gtag('event', 'contacts', { 'event_category': 'message', 'event_label': 'contacts'}); return true;")
+
+		.success
+			div
+				.title Спасибо!
+					div Мы получили ваше письмо.
+
+		p оставьте сообщение
+		p Напишите вашу жалобу или отзыв здесь. Это самый быстрый способ после телефона. Информация попадет только к директору и будет опубликована только с вашего разрешения.
+
+		.two
+			input(type="text" name="DATA[NAME]" placeholder="Имя")
+			input.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" required="")
+		textarea(rows='3' name="DATA[COMMENTS]" placeholder='Ваше сообщение' required='' maxlength="1024")
+
+
+		//- hidden fields
+		input(type="hidden" name="DATA[TITLE]" value="Сообщение из Контактов")
+		input(type="hidden" name="DATA[UF_CRM_1589028179]" value="Раменское"+h1+"")
+		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+		input.clientID(type="hidden" name="DATA[UF_CRM_1589028248]" value="")
+
+
+		button.btn__green.hvr-bob(type='submit')
+			i.fa.fa-send(aria-hidden='true')
+			span Отправить
+
+		a.politika(href="https://standartcleaning.ru/politika-opd")
+			i.far.fa-check-square(aria-hidden='true')
+			span нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных
+
+
+
+//- About page form
+mixin form_about
+	form(method="post" onsubmit="ym(25151147,'reachGoal','about'); ym(25151147,'reachGoal','message'); gtag('event', 'about', { 'event_category': 'message', 'event_label': 'about'}); return true;")
+		.success
+			div
+				.title Спасибо!
+					div Мы получили ваше письмо.
+		p Есть вопросы или отзыв? Можете оставить его здесь.
+		.two
+			input(type="text" name="DATA[NAME]" placeholder="Имя" maxlength="24")
+			input.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" minlength="10" required="")
+		textarea(rows='3' name="DATA[COMMENTS]" placeholder='Ваше сообщение' required='' maxlength="1024")
+		//- hidden fields
+		input(type="hidden" name="DATA[TITLE]" value="Сообщение из О Компании")
+		input(type="hidden" name="DATA[UF_CRM_1589028179]" value="Раменское"+h1+"")
+		input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
+		input.clientID(type="hidden" name="DATA[UF_CRM_1589028248]" value="")
+		button.btn__green.hvr-bob(type='submit')
+			i.fa.fa-send(aria-hidden='true')
+			span Отправить
+		a.politika(href="https://standartcleaning.ru/politika-opd")
+			i.far.fa-check-square(aria-hidden='true')
+			span нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных

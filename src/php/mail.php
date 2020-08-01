@@ -34,7 +34,7 @@ $message = '
 <body>
 	<table style="width: 100%; border-collapse: collapse;">
 		<tr style="background-color: #00bc80; background-image: url(../img/Logo-Klever-1x1.png)">
-		<td style="padding: 20px; text-align: center; color: white; font-size: 22px" colspan="2"><b>Заявка </br>ramenskoye</b></td>
+		<td style="padding: 20px; text-align: center; color: white; font-size: 22px" colspan="2"><b>Заявка Раменское</b></td>
 		</tr>
 		<tr>
 		<td style="padding: 10px; border: #eee 1px solid; max-width: 100px;"><b>Имя</b></td>

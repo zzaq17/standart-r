@@ -1,5 +1,5 @@
 @import "../mixins/media-in"
-$items: 7
+$items: 20
 $transition-duration: 0.3s
 $transition-delay: 0.03s
 
@@ -72,6 +72,9 @@ a
 	// Open nav
 	& ~ .menu-mobile
 		margin-bottom: 100px
+		width: 100%
+		overflow-y: auto
+		height: 80vh
 		pointer-events: auto
 		transform: translate(40px, 20px)
 
@@ -150,6 +153,7 @@ a
 .menu-mobile
 	display: inline-block
 	margin: 20px
+
 	// Don't want pointer-events as menu is closed
 	pointer-events: none
 	transition: $transition-duration
@@ -220,7 +224,6 @@ a
 /*||||||||Call Button||||||||||*/
 
 .call-button>a
-	// width: 100%
 	align-self: center
 	padding: 0 25px
 	font-size: 20px

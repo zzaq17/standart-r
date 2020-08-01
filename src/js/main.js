@@ -1,8 +1,10 @@
-// @ts-nocheck
-
 $(function () {
 	// Custom JS
 	$(document).ready(function () {
+
+		// // set actual year for copywrite
+		var dataToday = new Date();
+		document.getElementById("copy-year").innerHTML = dataToday.getFullYear();
 
 		// Showing Cookies
 		$(`body`).ihavecookies()
@@ -33,6 +35,24 @@ $(function () {
 			document.getElementById(`toggle`).checked = false
 		})
 
+		var logoMobile = $('.mobile-header .logo-mobile, .mobile-header .call-button');
+		document.querySelector('#toggle').addEventListener('change', function () {
+			if ( this.checked ) {
+				logoMobile.css({'display' : 'none'});
+			} else
+				logoMobile.css({'display' : 'block'});
+		});
+
+		// Jentle Scroll
+		$(`.menu, .menu-mobile, .logo-mobile, .logo-place`).on(`click`, `a[href^="#"]`, function (event) {
+			event.preventDefault()
+			const id = $(this).attr(`href`)
+			const top = $(id).offset().top
+			$(`body,html`).animate({
+				scrollTop: top - 65
+			}, 1200)
+		});
+
 		// SVG hack
 		$('img.svg').each(function(){
 			var $img = $(this);
@@ -50,16 +70,6 @@ $(function () {
 			  $img.replaceWith($svg);
 			}, 'xml');
 		  });
-
-		// Jentle Scroll
-		$(`.menu, .menu-mobile, .logo-mobile, .logo-place`).on(`click`, `a[href^="#"]`, function (event) {
-			event.preventDefault()
-			const id = $(this).attr(`href`)
-			const top = $(id).offset().top
-			$(`body,html`).animate({
-				scrollTop: top - 65
-			}, 1200)
-		})
 
 		// Tabs
 		let tab = function () {
@@ -92,6 +102,7 @@ $(function () {
 		tab();
 
 		// modal windows
+		// btn "Консультация"
 		$(`.modal-btn`).click(function () {
 			$(`.modal`).addClass(`show`)
 			$(`body`).addClass(`modal-opened`)
@@ -107,6 +118,8 @@ $(function () {
 			}
 		})
 
+
+
 		// axaj form
 		$(`form`).submit(function () {
 			const th = $(this)
@@ -120,7 +133,7 @@ $(function () {
 					$(th).find(`.success`).removeClass(`active`).fadeOut()
 					th.trigger(`reset`)
 				}, 3500)
-				console.log('sended to Bitrix1')
+				// console.log('sended to Bitrix1')
 			})
 			$.ajax({
 				type: `POST`,
@@ -132,15 +145,16 @@ $(function () {
 					$(th).find(`.success`).removeClass(`active`).fadeOut()
 					th.trigger(`reset`)
 				}, 3500)
-				console.log('sended to mail1')
+				// console.log('sended to mail1')
 			})
 			return false
 		})
 
-		// Get ClienId Metrika
+		// Get clientID Metrika
 		window.onload = function () {
+			// ym(61771486, 'getClientID', function (clientID) {
 			ym(25151147, 'getClientID', function (clientID) {
-				document.getElementsByClassName(`clienID`).value = clientID;
+				$('.clientID').attr('value', clientID);
 			});
 		}
 		// SourceBuster
@@ -167,8 +181,18 @@ $(function () {
 		//   },
 		// });
 
-		// 60 seconds Goal
-		// $('body').activity({'achieveTime':60,'testPeriod':10, useMultiMode: 1, callBack: function (e) { ga('send', 'event', 'Activity', '60_sec'); yaCounter25151147.reachGoal('60_sec'); }});
+		// // 60 seconds Goal
+		// $('body').activity({
+		// 	'achieveTime':60,
+		// 	'testPeriod':10,
+		// 	useMultiMode: 1,
+		// 	callBack: function (e) {
+		// 		ym(61771486,'reachGoal','60_sec');
+		// 		// ym(25151147,'reachGoal','60_sec');
+		// 		gtag('event', '60_sec', { 'event_category': 'Activity'});
+		// 		console.log('60_sec');
+		// 		}
+		// });
 
 		// sliders
 		// $('.lazy').slick({
@@ -495,25 +519,32 @@ $(function () {
 					prevArrow: `<button class="slick-prev slick-arrow"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>`,
 					nextArrow: `<button class="slick-next slick-arrow"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>`,
 					responsive: [{
-							breakpoint: 1280,
-							settings: {
-								slidesToShow: +$(this).attr(`data-items-lg`),
-								slidesToScroll: 1,
-							}
-						},
-						{
-							breakpoint: 992,
-							settings: {
-								slidesToShow: +$(this).attr(`data-items-md`),
-								slidesToScroll: 1
-							}
-						},
-						{
-							breakpoint: 768,
-							settings: {
-								slidesToShow: +$(this).attr(`data-items-sm`),
-								slidesToScroll: 1
-							}
+						breakpoint: 1920,
+						settings: {
+							slidesToShow: +$(this).attr(`data-items-lg`),
+							slidesToScroll: 3
+						}
+					},
+					{
+						breakpoint: 1025,
+						settings: {
+							slidesToShow: +$(this).attr(`data-items-md`),
+							slidesToScroll: 2
+						}
+					},
+					{
+						breakpoint: 769,
+						settings: {
+							slidesToShow: +$(this).attr(`data-items-sm`),
+							slidesToScroll: 1
+						}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: +$(this).attr(`data-items-xs`),
+							slidesToScroll: 1
+						}
 						}
 					]
 				})

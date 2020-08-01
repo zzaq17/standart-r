@@ -52,26 +52,6 @@ block content
 						a(href="https://www.facebook.com/standartcleaningzhuk/")
 							i.fab.fa-facebook
 					.elem
-						form(method="post" onsubmit="ym(25151147,'reachGoal','about'); ga ('send', 'event', 'message', 'sended'); return true;")
-							.success
-								div
-									.title Спасибо!
-										div Мы получили ваше письмо.
-							p Есть вопросы или отзыв? Можете оставить его здесь.
-							.two
-								input(type="text" name="DATA[NAME]" placeholder="Имя" maxlength="24")
-								input.input_tel(type="text" name="DATA[PHONE_WORK]" placeholder="+7900 123-45-67" minlength="10" required="")
-							textarea(rows='3' name="DATA[COMMENTS]" placeholder='Ваше сообщение' required='' maxlength="1024")
-							//- hidden fields
-							input(type="hidden" name="DATA[TITLE]" value="Сообщение из О Компании")
-							input(type="hidden" name="DATA[UF_CRM_1589028179]" value="Раменское"+h1+"")
-							input(type="hidden" name="DATA[PAGE]" value=""+pageUrl+"")
-							input.clienID(type="hidden" name="DATA[UF_CRM_1589028248]" value="")
-							button.btn__green.hvr-bob(type='submit')
-								i.fa.fa-send(aria-hidden='true')
-								span Отправить
-							a.politika(href="https://standartcleaning.ru/politika-opd")
-								i.far.fa-check-square(aria-hidden='true')
-								span нажимая кнопку "Отправить" вы принимаете политику обработки персональных данных
+						+form_about
 
 

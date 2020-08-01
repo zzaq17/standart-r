@@ -4,7 +4,7 @@ mixin otzyvy
 			.container
 				.section-title
 					h2 Отзывы наших клиентов
-				.carousel.review-carousel(data-items-xl='1', data-items-lg='1', data-items-md='1', data-items-sm='1', data-play='1', data-speed='3500')
+				.carousel.review-carousel(data-items-xl='1', data-items-lg='1', data-items-md='1', data-items-sm='1', data-items-xs='1', data-play='1', data-speed='3500')
 					each index, val in otzyvy
 						.slide-item
 							img.photo.lazyload(src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="" +index['img'] alt="")
