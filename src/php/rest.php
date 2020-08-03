@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		'TITLE' => $leadData['TITLE'],
 		'NAME' => $leadData['NAME'],
 		'PHONE_WORK' => $leadData['PHONE_WORK'],
-		'UF_CRM_1587037828276' => $leadData['UF_CRM_1587037828276'],
+		'UF_CRM_1596305490' => $leadData['UF_CRM_1596305490'],
 		'UF_CRM_1590424887' => $leadData['UF_CRM_1590424887'],
 		'PAGE' => $leadData['UF_CRM_1590425151'],
 	);
