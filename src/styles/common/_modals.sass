@@ -4,7 +4,8 @@ body.modal-opened
 	+mq('sm')
 		margin-right: 0
 
-.modal
+.modal,
+.modal-promo-sticker
 	display: none
 	padding: 50px 15px
 	background: rgba(0, 0, 0, 0.6)
@@ -52,7 +53,6 @@ body.modal-opened
 			right: 15px
 			top: 15px
 			z-index: 10
-			color: $c300
 
 			i
 				display: block
@@ -147,3 +147,18 @@ body.modal-opened
 				padding-right: .5em
 			&:hover
 				opacity: 1
+
+
+.modal-promo-sticker.show
+	.modal-window
+		max-width: 640px
+		.title
+			margin-bottom: 20px
+		a.btn__green.hvr-bob
+			justify-self: center
+			margin-bottom: 20px
+			max-width: 320px
+		p
+			line-height: 1.35
+		p.center
+			text-align: center

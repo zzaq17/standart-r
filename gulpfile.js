@@ -26,9 +26,9 @@ gulp.task('imagemin', function() {
 gulp.task('deploy', function() {
 
 	var conn = ftp.create({
-		host:      'ftp70.hostland.ru',
+		host:      'ftp60.hostland.ru',
 		user:      'host1681653_dev',
-		password:  'kirpix',
+		password:  'n5oQ1L1el6',
 
 		// host:      'ftp21.hostland.ru',
 		// user:      'host1328462_full',

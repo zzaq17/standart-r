@@ -1,0 +1,52 @@
+#promo-sticker
+	position: fixed
+	bottom: 20px
+	left: 5%
+	z-index: 10
+
+	display: grid
+	grid-template: auto / auto auto
+	a
+		background-color: transparent
+
+		// min-width: 320px
+
+		display: grid
+		grid-template: auto / auto auto
+		+mq('sm')
+			grid-template: auto / auto auto
+		.promo-sticker-wrap
+			display: grid
+			grid-template: auto / auto
+			justify-items: center
+			img
+				width: 120px
+				position: relative
+				// left: 80px
+				transition: width .3s
+				// +mq('xs')
+					// left: -50px
+			img:hover
+				width: 130px
+				transition: width .3s
+
+			p.descr
+				color: #aa0000
+				font-weight: 800
+				font-feature-settings: salt
+				font-size: 20px
+				position: relative
+				top: 20px
+				// left: 83px
+				// +mq('xs')
+					// left: 0
+	i
+		color: #777
+		font-size: 16px
+		justify-self: left
+		margin-top: 20px
+#promo-sticker.hidden
+	bottom: -40px
+	left: -10px
+	p.descr.hidden
+		display: none

@@ -15,8 +15,7 @@ $(function () {
 			if (bg) {
 				e.target.style.backgroundImage = 'url(' + bg + ')';
 			}
-		});
-
+			
 		// Enable input Masks
 		$(function () {
 			$(`.input_tel`).mask(`+0(000) 000-00-00`)
@@ -97,8 +96,6 @@ $(function () {
 			}
 
 		};
-
-
 		tab();
 
 		// modal windows
@@ -118,6 +115,28 @@ $(function () {
 			}
 		})
 
+		// btn "Промо"
+		$(`.modal-btn-promo-sticker`).click(function () {
+			$(`.modal-promo-sticker`).addClass(`show`)
+			$(`body`).addClass(`modal-opened`)
+		})
+		$(`.modal-promo-sticker .modal-window .close`).click(function () {
+			$(`.modal-promo-sticker`).removeClass(`show`)
+			$(`body`).removeClass(`modal-opened`)
+		})
+		$(`.modal-promo-sticker`).click(function (e) {
+			if ($(e.target).closest(`.modal-window`).length != 1) {
+				$(`.modal-promo-sticker`).removeClass(`show`)
+				$(`body`).removeClass(`modal-opened`)
+			}
+		})
+
+		// promo sticker close btn
+		$(`#promo-sticker i`).on(`click`, function () {
+			$('#promo-sticker').addClass('hidden');
+			$('#promo-sticker a.modal-btn-promo-sticker p.descr').addClass('hidden');
+			$(`#promo-sticker i`).css({'display' : 'none'});
+			})
 
 
 		// axaj form
@@ -553,6 +572,7 @@ $(function () {
 		initSlickSlider($(`.carousel`));
 		initSlickSlider($(`.slider-portfolio`));
 
+		})
 	})
 })
 
@@ -560,4 +580,27 @@ $(window).on(`load`, function () {
 	$(`.preloader`).delay(0).fadeOut(`fast`);
 	// calltouch
 	(function(w,d,n,c){w.CalltouchDataObject=n;w[n]=function(){w[n]["callbacks"].push(arguments)};if(!w[n]["callbacks"]){w[n]["callbacks"]=[]}w[n]["loaded"]=false;if(typeof c!=="object"){c=[c]}w[n]["counters"]=c;for(var i=0;i<c.length;i+=1){p(c[i])}function p(cId){var a=d.getElementsByTagName("script")[0],s=d.createElement("script"),i=function(){a.parentNode.insertBefore(s,a)};s.type="text/javascript";s.async=true;s.src="https://mod.calltouch.ru/init.js?id="+cId;if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",i,false)}else{i()}}})(window,document,"ct","eh1jrj0z");
+
+	// btn "Промо"
+	$(`.modal-btn-promo-sticker`).click(function () {
+		$(`.modal-promo-sticker`).addClass(`show`)
+		$(`body`).addClass(`modal-opened`)
+	})
+	$(`.modal-promo-sticker .modal-window .close`).click(function () {
+		$(`.modal-promo-sticker`).removeClass(`show`)
+		$(`body`).removeClass(`modal-opened`)
+	})
+	$(`.modal-promo-sticker`).click(function (e) {
+		if ($(e.target).closest(`.modal-window`).length != 1) {
+			$(`.modal-promo-sticker`).removeClass(`show`)
+			$(`body`).removeClass(`modal-opened`)
+		}
+	})
+
+		// promo sticker close btn
+		$(`#promo-sticker i`).on(`click`, function () {
+			$('#promo-sticker').addClass('hidden');
+			$('#promo-sticker a.modal-btn-promo-sticker p.descr').addClass('hidden');
+			$(`#promo-sticker i`).css({'display' : 'none'});
+			})
 })
