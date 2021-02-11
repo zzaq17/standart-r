@@ -15,7 +15,8 @@ $(function () {
 			if (bg) {
 				e.target.style.backgroundImage = 'url(' + bg + ')';
 			}
-			
+		});
+
 		// Enable input Masks
 		$(function () {
 			$(`.input_tel`).mask(`+0(000) 000-00-00`)
@@ -96,6 +97,8 @@ $(function () {
 			}
 
 		};
+
+
 		tab();
 
 		// modal windows
@@ -131,13 +134,14 @@ $(function () {
 			}
 		})
 
-		// promo sticker close btn
-		$(`#promo-sticker i`).on(`click`, function () {
-			$('#promo-sticker').addClass('hidden');
-			$('#promo-sticker a.modal-btn-promo-sticker p.descr').addClass('hidden');
-			$(`#promo-sticker i`).css({'display' : 'none'});
-			})
+			// promo sticker close btn
+			$(`#promo-sticker i`).on(`click`, function () {
+				$('#promo-sticker').addClass('hidden');
+				$('#promo-sticker a.modal-btn-promo-sticker p.descr').addClass('hidden');
+				$(`#promo-sticker i`).css({'display' : 'none'});
+				})
 
+				
 
 		// axaj form
 		$(`form`).submit(function () {
@@ -177,41 +181,41 @@ $(function () {
 			});
 		}
 		// SourceBuster
-		// sbjs.init({
+		sbjs.init({
 
-		//   // Set custom expiration period for cookies in months
-		//   // 6 months is default
-		//   lifetime: 6,
+		  // Set custom expiration period for cookies in months
+		  // 6 months is default
+		  lifetime: 6,
 
-		//   // Set custom session length in minutes
-		//   // 30 minutes is default
-		//   session_length: 30,
+		  // Set custom session length in minutes
+		  // 30 minutes is default
+		  session_length: 30,
 
-		//   // Set domain name in cookies
-		//   domain: {
-		//     host: 'standartcleaning.ru'
-		//   },
+		  // Set domain name in cookies
+		  domain: {
+		    host: 'standartcleaning.ru'
+		  },
 
-		//   // Set `utm_source` & `utm_medium` values for `typein` traffic
-		//   // Defaults are `(direct)` & `(none)`
-		//   typein_attributes: {
-		//     source: '(direct)',
-		//     medium: '(none)'
-		//   },
-		// });
+		  // Set `utm_source` & `utm_medium` values for `typein` traffic
+		  // Defaults are `(direct)` & `(none)`
+		  typein_attributes: {
+		    source: '(direct)',
+		    medium: '(none)'
+		  },
+		});
 
-		// // 60 seconds Goal
-		// $('body').activity({
-		// 	'achieveTime':60,
-		// 	'testPeriod':10,
-		// 	useMultiMode: 1,
-		// 	callBack: function (e) {
-		// 		ym(61771486,'reachGoal','60_sec');
-		// 		// ym(25151147,'reachGoal','60_sec');
-		// 		gtag('event', '60_sec', { 'event_category': 'Activity'});
-		// 		console.log('60_sec');
-		// 		}
-		// });
+		// 60 seconds Goal
+		$('body').activity({
+			'achieveTime':60,
+			'testPeriod':10,
+			useMultiMode: 1,
+			callBack: function (e) {
+				// ym(61771486,'reachGoal','60_sec');
+				ym(25151147,'reachGoal','60_sec');
+				gtag('event', '60_sec', { 'event_category': 'Activity'});
+				console.log('60_sec');
+				}
+		});
 
 		// sliders
 		// $('.lazy').slick({
@@ -572,7 +576,6 @@ $(function () {
 		initSlickSlider($(`.carousel`));
 		initSlickSlider($(`.slider-portfolio`));
 
-		})
 	})
 })
 
@@ -580,27 +583,4 @@ $(window).on(`load`, function () {
 	$(`.preloader`).delay(0).fadeOut(`fast`);
 	// calltouch
 	(function(w,d,n,c){w.CalltouchDataObject=n;w[n]=function(){w[n]["callbacks"].push(arguments)};if(!w[n]["callbacks"]){w[n]["callbacks"]=[]}w[n]["loaded"]=false;if(typeof c!=="object"){c=[c]}w[n]["counters"]=c;for(var i=0;i<c.length;i+=1){p(c[i])}function p(cId){var a=d.getElementsByTagName("script")[0],s=d.createElement("script"),i=function(){a.parentNode.insertBefore(s,a)};s.type="text/javascript";s.async=true;s.src="https://mod.calltouch.ru/init.js?id="+cId;if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",i,false)}else{i()}}})(window,document,"ct","eh1jrj0z");
-
-	// btn "Промо"
-	$(`.modal-btn-promo-sticker`).click(function () {
-		$(`.modal-promo-sticker`).addClass(`show`)
-		$(`body`).addClass(`modal-opened`)
-	})
-	$(`.modal-promo-sticker .modal-window .close`).click(function () {
-		$(`.modal-promo-sticker`).removeClass(`show`)
-		$(`body`).removeClass(`modal-opened`)
-	})
-	$(`.modal-promo-sticker`).click(function (e) {
-		if ($(e.target).closest(`.modal-window`).length != 1) {
-			$(`.modal-promo-sticker`).removeClass(`show`)
-			$(`body`).removeClass(`modal-opened`)
-		}
-	})
-
-		// promo sticker close btn
-		$(`#promo-sticker i`).on(`click`, function () {
-			$('#promo-sticker').addClass('hidden');
-			$('#promo-sticker a.modal-btn-promo-sticker p.descr').addClass('hidden');
-			$(`#promo-sticker i`).css({'display' : 'none'});
-			})
 })

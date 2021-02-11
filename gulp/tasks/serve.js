@@ -2,7 +2,7 @@ const gulp = require('gulp')
 
 const styles = require('./styles')
 const pug = require('./pug2html')
-const send = require('./fonts')
+const send = require('./send')
 const script = require('./script')
 
 const server = require('browser-sync').create()

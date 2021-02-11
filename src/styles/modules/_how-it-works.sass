@@ -76,8 +76,11 @@
 				justify-items: center
 				padding: 0
 			& img
-				height: 100%
+				height: 100px
 				width: auto
+				+mq('xs')
+					height: 100%
+					width: auto
 			& .title
 				color: $c700
 				font-size: 24px

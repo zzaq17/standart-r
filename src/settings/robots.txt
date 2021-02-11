@@ -1,0 +1,32 @@
+User-agent: *
+Disallow: /?
+Disallow: *utm*=
+Disallow: *openstat=
+Disallow: /php/
+
+User-agent: GoogleBot
+Disallow: /?
+Disallow: /php/
+Disallow: *utm*=
+Allow: /*/*.js
+Allow: /*/*.css
+Allow: /*/*.png
+Allow: /*/*.jpg
+Allow: /*/*.jpeg
+Allow: /*/*.gif
+Allow: /*/*.mp4
+
+User-agent: Yandex
+Disallow: /?
+Disallow: /php/
+Allow: /*/*.js
+Allow: /*/*.css
+Allow: /*/*.png
+Allow: /*/*.jpg
+Allow: /*/*.jpeg
+Allow: /*/*.gif
+Allow: /*/*.mp4
+Clean-Param: utm_source&utm_medium&utm_campaign
+Clean-Param: openstat
+
+Sitemap: https://ramenskoye.standartcleaning.ru/sitemap.xml

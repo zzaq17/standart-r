@@ -1,0 +1,193 @@
+############################################################################
+#### Стандартный .htaccess для проектов студии Клондайк, версия 4.6     ####
+############################################################################
+RewriteEngine On
+#  Директива включает редиректы.
+RewriteBase /
+# Без директивы (.*) = /$1 будет /var/wwww/site/web/$1  с директивой  = /$1
+Options +FollowSymLinks
+# Разрешает переход по символическим ссылкам.
+php_flag display_errors off
+# запретить отображение ошибок  (требование монитора качества)
+php_flag allow_url_fopen off
+# запретить  использовать удаленные файлы (требование проактивной защиты)
+
+# 1. Удалить www
+RewriteCond %{ENV:HTTPS} on
+#Если включен https
+RewriteRule .* - [E=SSL:s]
+#То создаем переменную  ssl с текстом s
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+# Проверяем, содержит ли домен www в начале URL.
+RewriteRule ^(.*)$ http%{ENV:SSL}://%1/$1 [R=301,L]
+# Перенаправляем удаляем www
+
+############################################################################
+#### Перенаправляем протокол http на https                              ####
+############################################################################
+RewriteCond %{HTTPS} off
+# Проверяем наличие https в URL.
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Редирект для главной (с /index.php,html на /)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP
+RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
+RewriteCond %{REQUEST_URI} !(\.[^./]+)$
+RewriteCond %{REQUEST_fileNAME} !-d
+RewriteCond %{REQUEST_fileNAME} !-f
+RewriteRule ^(.*)$ /$1.html
+
+############################################################################
+#### Компрессия статического контента для PageSpeed                     ####
+############################################################################
+<IfModule mod_deflate.c>
+AddType image/svg+xml .svg
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+AddOutputFilterByType DEFLATE application/x-font
+AddOutputFilterByType DEFLATE application/x-font-opentype
+AddOutputFilterByType DEFLATE application/x-font-otf
+AddOutputFilterByType DEFLATE application/x-font-truetype
+AddOutputFilterByType DEFLATE application/x-font-ttf
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE font/opentype
+AddOutputFilterByType DEFLATE font/otf
+AddOutputFilterByType DEFLATE font/ttf
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE image/jpg
+AddOutputFilterByType DEFLATE image/jpeg
+AddOutputFilterByType DEFLATE image/png
+AddOutputFilterByType DEFLATE image/x-icon
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE video/mp4
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive on
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/svg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType video/mp4 "access plus 1 year"
+ExpiresByType text/javascript "access plus 1 year"
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+ExpiresByType application/x-font-ttf "access plus 1 year"
+ExpiresByType application/x-font-opentype "access plus 1 year"
+ExpiresByType application/x-font-woff "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
+<IfModule mod_headers.c>
+<filesmatch "\.(ico|flv|jpg|jpeg|webp|png|gif|css|swf|woff|pdf|mp4)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesmatch>
+<filesmatch "\.(html|htm)$">
+Header set Cache-Control "max-age=7200, private, must-revalidate"
+</filesmatch>
+<filesmatch "\.(pdf)$">
+Header set Cache-Control "max-age=86400, public"
+</filesmatch>
+<filesmatch "\.(js|otf|ttf|woff|woff2)$">
+Header set Cache-Control "max-age=31536000, private"
+</filesmatch>
+</IfModule>
+############################################################################
+#### Конец общей части, далее следует собственные директивы .htaccess   ####
+############################################################################
+
+ErrorDocument 403 /errors/error403.html
+ErrorDocument 404 /errors/error404.html
+ErrorDocument 500 /errors/error500.html
+
+# Постраничные редиректы
+Redirect 301 /kliningovye-uslugi.html https://ramenskoye.standartcleaning.ru/
+Redirect 301 /chistka-divanov.html https://ramenskoye.standartcleaning.ru/himchistka/
+Redirect 301 /himchistka-mjagkoj-mebeli-na-domu.html https://ramenskoye.standartcleaning.ru/himchistka/
+Redirect 301 /himchistka-kovrov.html https://ramenskoye.standartcleaning.ru/himchistka/
+Redirect 301 /mojka-okon.html https://ramenskoye.standartcleaning.ru/moyka-okon-v-ramenskom/
+Redirect 301 /mojka-okon-alpinistami.html https://ramenskoye.standartcleaning.ru/moyka-okon-v-ramenskom/moyka-okon-alpinistami/
+Redirect 301 /kliningovaja-kompanija.html https://ramenskoye.standartcleaning.ru/o-kompanii/
+Redirect 301 /uborka-kottedzhej.html https://ramenskoye.standartcleaning.ru/uborka-domov/
+Redirect 301 /uborka-territoryi.html https://ramenskoye.standartcleaning.ru/uborka-domov/
+Redirect 301 /stoimost-uborki-kvartir.html https://ramenskoye.standartcleaning.ru/uborka-kvartir/regulyarnaya-uborka-kvartiry/
+Redirect 301 /uborka-pomeschenij.html https://ramenskoye.standartcleaning.ru/uborka-pomescheniy/
+Redirect 301 /uborka-posle-meropriyatij.html https://ramenskoye.standartcleaning.ru/uborka-posle-meropriyatiy/
+Redirect 301 /klining-kommercheskoj-nedvizhimosti.html https://ramenskoye.standartcleaning.ru/uborka-kommercheskoy-nedvizhimosti/
+Redirect 301 /postojannaja-uborka-doma.html https://ramenskoye.standartcleaning.ru/uborka-kvartir/regulyarnaya-uborka-kvartiry/
+
+Redirect 301 /promyshlennyy-alpinizm/ https://ramenskoye.standartcleaning.ru/promyshlennyy-alpinizm
+Redirect 301 /akcii/ https://ramenskoye.standartcleaning.ru/akcii
+Redirect 301 /ceny-na-kliningovye-uslugi-v-ramenskom/ https://ramenskoye.standartcleaning.ru/ceny-na-kliningovye-uslugi-v-ramenskom
+Redirect 301 /moyka-okon-v-ramenskom/moyka-okon-alpinistami/ https://ramenskoye.standartcleaning.ru/moyka-okon-v-ramenskom/moyka-okon-alpinistami
+Redirect 301 /moyka-okon-v-ramenskom/moyka-ostekleniya-i-fasadov/ https://ramenskoye.standartcleaning.ru/moyka-okon-v-ramenskom/moyka-ostekleniya-i-fasadov
+Redirect 301 /ochistka-krysh-ot-naledi-i-snega/ https://ramenskoye.standartcleaning.ru/ochistka-krysh-ot-naledi-i-snega
+Redirect 301 /uborka-domov/ekspress-uborka-doma/ https://ramenskoye.standartcleaning.ru/uborka-domov/ekspress-uborka-doma
+Redirect 301 /uborka-domov/generalnaya-uborka-doma/ https://ramenskoye.standartcleaning.ru/uborka-domov/generalnaya-uborka-doma
+Redirect 301 /uborka-domov/regulyarnaya-uborka-doma/ https://ramenskoye.standartcleaning.ru/uborka-domov/regulyarnaya-uborka-doma
+Redirect 301 /uborka-domov/uborka-kottedzha-posle-remonta/ https://ramenskoye.standartcleaning.ru/uborka-domov/uborka-kottedzha-posle-remonta
+Redirect 301 /uborka-kommercheskoy-nedvizhimosti/uborka-biznes-centra-2/ https://ramenskoye.standartcleaning.ru/uborka-kommercheskoy-nedvizhimosti/uborka-biznes-centra
+Redirect 301 /uborka-kommercheskoy-nedvizhimosti/uborka-magazina/ https://ramenskoye.standartcleaning.ru/uborka-kommercheskoy-nedvizhimosti/uborka-magazina
+Redirect 301 /uborka-kommercheskoy-nedvizhimosti/uborka-proizvodstv/ https://ramenskoye.standartcleaning.ru/uborka-kommercheskoy-nedvizhimosti/uborka-proizvodstv
+Redirect 301 /uborka-kommercheskoy-nedvizhimosti/uborka-sklada/ https://ramenskoye.standartcleaning.ru/uborka-kommercheskoy-nedvizhimosti/uborka-sklada
+Redirect 301 /uborka-kvartir/generalnaya-uborka-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/generalnaya-uborka-kvartiry
+Redirect 301 /uborka-kvartir/generalnaya-uborka-vannoy/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/generalnaya-uborka-vannoy
+Redirect 301 /uborka-kvartir/uborka-1k-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/uborka-1k-kvartiry
+Redirect 301 /uborka-kvartir/uborka-2h-komnatnoy-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/uborka-2h-komnatnoy-kvartiry
+Redirect 301 /uborka-kvartir/uborka-kvartir-posle-remonta/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/uborka-kvartir-posle-remonta
+Redirect 301 /uborka-ofisov/ezhednevnaya-uborka-ofisa/ https://ramenskoye.standartcleaning.ru/uborka-ofisov/ezhednevnaya-uborka-ofisa
+Redirect 301 /uborka-ofisov/generalnaya-uborka-ofisa/ https://ramenskoye.standartcleaning.ru/uborka-ofisov/generalnaya-uborka-ofisa
+Redirect 301 /uborka-ofisov/regulyarnana-uborka-v-ofise/ https://ramenskoye.standartcleaning.ru/uborka-ofisov/regulyarnana-uborka-v-ofise
+Redirect 301 /uborka-ofisov/uborka-ofisa-posle-remonta/ https://ramenskoye.standartcleaning.ru/uborka-ofisov/uborka-ofisa-posle-remonta
+Redirect 301 /uborka-ofisov/vechernyaya-uborka-ofisov/ https://ramenskoye.standartcleaning.ru/uborka-ofisov/vechernyaya-uborka-ofisov
+Redirect 301 /uborka-pomescheniy/generalnaya-uborka/ https://ramenskoye.standartcleaning.ru/uborka-pomescheniy/generalnaya-uborka
+Redirect 301 /uborka-pomescheniy/uborka-posle-remonta/ https://ramenskoye.standartcleaning.ru/uborka-pomescheniy/uborka-posle-remonta
+Redirect 301 /uslugi-domrabotnicy/ https://ramenskoye.standartcleaning.ru/uslugi-domrabotnicy
+Redirect 301 /uslugi-sadovnika/ https://ramenskoye.standartcleaning.ru/uslugi-sadovnika
+
+Redirect 301 /himchistka/himchistka-myagkoy-mebeli/ https://ramenskoye.standartcleaning.ru/himchistka/himchistka-myagkoy-mebeli
+Redirect 301 /generalnaja-uborka-doma https://ramenskoye.standartcleaning.ru/uborka-domov/generalnaya-uborka-doma
+Redirect 301 /himchistka/himchistka-divanov-v-ramenskom/ https://ramenskoye.standartcleaning.ru/himchistka/himchistka-divanov-v-ramenskom
+Redirect 301 /himchistka/himchistka-igrushek/ https://ramenskoye.standartcleaning.ru/himchistka/himchistka-igrushek
+Redirect 301 /himchistka/himchistka-kovrov/ https://ramenskoye.standartcleaning.ru/himchistka/himchistka-kovrov
+Redirect 301 /himchistka/himchistka-matrasov/ https://ramenskoye.standartcleaning.ru/himchistka/himchistka-matrasov
+Redirect 301 /himchistka/himchistka-salona-avtomobilya/ https://ramenskoye.standartcleaning.ru/himchistka/himchistka-salona-avtomobilya
+Redirect 301 /himchistka/himchistka-shtor/ https://ramenskoye.standartcleaning.ru/himchistka/himchistka-shtor
+Redirect 301 /kalkulyator-kliningovyh-uslug-dlya-kvartir/ https://ramenskoye.standartcleaning.ru/kalkulyator-kliningovyh-uslug-dlya-kvartir
+Redirect 301 /kontakty/ https://ramenskoye.standartcleaning.ru/kontakty
+Redirect 301 /mojka-ostekleniya-i-fasadov https://ramenskoye.standartcleaning.ru/moyka-okon-v-ramenskom/moyka-ostekleniya-i-fasadov
+Redirect 301 /o-kompanii/ https://ramenskoye.standartcleaning.ru/o-kompanii
+Redirect 301 /uborka-kommercheskoy-nedvizhimosti/uborka-klinik-i-meduchrezhdenij/ https://ramenskoye.standartcleaning.ru/uborka-kommercheskoy-nedvizhimosti/uborka-klinik-i-meduchrezhdenij
+Redirect 301 /uborka-kommercheskoy-nedvizhimosti/uborka-restoranov/ https://ramenskoye.standartcleaning.ru/uborka-kommercheskoy-nedvizhimosti/uborka-restoranov
+Redirect 301 /uborka-kommercheskoy-nedvizhimosti/uborka-territorii-predpriyatij/ https://ramenskoye.standartcleaning.ru/uborka-kommercheskoy-nedvizhimosti/uborka-territorii-predpriyatij
+Redirect 301 /uborka-kvartir/bystraya-uborka-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/bystraya-uborka-kvartiry
+Redirect 301 /uborka-kvartir/generalnaya-uborka-dvuhkomnatnoj-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/generalnaya-uborka-dvuhkomnatnoj-kvartiry
+Redirect 301 /uborka-kvartir/generalnaya-uborka-kuhni/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/generalnaya-uborka-kuhni
+Redirect 301 /uborka-kvartir/generalnaya-uborka-odnokomnatnoj-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/generalnaya-uborka-odnokomnatnoj-kvartiry
+Redirect 301 /uborka-kvartir/generalnaya-uborka-trekhkomnatnoj-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/generalnaya-uborka-trekhkomnatnoj-kvartiry
+Redirect 301 /uborka-kvartir/regulyarnaya-uborka-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/regulyarnaya-uborka-kvartiry
+Redirect 301 /uborka-kvartir/uborka-3h-komnatnoy-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/uborka-3h-komnatnoy-kvartiry
+Redirect 301 /uborka-kvartir/uborka-3h-komnatnoy-kvartiry-posle-remonta/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/uborka-3h-komnatnoy-kvartiry-posle-remonta
+Redirect 301 /uborka-kvartir/uborka-odnokomnatnoy-kvartiry-posle-remonta/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/uborka-odnokomnatnoy-kvartiry-posle-remonta
+Redirect 301 /uborka-kvartir/uborka-posle-remonta-2uh-komnatnoy-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/uborka-posle-remonta-2uh-komnatnoy-kvartiry
+Redirect 301 /uborka-ofisov/utrennyaya-uborka-ofisov/ https://ramenskoye.standartcleaning.ru/uborka-ofisov/utrennyaya-uborka-ofisov
+Redirect 301 /uborka-posle-meropriyatiy/ https://ramenskoye.standartcleaning.ru/uborka-posle-meropriyatiy
+
+Redirect 301 /uborka-ofisov/utrennyaya-uborka-ofisov/ https://ramenskoye.standartcleaning.ru/uborka-ofisov/utrennyaya-uborka-ofisov
+Redirect 301 /uborka-kvartir/uborka-odnokomnatnoy-kvartiry-posle-remonta/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/uborka-odnokomnatnoy-kvartiry-posle-remonta
+Redirect 301 /himchistka/himchistka-kovrov/ https://ramenskoye.standartcleaning.ru/himchistka/himchistka-kovrov
+Redirect 301 /uborka-kvartir/generalnaya-uborka-kuhni/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/generalnaya-uborka-kuhni
+Redirect 301 /kalkulyator-kliningovyh-uslug-dlya-kvartir/ https://ramenskoye.standartcleaning.ru/kalkulyator-kliningovyh-uslug-dlya-kvartir
+Redirect 301 /uborka-kvartir/generalnaya-uborka-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/generalnaya-uborka-kvartiry
+Redirect 301 /uborka-kvartir/uborka-3h-komnatnoy-kvartiry/ https://ramenskoye.standartcleaning.ru/uborka-kvartir/uborka-3h-komnatnoy-kvartiry
+Redirect 301 https://ramenskoye.standartcleaning.ru/ochistka-krysh-ot-naledi-i-snega.html https://ramenskoye.standartcleaning.ru/ochistka-krysh-ot-naledi-i-snega
