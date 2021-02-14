@@ -7,12 +7,11 @@ const autoprefixer = require('gulp-autoprefixer')
 const rename = require("gulp-rename")
 
 module.exports = function styles() {
-  return gulp.src('src/styles/*.+(scss|sass)')
+  return gulp.src('src/styles/*.sass')
     .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer({
       grid: false, // Optional. Enable CSS Grid
-      // @ts-ignore
       overrideBrowserslist: ['last 10 versions']
     }))
     .pipe(shorthand())

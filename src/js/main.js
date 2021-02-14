@@ -22,13 +22,21 @@ $(function () {
 			$(`.input_tel`).mask(`+0(000) 000-00-00`)
 		})
 
-		// JQ menu for Desktop
-		$(`.menu li ul, .local-menu ul li`).hide(), $(`li`).hover(function () {
+		// JQ menu-client for Desktop
+		$(`.menu li ul`).hide(), $(`li`).hover(function () {
 				$(`ul:first`, this).fadeIn()
 			},
 			function () {
 				$(`ul:first`, this).fadeOut()
 			})
+
+		// // JQ menu-local for Desktop
+		// $(`.local-menu ul li`).hide(), $(`li`).hover(function () {
+		// 	$(`ul:first`, this).fadeIn()
+		// },
+		// function () {
+		// 	$(`ul:first`, this).fadeOut()
+		// })
 
 		// Mobile menu: hide on clicks
 		$(`.nav-item`).on(`click`, function () {
@@ -141,7 +149,7 @@ $(function () {
 				$(`#promo-sticker i`).css({'display' : 'none'});
 				})
 
-				
+
 
 		// axaj form
 		$(`form`).submit(function () {

@@ -1,0 +1,35 @@
+extends ../_templates/_template_kommerce
+
+block variables
+	//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/uborka-kommercheskoy-nedvizhimosti/uborka-klinik-i-meduchrezhdenij'
+	- var mainpage = ''
+	- var title = 'Уборка клиник и медучреждений в Раменском'
+	- var metaDescr = 'Уборка медучреждений и клиник профессиональным оборудованием и средствами по регламенту. Полное клининговое обслуживание компаний в Раменском'
+	- var ogImage = 'img/uborka-kliniki.jpg'
+		//- main screen
+	- var h1 = 'Уборка клиник и медучреждений в Раменском'
+	- var h1Descr = 'Убираем мед клиники на регулярной основе, после ремонта и проводим генеральные уборки'
+		//- breadcrumbs
+	- var bcCat = 'Уборка коммерческой недвижимости'
+	- var bcCatUrl = 'uborka-kommercheskoy-nedvizhimosti/'
+	- var bc = 'Уборка клиник и медучреждений в Раменском'
+		//- backgrounds
+	- var mainBackground = 'img/uborka-kliniki.jpg'
+		//- settings
+	- var nestingLevel = '2'
+	- var category = 'komm'
+		//- mixin pricetable
+	- var priceH2 = 'Цены на уборку коммерческой недвижимости'
+	-
+		var thead = ['Уборка клиник', 'Цена']
+	-
+		var tbody = [
+				['Ежедневная (комплексная)', 'от 15 000 р. /мес.'],
+				['Генеральная уборка', 'от 60 р. /м²'],
+				['Послестроительная уборка до 500 м²', 'от 90 р. /м²'],
+				['Послестроительная уборка от 501 до 1500 м²', 'от 70 р. /м²'],
+				['Послестроительная уборка от 1500 до 5000 м²', 'от 60 р. /м²'],
+		]
+

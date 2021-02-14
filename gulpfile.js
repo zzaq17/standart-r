@@ -1,14 +1,26 @@
-var gulp = require('gulp'),
-	serve = require('./gulp/tasks/serve'),
-	pug = require('./gulp/tasks/pug2html'),
-	styles = require('./gulp/tasks/styles'),
-	script = require('./gulp/tasks/script'),
-	send = require('./gulp/tasks/send'),
-	clean = require('./gulp/tasks/clean'),
-	gutil = require('gulp-util'),
-	ftp = require('vinyl-ftp'),
-	imagemin = require('gulp-imagemin')
+const gulp		= require('gulp')
 
+const serve		= require('./gulp/tasks/serve')
+const clean		= require('./gulp/tasks/clean')
+const pugbase	= require('./gulp/tasks/pugbase')
+const pughlu	= require('./gulp/tasks/pughlu')
+const puginfo	= require('./gulp/tasks/puginfo')
+const pugf1		= require('./gulp/tasks/pugf1')
+const pugf2		= require('./gulp/tasks/pugf2')
+const pugf3		= require('./gulp/tasks/pugf3')
+const pugf4		= require('./gulp/tasks/pugf4')
+const pugf5		= require('./gulp/tasks/pugf5')
+const pugf6		= require('./gulp/tasks/pugf6')
+const pugf7		= require('./gulp/tasks/pugf7')
+const pugerrors	= require('./gulp/tasks/pugerrors')
+const styles	= require('./gulp/tasks/styles')
+const js		= require('./gulp/tasks/js')
+const fonts		= require('./gulp/tasks/fonts')
+const img		= require('./gulp/tasks/imgmin')
+const php		= require('./gulp/tasks/php')
+const video		= require('./gulp/tasks/video')
+const send		= require('./gulp/tasks/send')
+const deploy	= require('./gulp/tasks/deploy')
 
 function setMode(isProduction = false) {
 	return cb => {
@@ -17,42 +29,11 @@ function setMode(isProduction = false) {
 	}
 }
 
-gulp.task('imagemin', function() {
-	return gulp.src(['src/img/*.*', '!src/img/404.gif'])
-	.pipe(imagemin())
-	.pipe(gulp.dest('build/img'));
-});
-
-gulp.task('deploy', function() {
-
-	var conn = ftp.create({
-		host:      'ftp60.hostland.ru',
-		user:      'host1681653_dev',
-		password:  'n5oQ1L1el6',
-
-		// host:      'ftp49.hostland.ru',
-		// user:      'host1328462_devz',
-		// password:  'zpKyzTNCTZ',
-
-		parallel:  10,
-
-		log: gutil.log
-	});
-
-	var globs = [
-	'build/**',
-	// 'build/.htaccess'
-	];
-
-	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/ramenskoye'));
-	// .pipe(conn.dest('/r'));
-
-});
-
-const dev = gulp.parallel(pug.pug, pug.pugf1, pug.pugf2, pug.pugf3, pug.pugf4, pug.pugf5, pug.pugf6, pug.pugf7, pug.errors, styles, script, send.fonts, send.img, send.php, send.video)
-
+const dev = gulp.parallel(img, pugbase, pughlu, puginfo, pugf1, pugf2, pugf3, pugf4, pugf5, pugf6, pugf7, pugerrors, styles, js, fonts, php, video)
 const build = gulp.series(clean, dev)
+const prod = gulp.series(deploy)
 
 module.exports.start = gulp.series(setMode(), build, serve)
+module.exports.clean = gulp.series(setMode(), clean)
 module.exports.build = gulp.series(setMode(true), build, send.ht1, send.ht2, send.ht3, send.ht4, send.ht5, send.ht6, send.ht7, send.ht8, send.settings)
+module.exports.prod = gulp.series(setMode(true), prod)

@@ -1,0 +1,42 @@
+extends ../_templates/_template_subservice
+
+block variables
+	//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/uborka-kvartir/uborka-2h-komnatnoy-kvartiry'
+	- var mainpage = ''
+	- var title = 'Уборка 2х комнатной квартиры'
+	- var metaDescr = 'Все виды уборок для двухкомнатной квартиры от 2500 рублей: регулярная, экспресс, генеральная и после ремонта. Наведём чистоту бережно и с гарантией!'
+	- var ogImage = 'img/generalnaya-uborka-kvartir.jpg'
+		//- main screen
+	- var h1 = 'Уборка двухкомнатной квартиры от 2 500 р.'
+	- var h1Descr = 'Комплексная уборка каждого угла в квартире – кухни, санузла, комнат и коридоров. Отлично обновляет помещения после жильцов или перед продажей'
+		//- breadcrumbs
+	- var bcCat = 'Уборка квартир в Раменском'
+	- var bcCatUrl = 'uborka-kvartir/'
+	- var bc = 'Уборка двухкомнатной квартиры от 2 500 р.'
+		//- backgrounds
+	- var mainBackground = 'img/podderzhivayuschaya-uborka-kvartiry.jpg'
+	- var formBackground = 'img/inner-form-bg.jpg'
+		//- settings
+	- var nestingLevel = '2'
+	- var category = 'kvartiry'
+	- var cleaningType = 'regular'
+		//- mixin otzyvy
+	-
+		var otzyvy = [
+				{'name': 'Tata', 'descr': 'Спасибо большое за уборки! Они просто спасают!', 'img': '../img/review__Tata.jpg'},
+				{'name': 'Александр', 'descr': 'Вызывал на уборку квартиры. Все требования и пожелания были учтены. Очень порадовала цена и качество уборки. Всем рекомендую.', 'img': '../img/review__Aleksandr.jpg'},
+				{'name': 'Ольга', 'descr': 'Если кто из раменского или жуковского, то очень рекомендую Стандарт. Они уже месяцев 5 у нас убирают - аккуратные барышни, пылесосы тихие, все чистенькое. Ничего лишнего не делают, убрали быстро (минут 15) и до следующей недели))', 'img': '../img/review__Olga2.jpg'},
+		]
+	-
+		var thead = ['Уборка квартир', 'двухкомнатная <br/>от 51 до 70 м²']
+	-
+		var tbody = [
+				['Постоянная', 'от 2 500 р.'],
+				['Постоянная без химии', 'от 2 200 р.'],
+				['Экспресc', 'от 3 000 р.'],
+				['Генеральная', 'от 5 000 р.'],
+				['После ремонта', 'от 6 000 р.']
+		]
+

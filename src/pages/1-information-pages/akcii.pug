@@ -1,0 +1,50 @@
+extends ../_templates/_template_default
+
+block variables
+	//- head part
+	- var subDomain = 'ramenskoye'
+	- var pageUrl = '/akcii'
+	- var mainpage = ''
+	- var title = 'Акции и скидки'
+	- var metaDescr = 'Сэкономьте с акциями на услуги клининговой компании «Стандарт» в Раменском'
+	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage.png'
+		//- main screen
+	- var h1 = 'Акции и Скидки на клининговые услуги'
+	- var h1Descr = ''
+		//- breadcrumbs
+	- var bcCat = ''
+	- var bcCatUrl = ''
+	- var bc = 'Акции и Скидки на клининговые услуги'
+		//- settings
+	- var nestingLevel = '1'
+	- var category = 'default'
+
+
+block content
+	section.hero
+		h1= h1
+		+breadcrumbs_naked
+
+	div.section.section-akcii
+		.container.two-column
+			.elem
+				.picture
+					img(src="../img/akcii/akciya-privedi-druga-480.png" alt="")
+				.info-block
+					p Порекомендуйте нас другу и получите 500 р. на уборку!
+					p Посоветуйте своему другу воспользоваться нашими услугами и сэкономьте
+			.elem
+				.picture
+					img(src="../img/akcii/akciya-skidka-za-otzyv-480.png" alt="")
+				.info-block
+					p Оставьте отзыв и получите скидку 10% на заказ!
+					p Оставьте отзыв об услугах нашей компании в Инстаграм, Вконтакте или Facebook и получите скидку 10% на любой следующий заказ!
+					.social-buttons
+						a(href="https://instagram.com/standart_cleaning" class="hvr-icon-buzz-out")
+							i.hvr-icon.fab.fa-instagram
+						a(href="https://vk.com/standartcleaning" class="hvr-icon-buzz-out")
+							i.hvr-icon.fab.fa-vk
+						a(href="https://www.facebook.com/standartcleaningzhuk/" class="hvr-icon-buzz-out")
+							i.hvr-icon.fab.fa-facebook-f
+	//- include _includes/_corona-attention
+

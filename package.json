@@ -6,7 +6,7 @@
   "scripts": {
     "s": "gulp start",
     "b": "gulp build",
-    "d": "gulp build && gulp imagemin && gulp deploy"
+    "d": "gulp prod"
   },
   "repository": {
     "type": "git",

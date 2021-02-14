@@ -1,52 +1,32 @@
 const gulp = require('gulp')
 
 module.exports = {
-  fonts: function() {
-  return gulp.src('src/fonts/*')
-    .pipe(gulp.dest('build/fonts'))
-},
-
-  php: function() {
-  return gulp.src('src/php/*')
-    .pipe(gulp.dest('build/php'))
-  },
-
-  video: function() {
-    return gulp.src('src/video/*')
-      .pipe(gulp.dest('build/video'))
-  },
-
-  img: function() {
-    return gulp.src('src/img/**/*')
-      .pipe(gulp.dest('build/img'))
-  },
-
   ht1: function() {
-    return gulp.src('src/pages/himchistka/.htaccess')
+    return gulp.src('src/pages/f4-himchistka/.htaccess')
       .pipe(gulp.dest('build/himchistka/'))
   },
   ht2: function() {
-    return gulp.src('src/pages/moyka-okon-v-ramenskom/.htaccess')
+    return gulp.src('src/pages/f5-moyka-okon-v-ramenskom/.htaccess')
       .pipe(gulp.dest('build/moyka-okon-v-ramenskom/'))
   },
   ht3: function() {
-    return gulp.src('src/pages/uborka-domov/.htaccess')
+    return gulp.src('src/pages/f2-uborka-domov/.htaccess')
       .pipe(gulp.dest('build/uborka-domov/'))
   },
   ht4: function() {
-    return gulp.src('src/pages/uborka-kommercheskoy-nedvizhimosti/.htaccess')
+    return gulp.src('src/pages/f7-uborka-kommercheskoy-nedvizhimosti/.htaccess')
       .pipe(gulp.dest('build/uborka-kommercheskoy-nedvizhimosti/'))
   },
   ht5: function() {
-    return gulp.src('src/pages/uborka-kvartir/.htaccess')
+    return gulp.src('src/pages/f1-uborka-kvartir/.htaccess')
       .pipe(gulp.dest('build/uborka-kvartir/'))
   },
   ht6: function() {
-    return gulp.src('src/pages/uborka-ofisov/.htaccess')
+    return gulp.src('src/pages/f3-uborka-ofisov/.htaccess')
       .pipe(gulp.dest('build/uborka-ofisov/'))
   },
   ht7: function() {
-    return gulp.src('src/pages/uborka-pomescheniy/.htaccess')
+    return gulp.src('src/pages/f6-uborka-pomescheniy/.htaccess')
       .pipe(gulp.dest('build/uborka-pomescheniy/'))
   },
   ht8: function() {

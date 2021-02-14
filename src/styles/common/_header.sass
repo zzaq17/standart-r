@@ -36,7 +36,7 @@ header
 		justify-items: stretch
 
 		font-family: $font
-		color: #fff
+		color: $c20
 		// text-shadow: rgba(0, 0, 0, 0.1)
 		letter-spacing: .5px
 
@@ -44,38 +44,47 @@ header
 			justify-self: left
 			ul
 				li
-					a
+					transition: all 2s ease-in
+					a,span.local
 						font-family: $font
-						padding: 0 1em
-						color: #fff
-						// text-shadow: rgba(0, 0, 0, 0.1)
+						padding: 0 14px
+						color: $c50
+						text-shadow: rgba(0, 0, 0, 0.1)
 						letter-spacing: .5px
-					a:hover
+						transition: all 2s ease-in
+					a:hover,span.local:hover
 						color: $c20
-				li
-					a:after
+						cursor: pointer
+						transition: all 2s ease-in
+					a:after,span.local:after
 						font-family: 'fa-solid'
 						content: "\f107"
 						padding-left: 0.5em
 						vertical-align: middle
 						font-size: 14px
-				li
-					a:only-child:after
+					a:only-child:after,span.local:only-child:after
 						content: ''
-				ul
-					display: none
-					position: absolute
+					ul
+						display: none
+						position: absolute
+						top: 24px
 
 				li:hover
 					ul
 						display: inherit
+						color: $c20
+						transition: opacity 2s ease-in
 						li
 							background-color: $c300
 							border-top: 1px solid #49d3a5
-							bottom: -8px
+							bottom: -7px
 							padding: 0.75em 0
 							position: relative
 							color: $c20
+							transition: all .3s ease-in
+						li:hover
+							background-color: $c500
+							transition: all .3s ease-in
 
 		.top-menu
 			display: grid
@@ -87,13 +96,13 @@ header
 			grid-template-columns: auto auto auto auto auto auto auto auto
 			grid-column-gap: 1.5em
 			a
-				color: #ffffff
+				color: $c20
 
 /* ------ LOWER BAR ------ */
 .lower-bar-wrap
 	width: 100%
 	padding: .5em 0
-	background-color: #fff
+	background-color: $c20
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
 	// position: absolute
 	z-index: 3

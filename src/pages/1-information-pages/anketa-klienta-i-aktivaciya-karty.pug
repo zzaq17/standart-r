@@ -1,0 +1,32 @@
+extends ../_templates/_template_default
+
+block variables
+
+	- var subDomain = ''
+	- var pageUrl = '/anketa-klienta-i-aktivaciya-karty'
+	- var title = 'Анкета постоянного клиента'
+	- var metaDescr = 'Анкета постоянного клиента клининговой компании ООО «Стандарт»'
+	- var ogImage = 'img/kliningovye-uslugi-oblozhka-preview-bage.png'
+	- var h1 = 'Анкета клиента для активации карты'
+	- var h1Descr = ''
+	- var bcCat = ''
+	- var bcCatUrl = ''
+	- var nestingLevel = '1'
+	- var bc = 'Анкета постоянного клиента'
+	- var category = 'default'
+
+block content
+
+	section.hero
+		h1= h1
+		+breadcrumbs_naked
+	section.section-blog
+		.container
+			h2.left Поздравляем! Вы получили нашу скидочную карту!
+			p
+				span.bold Теперь наши услуги для вас будут выгоднее и удобнее.
+			p Мы просим оставить ваши данные, чтобы мы могли предоставить персональный сервис – будем узнавать Вас по телефону, предоставлять скидки, даже если вы не знаете об акциях, а заказы и вопросы будут обрабатываться быстрее!
+			.one-three-column
+				a(href="https://bit.ly/2SH87kf").btn__green.hvr-bob Заполнить Анкету
+				p Вы будете перенаправлены в сервис Google Формы. Когда закончите, просто закройте вкладку с ответами. Ваши данные защищены шифрованием и не предоставляются третьим лицам. Вы всегда сможете отозвать свое согласие.
+
