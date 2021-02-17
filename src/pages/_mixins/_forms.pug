@@ -31,7 +31,7 @@ mixin form_mainpage-mainscreen
 
 
 mixin form_mainpage-cta
-	form.lazyload(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ym(25151147,'reachGoal','lead'); gtag('event', 'cta', { 'event_category': 'lead', 'event_label': 'cta'}); return true;" data-bg=""+formBackground+"")
+	form.lazyload(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ym(25151147,'reachGoal','lead'); gtag('event', 'cta', { 'event_category': 'lead', 'event_label': 'cta'}); return true;" data-bg="../../"+formBackground+"")
 
 		.title
 			| Узнайте стоимость сейчас!
@@ -129,7 +129,7 @@ mixin form_mainscreen
 mixin form_cta
 	if formBackground
 		section.section.cta
-			.container.lazyload(style='background-blend-mode: overlay; background-color: rgba(0, 0, 0, .5); background-position: center center; background-size: cover; background-repeat: no-repeat;' data-bg=''+formBackground+'')
+			.container.lazyload(style='background-blend-mode: overlay; background-color: rgba(0, 0, 0, .5); background-position: center center; background-size: cover; background-repeat: no-repeat;' data-bg='../../'+formBackground+'')
 
 				form(method="post" onsubmit="ym(25151147,'reachGoal','cta'); ym(25151147,'reachGoal','lead'); gtag('event', 'cta', { 'event_category': 'lead', 'event_label': 'cta'}); return true;")
 

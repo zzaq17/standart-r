@@ -7,7 +7,7 @@ module.exports = function deploy() {
 		/* production */
 			host:      'ftp60.hostland.ru',
 			user:      'host1681653_dev',
-			password:  'n5oQ1L1el6',
+			password:  'kirpix',
 
 		/* dev */
 			// host:      'ftp49.hostland.ru',

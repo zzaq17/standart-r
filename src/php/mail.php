@@ -24,6 +24,14 @@ $to .= 'lead.standartcleaning@yandex.ru' . ', '; // Внимание! Так п�
 // не забываем запятую. Даже в последнем контакте лишней не будет
 // Для начинающих! $to .= точка в этом случае для Дописывания в переменную
 
+// переменные письма
+$bgc = "#00bc80";
+$subject = $postData['TITLE'];
+if ($postData['COMMENTS']):
+	$comment = '<tr><td style="padding: 10px; border: #eee 1px solid; width: 140px;"><b>Сообщение</b></td><td style="padding: 10px; border: #eee 1px solid;">'.$postData['comment'].'</td></tr>';
+	endif;
+$dateLead = date("d.m.y H:i");
+
 // содержание письма
 $subject = $postData['TITLE'];
 $message = '
@@ -32,33 +40,30 @@ $message = '
 	<title>'.$subject.'</title>
 </head>
 <body>
-	<table style="width: 100%; border-collapse: collapse;">
-		<tr style="background-color: #00bc80; background-image: url(../img/Logo-Klever-1x1.png)">
-		<td style="padding: 20px; text-align: center; color: white; font-size: 22px" colspan="2"><b>Заявка Раменское</b></td>
+	<table style="width: 100%; max-width: 600px; border-collapse: collapse;">
+		<tr style="background-color: '.$bgc.'; background-image: url(../img/Logo-Klever-1x1.png)">
+			<td style="padding: 20px; text-align: center; color: white; font-size: 22px" colspan="2"><b>Заявка Жуковский</b></td>
 		</tr>
 		<tr>
-		<td style="padding: 10px; border: #eee 1px solid; max-width: 100px;"><b>Имя</b></td>
-		<td style="padding: 10px; border: #eee 1px solid;">'.$postData['NAME'].'</td>
+			<td style="padding: 10px; border: #eee 1px solid; max-width: 140px;"><b>Имя</b></td>
+			<td style="padding: 10px; border: #eee 1px solid;">'.$postData['NAME'].'</td>
 		</tr>
 		<tr style="background-color: #eee">
-		<td style="padding: 10px; border: #eee 1px solid; max-width: 100px;"><b>Телефон</b></td>
-		<td style="padding: 10px; border: #eee 1px solid;">'.$postData['PHONE_WORK'].'</td>
+			<td style="padding: 10px; border: #eee 1px solid; max-width: 140px;"><b>Телефон</b></td>
+			<td style="padding: 10px; border: #eee 1px solid;">'.$postData['PHONE_WORK'].'</td>
 		</tr>
 		<tr>
-		<td style="padding: 10px; border: #eee 1px solid; max-width: 100px;"><b>Когда</b></td>
-		<td style="padding: 10px; border: #eee 1px solid;">'.$dateTime.'</td>
+			<td style="padding: 10px; border: #eee 1px solid; max-width: 140px;"><b>Откуда</b></td>
+			<td style="padding: 10px; border: #eee 1px solid;">'.$postData['UF_CRM_1590424887'].' <br/>'.$postData['PAGE'].'</td>
 		</tr>
 		<tr style="background-color: #eee">
-		<td style="padding: 10px; border: #eee 1px solid; max-width: 100px;"><b>Откуда</b></td>
-		<td style="padding: 10px; border: #eee 1px solid;">'.$postData['UF_CRM_1590424887'].' <br>'.$postData['PAGE'].'</td>
-		</tr>
-		<tr>
-		<td style="padding: 10px; border: #eee 1px solid; max-width: 100px;"><b>Сообщение</b></td>
-		<td style="padding: 10px; border: #eee 1px solid;">'.$postData['COMMENTS'].'</td>
-		</tr>
+			<td style="padding: 10px; border: #eee 1px solid; width: 140px;"><b>Дата заявки</b></td>
+			<td style="padding: 10px; border: #eee 1px solid;">'.$dateLead.'</td>
+		</tr>'
+		.$comment.'
 		</table>
 </body>
-';
+		';
 
 // устанавливаем тип сообщения Content-type, если хотим
 $headers  = "MIME-Version: 1.0" . PHP_EOL .
@@ -68,4 +73,3 @@ $headers  = "MIME-Version: 1.0" . PHP_EOL .
 
 // отправляем
 mail($to, $subject, $message, $headers);
-
