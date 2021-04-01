@@ -31,21 +31,21 @@ $(document).ready(function () {
         } else if ($typeClean == 'tc3' && $flatSize == 'fs4') {
             $Sum2 = 4000;
         } else if ($typeClean == 'tc4' && $flatSize == 'fs1') {
-            $Sum2 = 4000;
+            $Sum2 = 5000;
         } else if ($typeClean == 'tc4' && $flatSize == 'fs2') {
-            $Sum2 = 5000;
+            $Sum2 = 6000;
         } else if ($typeClean == 'tc4' && $flatSize == 'fs3') {
-            $Sum2 = 6000;
+            $Sum2 = 7000;
         } else if ($typeClean == 'tc4' && $flatSize == 'fs4') {
-            $Sum2 = 7000;
-        } else if ($typeClean == 'tc5' && $flatSize == 'fs1') {
-            $Sum2 = 5000;
-        } else if ($typeClean == 'tc5' && $flatSize == 'fs2') {
-            $Sum2 = 6000;
-        } else if ($typeClean == 'tc5' && $flatSize == 'fs3') {
-            $Sum2 = 7000;
-        } else if ($typeClean == 'tc5' && $flatSize == 'fs4') {
             $Sum2 = 8000;
+        } else if ($typeClean == 'tc5' && $flatSize == 'fs1') {
+            $Sum2 = 6000;
+        } else if ($typeClean == 'tc5' && $flatSize == 'fs2') {
+            $Sum2 = 7000;
+        } else if ($typeClean == 'tc5' && $flatSize == 'fs3') {
+            $Sum2 = 8000;
+        } else if ($typeClean == 'tc5' && $flatSize == 'fs4') {
+            $Sum2 = 9000;
         } else {
             $Sum2 = 2000;
         }

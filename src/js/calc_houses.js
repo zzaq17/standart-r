@@ -32,13 +32,13 @@
             } else if ($typeCleanHouses == 'tc3' && $houseSize == 'hs4') {
                 $SumHouses2 = 6000;
             } else if ($typeCleanHouses == 'tc4' && $houseSize == 'hs1') {
-                $SumHouses2 = 6000;
+                $SumHouses2 = 7000;
             } else if ($typeCleanHouses == 'tc4' && $houseSize == 'hs2') {
-                $SumHouses2 = 8000;
-            } else if ($typeCleanHouses == 'tc4' && $houseSize == 'hs3') {
                 $SumHouses2 = 9000;
-            } else if ($typeCleanHouses == 'tc4' && $houseSize == 'hs4') {
+            } else if ($typeCleanHouses == 'tc4' && $houseSize == 'hs3') {
                 $SumHouses2 = 10000;
+            } else if ($typeCleanHouses == 'tc4' && $houseSize == 'hs4') {
+                $SumHouses2 = 11000;
             } else if ($typeCleanHouses == 'tc5' && $houseSize == 'hs1') {
                 $SumHouses2 = 10800;
             } else if ($typeCleanHouses == 'tc5' && $houseSize == 'hs2') {
